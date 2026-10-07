@@ -1,0 +1,6 @@
+26-05-2021 08:29:30|CORE-CMN-EXT|CmnExecuter_InsertActivityEMLQueue|1020|Invalid Activity Type|
+26-05-2021 08:29:32|CORE-CMN-EXT|CmnExecuter_GetActivityEMLQueue|1020|Invalid Activity Type|
+26-05-2021 08:29:32|||1020|Invalid Activity Type|
+26-05-2021 22:53:46|CORE-CMN-EXT|CmnExecuter_InsertActivityEMLQueue|1020|Invalid Activity Type|
+26-05-2021 22:53:49|CORE-CMN-EXT|CmnExecuter_GetActivityEMLQueue|1020|Invalid Activity Type|
+26-05-2021 22:53:49|||1020|Invalid Activity Type|

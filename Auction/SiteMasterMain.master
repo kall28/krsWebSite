@@ -1,0 +1,510 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="New_SiteMasterMain, App_Web_sitemastermain.master.cdcab7d2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="apple-touch-icon" sizes="57x57" href="<%=ResolveUrl("~/favicon/apple-icon-57x57.png")%>" />
+    <link rel="apple-touch-icon" sizes="60x60" href="<%=ResolveUrl("~/favicon/apple-icon-60x60.png")%>" />
+    <link rel="apple-touch-icon" sizes="72x72" href="<%=ResolveUrl("~/favicon/apple-icon-72x72.png")%>" />
+    <link rel="apple-touch-icon" sizes="76x76" href="<%=ResolveUrl("~/favicon/apple-icon-76x76.png")%>" />
+    <link rel="apple-touch-icon" sizes="114x114" href="<%=ResolveUrl("~/favicon/apple-icon-114x114.png")%>" />
+    <link rel="apple-touch-icon" sizes="120x120" href="<%=ResolveUrl("~/favicon/apple-icon-120x120.png")%>" />
+    <link rel="apple-touch-icon" sizes="144x144" href="<%=ResolveUrl("~/favicon/apple-icon-144x144.png")%>" />
+    <link rel="apple-touch-icon" sizes="152x152" href="<%=ResolveUrl("~/favicon/apple-icon-152x152.png")%>" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<%=ResolveUrl("~/favicon/apple-icon-180x180.png")%>" />
+    <link rel="icon" type="image/png" sizes="192x192" href="<%=ResolveUrl("~/favicon/android-icon-192x192.png")%>" />
+    <link rel="icon" type="image/png" sizes="32x32" href="<%=ResolveUrl("~/favicon/favicon-32x32.png")%>" />
+    <link rel="icon" type="image/png" sizes="96x96" href="<%=ResolveUrl("~/favicon/favicon-96x96.png")%>" />
+    <link rel="icon" type="image/png" sizes="16x16" href="<%=ResolveUrl("~/favicon/favicon-16x16.png")%>" />
+    <link rel="manifest" href="<%=ResolveUrl("~/favicon/manifest.json")%>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="msapplication-TileImage" content="<%=ResolveUrl("~/favicon/ms-icon-144x144.png")%>" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Renepay</title>
+    <%--<link rel="icon" type="image/png" href="<%=ResolveUrl("~/images/favicon.ico")%>" />--%>
+    <!-- main CSS -->
+    <link href="<%=ResolveUrl("~/Styles/style-2.1.css")%>" rel="stylesheet" />
+
+    <!-- Home CSS -->
+    <link href="<%=ResolveUrl("~/Styles/Home.css")%>" rel="stylesheet" />
+
+    <!-- responsive CSS -->
+    <link href="<%=ResolveUrl("~/Styles/responsive.css")%>" rel="stylesheet" />
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="<%=ResolveUrl("~/Styles/bootstrap.min.css")%>" rel="stylesheet" />
+
+    <!-- MetisMenu CSS -->
+    <link href="<%=ResolveUrl("~/Styles/metisMenu.min.css")%>" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="<%=ResolveUrl("~/Styles/sb-admin-2.css")%>" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href="<%=ResolveUrl("~/Styles/font-awesome.min.css")%>" rel="stylesheet" type="text/css" />
+    <!-- jQuery -->
+    <style>
+        body {
+            background-color: #fff;
+        }
+    </style>
+    <style>
+        .badge-notify {
+            background: red;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="xScrMgrMaster" runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="~/Scripts/jquery-ui-1.11.2.custom/external/jquery/jquery.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery-ui-1.11.2.custom/jquery-ui.min.js" />
+                <asp:ScriptReference Path="~/Scripts/bootstrap.min.js" />
+                <%--<asp:ScriptReference Path="~/Scripts/sb-admin-2.js" />--%>
+                <asp:ScriptReference Path="~/Scripts/common-2.1.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery.slicknav.js" />
+
+            </Scripts>
+        </asp:ScriptManager>
+        <asp:UpdatePanel ID="xupnlMain" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <script>
+                    function login_click() {
+                        ShowModalBox($("#divLogin"));
+                        HideModalBox($("#divSignup"));
+                        HideModalBox($("#divFPassword"));
+                        HideModalBox($("#divFUsername"));
+                    }
+
+                    function fPwd_click() {
+                        ShowModalBox($("#divFPassword"));
+                        //HideModalBox($("#divSignup"));
+                        HideModalBox($("#divLogin"));
+                        //HideModalBox($("#divFUsername"));
+                    }
+
+                    function fUName_click() {
+                        ShowModalBox($("#divFUsername"));
+                        HideModalBox($("#divSignup"));
+                        HideModalBox($("#divLogin"));
+                        HideModalBox($("#divFPassword"));
+                    }
+
+                    function signup_click() {
+                        ShowModalBox($("#divSignup"));
+                        HideModalBox($("#divFUsername"));
+                        HideModalBox($("#divLogin"));
+                        HideModalBox($("#divFPassword"));
+                    }
+
+                    function signupsel_click(mode) {
+                        HideModalBox($("#divSignup"));
+                        HideModalBox($("#divFUsername"));
+                        HideModalBox($("#divLogin"));
+                        HideModalBox($("#divFPassword"));
+                        //link_click(mode);
+                        ShowProgress();
+                    }
+
+                    function validateLogin() {
+                        //if ($("#divLogin").is(":visible")) {
+                        var ctrl = $("#xtxtUserName");
+                        if (ctrl.val() == "") {
+                            $("#xtxtUserName").focus();
+                            ShowToolTip("#xtxtUserName", "Please enter Email / Mobile Number.", "bottom");
+                            return false;
+                        }
+
+                        ctrl = $("#xtxtPassword");
+                        if (ctrl.val() == "") {
+                            $("#xtxtPassword").focus();
+                            ShowToolTip("#xtxtPassword", "Please enter password.", "bottom");
+                            return false;
+                        }
+
+                        HideModalBox($("#divLogin"));
+                        ShowProgress();
+                        return true;
+                        //}
+                        //else {
+                        //    return false;
+                        //}
+                    }
+
+                    function validateFUName() {
+                        //if ($("#divFUsername").is(":visible")) {
+                        var ctrl = $("#txtFUEMail");
+                        if (ctrl.val() == "") {
+                            $("#txtFUEMail").focus();
+                            ShowToolTip("#txtFUEMail", "Please enter emailAddress.", "bottom");
+                            return false;
+                        }
+                        if (!validateEmail($("#txtFUEMail").val())) {
+                            $("#txtFUEMail").focus();
+                            ShowToolTip($("#txtFUEMail"), "Please Enter ValidEmailAddress", "bottom");
+                            return false;
+                        }
+                        ctrl = $("#txtFUMobileNo");
+                        if (ctrl.val() == "") {
+                            $("#txtFUMobileNo").focus();
+                            ShowToolTip("#txtFUMobileNo", "Please enter mobile no.", "bottom");
+                            return false;
+                        }
+                        HideModalBox($("#divFUsername"));
+                        ShowProgress();
+                        return true;
+                        //}
+                        //else {
+                        //    return false;
+                        //}
+                    }
+
+                    function validateFPwd() {
+                        //if ($("#divFPassword").is(":visible")) {
+                        //var ctrl = $("#txtFPUserName");
+                        //if (ctrl.val() == "") {
+                        //    $("#txtFPUserName").focus();
+                        //    ShowToolTip("#txtFPUserName", "Please enter user name.", "bottom");
+                        //    return false;
+                        //}
+
+                        //ctrl = $("#txtFPMobileNo");
+                        //if (ctrl.val() == "") {
+                        //    $("#txtFPMobileNo").focus();
+                        //    ShowToolTip("#txtFPMobileNo", "Please enter mobile no.", "bottom");
+                        //    return false;
+                        //}
+                        if ($("#txtFPUserName").val() == "" && $("#txtFPMobileNo").val() == "") {
+                            $("#txtFPUserName").focus();
+                            ShowToolTip("#txtFPUserName", "Please enter your Email / registered mobile number.", "bottom");
+                            // ShowModalMsgBox("Error", "Please enter your username / registered mobile number.");
+                            return false;
+                        }
+                        HideModalBox($("#divFPassword"));
+                        ShowProgress();
+                        return true;
+                        //}
+                        //else {
+                        //    return false;
+                        //}
+                    }
+
+                    //$(document).ready(function(){
+                    //$(document).keypress(function (event) {
+                    //    if (event.keyCode == 13) {
+                    //        if ($("#divLogin").is(":visible")) {
+                    //            $("#lnkLogin").click();
+                    //        }
+                    //        else if ($("#divFUsername").is(":visible")) {
+                    //            $("#lnkFUSubmit").click();
+                    //        }
+                    //        else if ($("#divFPassword").is(":visible")) {
+                    //            $("#lnkFPSubmit").click();
+                    //        }
+                    //        else { event.preventDefault(); return false; }
+                    //    }
+                    //});
+                    //});                    
+                </script>
+                <!-- Modal -->
+                <div class="modal fade" id="divLogin" role="dialog">
+                    <div class="modal-dialog loginBlk">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title h3">LOG IN</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div id="divLoginPanel" class="loginDetail">
+                                    <asp:RadioButtonList ID="rdbLoginType" runat="server" RepeatDirection="Horizontal" RepeatColumns="3" CellPadding="20" CellSpacing="20" Width="100%">
+                                        <asp:ListItem Text="As Buyer" Value="B" Selected="True"></asp:ListItem>
+                                        <asp:ListItem Text="As Supplier" Value="S"></asp:ListItem>
+                                        <%-- <asp:ListItem Text="Other" Value="O"></asp:ListItem>--%>
+                                    </asp:RadioButtonList>
+                                    <div class="userid">
+                                        <i class="fa fa-user fa-fw"></i>
+                                        <input id="xtxtUserName" type="text" runat="server" placeholder="Email / Mobile number"
+                                            autocomplete="off" onkeydown="if (event.keyCode == 13){return false;}" />
+                                    </div>
+                                    <a href="#" onclick="javascript: fUName_click(); return false;" class="forgot" style="display: none;">Forgot Username?<br />
+                                    </a>
+                                    <div class="userpswd">
+                                        <i class="fa fa-lock fa-fw"></i>
+                                        <input id="xtxtPassword" type="password" runat="server" placeholder="Enter your password"
+                                            autocomplete="off" onkeydown="if (event.keyCode == 13){return false;}" />
+                                    </div>
+                                    <a href="#" onclick="javascript: fPwd_click(); return false;" class="forgot">Forgot Password?</a><br>
+                                    <input type="checkbox" id="chkremember" runat="server" value="passwrod" />
+                                    Remember me<br>
+                                    <br>
+                                    <a class="btnRed" href="#" id="lnkLogin" runat="server" onserverclick="xbtnLogin_click"
+                                        onclick="javascript: return validateLogin();">LOG IN</a>
+                                </div>
+                                <div id="divSignupPanel" class="signupInfo">
+                                    <p class="h3">New to <em>Renepay?</em></p>
+                                    <p>Click here to sign up</p>
+                                    <%--<a class="btnRed" href="#" onclick="javascript:signup_click();return false;">SIGN UP</a>--%>
+
+                                    <div class="moreReg">
+                                        <a href="#" id="A1" runat="server" text="Buyer"
+                                            onclick="javascript:signupsel_click('RB');"
+                                            onserverclick="lnkRegBuyer_ServerClick">
+                                            <div class="buyReg">
+                                                <img src="~/images/ico-buyer.png" runat="server" />
+                                                <span>BUYER</span>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" id="A2" runat="server"
+                                            onclick="javascript:signupsel_click('RS');"
+                                            onserverclick="lnkRegSupplier_ServerClick">
+                                            <div class="buyReg">
+                                                <img src="~/images/ico-seller.png" runat="server">
+                                                <span>SUPPLIER</span>
+                                            </div>
+                                        </a>
+                                        <br class="cl" />
+                                        <%--<div class="modal-body">
+                                            <div id="div2" class="signupInfo">
+                                                
+                                            </div>
+                                            <div id="div3" class="signupInfo">
+                                                <a class="btnRed" href="#" id="A2" runat="server"
+                                                    onclick="javascript:signupsel_click('RS');"
+                                                    onserverclick="lnkRegSupplier_ServerClick">Supplier</a>
+                                            </div>
+                                            <br class="cl">
+                                        </div>--%>
+                                    </div>
+
+                                </div>
+                                <br class="cl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="divSignup" role="dialog">
+                    <div class="modal-dialog loginBlk">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" onclick="javascript: login_click(); return false;">&times;</button>
+                                <h4 class="modal-title h3">SIGN UP</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div id="div4" class="signupInfo">
+                                    <a class="btnRed" href="#" id="lnkRegBuyer" runat="server"
+                                        onclick="javascript:signupsel_click('RB');"
+                                        onserverclick="lnkRegBuyer_ServerClick">Register as a Buyer</a>
+                                </div>
+                                <div id="div1" class="signupInfo">
+                                    <a class="btnRed" href="#" id="lnkRegSupplier" runat="server"
+                                        onclick="javascript:signupsel_click('RS');"
+                                        onserverclick="lnkRegSupplier_ServerClick">Register as a Supplier</a>
+                                </div>
+                                <br class="cl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="divFUsername" role="dialog">
+                    <div class="modal-dialog loginBlk">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" onclick="javascript: login_click(); return false;">&times;</button>
+                                <h4 class="modal-title h3">Forgot your username?</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Enter your registered email address and mobile number to receive your username</p>
+                                <br>
+                                <div class="forgotUser">
+                                    <div class="userid">
+                                        <i class="fa fa-mail fa-fw"></i>
+                                        <input type="text" id="txtFUEMail" runat="server" placeholder="Email Address"
+                                            onkeydown="if (event.keyCode == 13){return false;}" />
+                                    </div>
+                                    <div class="userpswd">
+                                        <i class="fa fa-mobile fa-fw"></i>
+                                        <input type="text" id="txtFUMobileNo" runat="server" placeholder="Mobile Number" maxlength="10"
+                                            onkeydown="return IsNumeric(event);" />
+                                    </div>
+                                    <br class="cl">
+                                    <br>
+                                    <a class="btnRed" href="#" id="lnkFUSubmit" runat="server" onserverclick="xbtnFUSubmit_click"
+                                        onclick="javascript:if(!validateFUName()){ return false;}">SUBMIT</a>
+                                </div>
+                                <br class="cl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade newUI txtCenter" id="divFPassword" role="dialog">
+                    <div class="modal-dialog loginBlk" style="width: 30%;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" onclick="javascript: login_click(); return false;">&times;</button>
+                                <h4 class="modal-title h3">Forgot your password?</h4>
+                            </div>
+                            <div class="modal-body">
+                                <%--<p>Enter your username / registered mobile number to receive your reset password link</p>--%>
+                                <p style="text-align: left">Enter your username to reset your password</p>
+                                <br />
+                                <asp:RadioButtonList ID="rdbloggTypeFP" Style="text-align: left" runat="server" RepeatDirection="Horizontal" RepeatColumns="3" CellPadding="20" CellSpacing="20" Width="100%">
+                                    <asp:ListItem Text="As Buyer" Value="B" Selected="True"></asp:ListItem>
+                                    <asp:ListItem Text="As Supplier" Value="S"></asp:ListItem>
+                                    <%--<asp:ListItem Text="Other" Value="O"></asp:ListItem>--%>
+                                </asp:RadioButtonList>
+                                <br />
+                                <div class="forgotUser">
+                                    <div class="userid formRow1" style="margin: 0 auto; width: 100%; float: none;">
+                                        <i class="fa fa-user fa-fw"></i>
+                                        <input type="text" id="txtFPUserName" runat="server" placeholder="Email/mobile number"
+                                            onkeydown="if (event.keyCode == 13){return false;}" />
+                                    </div>
+                                    <div class="userpswd" style="display: none">
+                                        <i class="fa fa-mobile fa-fw"></i>
+                                        <input type="text" id="txtFPMobileNo" runat="server" placeholder="Mobile Number" maxlength="10"
+                                            onkeydown="return IsNumeric(event);" />
+                                    </div>
+                                    <br class="cl">
+                                    <br>
+                                    <a class="btnRed" href="#" id="lnkFPSubmit" runat="server" onserverclick="xbtnFPSubmit_click"
+                                        onclick="javascript:if(!validateFPwd()){ return false;}">SUBMIT</a>
+                                </div>
+                                <br class="cl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="divMsgBox" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title" id="msgHeader"></h4>
+                            </div>
+                            <div class="modal-body">
+                                <p id="msgBody"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="xbtnClose" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <asp:Literal ID="xlitScript" runat="server"></asp:Literal>
+
+
+                <div class="modal fade" id="divLoginErrorMsg" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" id="lnkbtnAddUserClose" runat="server" class="close" onserverclick="xlnkBtnClose_click"
+                                    onclick="javascript:link_click('H');">
+                                    &times;</button>
+                                <h4 class="modal-title" id="H3" runat="server">Login</h4>
+                            </div>
+                            <div class="modal-body txtCenter">
+                                <p id="p2" runat="server" style="text-align: left">
+                                    Please check the username or password you’ve entered and also ensure you’ve selected the right profile – Buyer or Supplier
+                                </p>
+                                <div style="text-align: right">
+                                    <button type="button" id="xbtnRetry" runat="server" class="btnRed" onserverclick="xbtnRetry_click">
+                                        Try again</button>
+                                </div>
+                            </div>
+                            <div class="modal-footer" style="display: none">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <asp:Literal ID="xlitMsgScript" runat="server"></asp:Literal>
+
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <div id="indexup">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <ctrl:SiteFooter ID="xctrlFooter" runat="server" />
+        </div>
+        <ctrl:ProgressBar ID="xctrlProgressBar" runat="server" />
+
+        <div id="divhomeSticky" class="helpBlk helpSlide newUI helpBlkH homeStickyClosed">
+            <div class="chatBlk">
+                <div class="panel-group" id="Div2">
+                    <ctrl:Feedback ID="xFeedbackH" runat="server" Data_Parent="chataccordion" IsCollapsed="false" IsHomeBanner="true"></ctrl:Feedback>
+                </div>
+            </div>
+        </div>
+        <script>
+
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-84938297-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+
+    </form>
+</body>
+</html>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-84938297-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+<script>
+    /*footer nav script*/
+    $(document).ready(function () {
+        $('#fnav').slicknav({
+            prependTo: '#FootNav',
+            label: 'FOOTER MENU'
+        });
+
+        $('.btnHelper').click(function () {
+            $('.helpSlide').addClass('HelpMoveRight');
+            $('.helpSlide').show();
+            $('.helpBlockAll').css('display', 'block');
+            $('.helpBlockAll').show();
+            $('.helpSlide').stop().animate({ 'marginRight': '0px' }, 1000);
+            return false;
+        });
+        $('.helpBlockAll').click(function () {
+            $('.helpBlockAll').hide();
+            $('.helpSlide').stop().animate({ 'marginRight': '-768px' }, 200);
+
+        });
+    });
+</script>

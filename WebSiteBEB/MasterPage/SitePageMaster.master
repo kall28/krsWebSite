@@ -1,0 +1,565 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="MasterPage_SitePageMaster, App_Web_sitepagemaster.master.ec608581" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+	<title>
+		<asp:Literal ID="xlitPageTitle" runat="server"></asp:Literal>
+	</title>
+	<meta charset="utf-8">
+	<!-- SEO Meta Tags-->
+	<meta name="description" content="Black Eagle Books">
+	<meta name="keywords"
+		content="Books, Education, Autobiography & Tablets,  Culture, Fiction,  History, Memoir,  Mythology, Non-Fiction,  Novel,  Poetry,  Science,  Short Story,  Translation, Travelog ">
+	<meta name="author" content="Black Eagle Books">
+	<!-- Viewport-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Favicon and Touch Icons-->
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="mask-icon" color="#fe6a6a" href="safari-pinned-tab.svg">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#ffffff">
+	<!-- Vendor Styles including: Font Icons, Plugins, etc.-->
+	<link rel="stylesheet" media="screen" href="../js/vendor/simplebar/dist/simplebar.min.css" />
+	<link rel="stylesheet" media="screen" href="../js/vendor/tiny-slider/dist/tiny-slider.css" />
+	<link rel="stylesheet" media="screen" href="../js/vendor/drift-zoom/dist/drift-basic.min.css" />
+	<link rel="stylesheet" media="screen" href="../js/vendor/lightgallery.js/dist/css/lightgallery.min.css" />
+	<!-- Main Theme Styles + Bootstrap-->
+	<link rel="stylesheet" media="screen" href="../css/theme.min.css">
+	<link rel="stylesheet" media="screen" href="../css/main.css">
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body class="toolbar-enabled page">
+	<form id="form1" runat="server">
+		<asp:ScriptManager ID="xScrMgrMaster" runat="server">
+			<Scripts>
+				<asp:ScriptReference Path="~/js/vendor/jquery/dist/jquery-3.5.1.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/bootstrap/dist/js/bootstrap.bundle.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/bs-custom-file-input/dist/bs-custom-file-input.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/simplebar/dist/simplebar.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/tiny-slider/dist/min/tiny-slider.js" />
+				<asp:ScriptReference Path="~/js/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/drift-zoom/dist/Drift.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/lightgallery.js/dist/js/lightgallery.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/lg-video.js/dist/lg-video.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/imagesloaded/imagesloaded.pkgd.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/shufflejs/dist/shuffle.min.js" />
+				<%--<asp:ScriptReference Path="~/js/theme.min.js" />--%>
+				<asp:ScriptReference Path="~/js/web.comm-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.nav-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.req-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.form.req-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.form.ctrl-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.cart-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.page-1.0.js" />
+			</Scripts>
+		</asp:ScriptManager>
+		<%--<div class="toastHdr">
+			<div class="toast fade hide" data-autohide="true">
+				<!-- 	<div class="toast-header">
+            <strong class="mr-auto text-primary" id="toastTitle"></strong>
+          <small class="text-muted">5 mins ago</small> 
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+          </div>-->
+				<div class="toast-body" id="toastBody">
+				</div>
+			</div>
+		</div>--%>
+		<!-- Toast: Added to Cart-->
+		<div class="toast-container toast-bottom-center hide">
+			<div class="toast mb-3" id="cart-toast" data-delay="5000" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-header bg-success text-white">
+					<i class="czi-check-circle mr-2"></i>
+					<h6 class="font-size-sm text-white mb-0 mr-auto">Added to cart!</h6>
+					<button class="close text-white ml-2 mb-1" type="button" data-dismiss="toast" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="toast-body">This item has been added to your cart.</div>
+			</div>
+		</div>
+		<header class="box-shadow-sm">
+			<div class="navbar-sticky ">
+				<div class="navbar navbar-expand-lg navbar-light">
+					<div class="container">
+						<!-- Departments menu-->
+						<ul class="navbar-nav mega-nav pr-lg-2 mr-lg-2">
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle pl-0" href="#"
+									data-toggle="dropdown"><i class="czi-menu align-middle mt-n1 mr-2"></i>Menu</a>
+								<ul class="dropdown-menu">
+									<asp:Literal ID="xlitMenuCategories" runat="server"></asp:Literal>
+									<li class="widget1">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkHdrDonate">Donate</a>
+									</li>
+									<li class="widget1">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkHdrAuthors">Authors</a>
+									</li>
+									<li class="widget1">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkHdrAdopt">Adopt a Book</a>
+									</li>
+									<li class="widget1">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkHdrPublish">Publish your Book</a>
+									</li>
+									<li class="widget1">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkHdrAbout">About Us </a>
+									</li>
+									<li class="widget1">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkHdrContact">Contact Us </a>
+									</li>
+
+								</ul>
+							</li>
+						</ul>
+						<a class="navbar-brand d-none d-sm-block mr-3 flex-shrink-0" href="javascript:void(0)"
+							style="min-width: 7rem;" id="lnkHdrLogo">
+							<img width="150" id="imgHdrLogo" runat="server" src="~/images/blackBook_logo.png" alt="Black Eagle Books" />
+						</a>
+						<a class="navbar-brand d-sm-none mr-2"
+							href="javascript:void(0)" style="min-width: 8.625rem;" id="lnkHdrLogoM">
+							<img width="74" id="imgHdrLogoM" runat="server" src="~/images/blackBook_logo.png" alt="Black Eagle Books" />
+						</a>
+						<!-- Search-->
+						<div class="input-group-overlay d-none d-lg-block mx-4">
+							<input class="form-control prepended-form-control appended-form-control" type="text"
+								placeholder="Search your favorite Books">
+							<a href="javascript:void(0)" class="input-group-prepend-overlay">
+								<span class="input-group-text">
+									<i class="czi-search"></i>
+								</span>
+							</a>
+						</div>
+						<!-- Toolbar-->
+						<div class="navbar-toolbar d-flex flex-shrink-0 align-items-center">
+							<asp:Literal ID="xlitLoginInfo" runat="server"></asp:Literal>
+							<div class="navbar-tool dropdown ml-3 dmNone">
+								<asp:Literal ID="xlitCartInfo" runat="server"></asp:Literal>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="navbar navbar-expand-lg navbar-light navbar-stuck-menu mt-n2 pt-0 pb-2">
+					<div class="container">
+						<div class="collapse navbar-collapse" id="navbarCollapse">
+							<!-- Search-->
+							<div class="input-group-overlay d-lg-none my-3">
+								<div class="input-group-prepend-overlay">
+									<span class="input-group-text"><i class="czi-search"></i></span>
+								</div>
+								<input class="form-control prepended-form-control" type="text" placeholder="Search for products">
+							</div>
+							<!-- Primary menu-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+		</asp:ContentPlaceHolder>
+
+		<!-- footer -->
+		<footer class="bg-dark">
+			<div class="pt-3 bg-darker">
+				<div class="container">
+					<div class="row footIcnHdr">
+						<div class="col-md-20 col-sm-6 mb-4">
+							<div class="text-nowrap mb-4">
+								<a class="d-inline-block align-middle mt-n1 mr-3" href="javascript:void(0);" id="lnkFtrLogo">
+									<img class="d-block" width="117" id="imgFtrLogo" runat="server" src="~/images/blackBook_logo.png" alt="Black Eagle Books" />
+								</a>
+							</div>
+						</div>
+						<div class="col-md-20 col-sm-6 mb-4">
+							<div class="media">
+								<i class="czi-rocket text-primary" style="font-size: 2.25rem;"></i>
+								<div class="media-body pl-3">
+									<h6 class="font-size-base text-light mb-1">Fast and free delivery</h6>
+									<p class="mb-0 font-size-ms text-light opacity-50">Free delivery for all orders over $200</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-20 col-sm-6 mb-4">
+							<div class="media">
+								<i class="czi-currency-exchange text-primary" style="font-size: 2.25rem;"></i>
+								<div class="media-body pl-3">
+									<h6 class="font-size-base text-light mb-1">Money back guarantee</h6>
+									<p class="mb-0 font-size-ms text-light opacity-50">We return money within 30 days</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-20 col-sm-6 mb-4">
+							<div class="media">
+								<i class="czi-support text-primary" style="font-size: 2.25rem;"></i>
+								<div class="media-body pl-3">
+									<h6 class="font-size-base text-light mb-1">24/7 customer support</h6>
+									<p class="mb-0 font-size-ms text-light opacity-50">Friendly 24/7 customer support</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-20 col-sm-6 mb-4">
+							<div class="media">
+								<i class="czi-card text-primary" style="font-size: 2.25rem;"></i>
+								<div class="media-body pl-3">
+									<h6 class="font-size-base text-light mb-1">Secure online payment</h6>
+									<p class="mb-0 font-size-ms text-light opacity-50">We possess SSL / Secure сertificate</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr class="hr-light pb-2 mb-2">
+					<div class="row pb-2">
+						<div class="col-md-8 text-center text-md-left">
+							<div class="widget widget-links widget-light">
+								<!-- <h3 class="widget-title text-light">Shop departments</h3> -->
+								<ul class="widget-list d-flex flex-wrap justify-content-center justify-content-md-start">
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkFtrAuthors">Authors</a>
+									</li>
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkFtrAdopt">Adopt a Book</a>
+									</li>
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkFtrDonate">Donate</a>
+									</li>
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkFtrPublish">Publish your Book</a>
+									</li>
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkFtrShop">Book Shop</a>
+									</li>
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkFtrAbout">About us</a>
+									</li>
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkFtrContact">Contact Us</a>
+									</li>
+								</ul>
+							</div>
+							<div class="widget widget-links widget-light mt-2">
+								<ul class="widget-list d-flex flex-wrap justify-content-center justify-content-md-start">
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkFtrTNC">Terms and Condition</a>
+									</li>
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkFtrReturnCenter">Return Center</a>
+									</li>
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkFtrSupport">Support</a>
+									</li>
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkFtrPolicy">Privacy</a>
+									</li>
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="javascript:void(0)" id="lnkFtrTerms">Terms of use</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-8 pl-0 ml-0 mt-4 ">
+								<div class="mb-1">
+									<a class="social-btn sb-light sb-twitter ml-2 mb-2" href="#">
+										<i class="czi-twitter"></i>
+									</a><a class="social-btn sb-light sb-facebook ml-2 mb-2" href="#">
+										<i class="czi-facebook"></i>
+									</a><a class="social-btn sb-light sb-instagram ml-2 mb-2" href="#">
+										<i class="czi-instagram"></i>
+									</a><a class="social-btn sb-light sb-pinterest ml-2 mb-2" href="#">
+										<i class="czi-pinterest"></i>
+									</a><a class="social-btn sb-light sb-youtube ml-2 mb-2" href="#">
+										<i class="czi-youtube"></i>
+									</a>
+									<img class="d-inline-block pl-3" width="187" id="imgFtrPayMethods" runat="server" src="~/images/cards-alt.png" alt="Payment methods" />
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 text-center text-md-right ">
+							<h3 class="widget-title text-light ">Stay informed</h3>
+							<div class="cz-subscribe-form validate">
+								<div class="input-group input-group-overlay flex-nowrap">
+									<input class="form-control prepended-form-control" type="email" id="txtFtrSubEmail" name="EMAIL" placeholder="Your email"
+										required>
+									<div class="input-group-append">
+										<button class="btn btn-primary" type="button" name="subscribe" id="btnFtrSubSubmit">Subscribe</button>
+									</div>
+								</div>
+								<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+								<div style="position: absolute; left: -5000px;" aria-hidden="true">
+									<input class="cz-subscribe-form-antispam" type="text" name="b_c7103e2c981361a6639545bd5_29ca296126"
+										tabindex="-1">
+								</div>
+								<small class="form-text text-light opacity-50">*Subscribe to our newsletter to receive early
+									discount offers, updates and new products info.
+								</small>
+								<div class="subscribe-status"></div>
+							</div>
+						</div>
+					</div>
+					<hr class="hr-light pb-2 mb-2">
+					<div>
+						<div class="pb-4 font-size-xs text-light opacity-50 text-center text-md-left">
+							© Copyrights 2019, Black Eagle
+                        Books
+                        (A nonprofit to propagate Indian literature globally) 7464 Wisdom Lane, Dublin, OH 43016, USA
+                        The content and images used on this site are copyright protected and copyrights vests with the respective
+                        owners.
+                        The usage of the content and images on this website is intended to promote the works and no endorsement of
+                        the
+                        artist shall be implied.
+                        Unauthorized use is prohibited and punishable by law.
+                   
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</footer>
+
+		<!-- search -->
+		<div class="modal fade search" id="search" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<input type="text" class="form-control" placeholder="Type your search here" aria-label="Type your search here"
+							aria-describedby="button-addon2">
+
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<i class="icon-search"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Login Modal -->
+		<div class="modal fade" id="modalSignIn" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<ul class="nav nav-tabs card-header-tabs" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active" href="#signin-tab" data-toggle="tab" role="tab"
+									aria-selected="true"><i class="czi-unlocked mr-2 mt-n1"></i>Sign in</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#signup-tab" data-toggle="tab" role="tab"
+									aria-selected="false"><i class="czi-user mr-2 mt-n1"></i>Sign up</a>
+							</li>
+						</ul>
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body tab-content py-4">
+						<div class="needs-validation tab-pane fade show active" id="signin-tab">
+							<div class="form-group">
+								<label for="si-email">Email address</label>
+								<input class="form-control" type="email" id="txtMUserName" placeholder="" required>
+								<div class="invalid-feedback">Please provide a valid email address.</div>
+							</div>
+							<div class="form-group">
+								<label for="si-password">Password</label>
+								<div class="password-toggle">
+									<input class="form-control" type="password" id="txtMPassword" required>
+									<label class="password-toggle-btn">
+										<input class="custom-control-input" type="checkbox"><i class="czi-eye password-toggle-indicator"></i><span class="sr-only">Show password</span>
+									</label>
+								</div>
+							</div>
+							<div class="form-group d-flex flex-wrap justify-content-between">
+								<%--<div class="custom-control custom-checkbox mb-2">
+									<input class="custom-control-input" type="checkbox" id="si-remember">
+									<label class="custom-control-label" for="si-remember">Remember me</label>
+								</div>--%>
+								<a class="font-size-sm" href="javascript:void(0)" id="lnkMForgotPwd">Forgot password?</a>
+							</div>
+							<button class="btn btn-primary btn-block btn-shadow" type="button" id="btnMSignin">
+								Sign in                       
+							</button>
+						</div>
+						<div class="needs-validation tab-pane fade" id="signup-tab">
+							<div class="form-group">
+								<label for="su-name">First name</label>
+								<input class="form-control" type="text" id="txtMRegFirstName" placeholder="" required>
+								<div class="invalid-feedback">Please fill in your name.</div>
+							</div>
+							<div class="form-group">
+								<label for="su-name">Last name</label>
+								<input class="form-control" type="text" id="txtMRegLastName" placeholder="" required>
+								<div class="invalid-feedback">Please fill in your name.</div>
+							</div>
+							<div class="form-group">
+								<label for="su-email">Email address</label>
+								<input class="form-control" type="email" id="txtMRegEmail" placeholder="" required>
+								<div class="invalid-feedback">Please provide a valid email address.</div>
+							</div>
+							<div class="form-group">
+								<label for="su-email">Mobile No</label>
+								<input class="form-control" type="text" id="txtMRegMobileNo" placeholder="" required>
+								<div class="invalid-feedback">Please provide a valid mobile no.</div>
+							</div>
+							<div class="form-group">
+								<label for="su-password">Password</label>
+								<div class="password-toggle">
+									<input class="form-control" type="password" id="txtMRegPwd" required>
+									<label class="password-toggle-btn">
+										<input class="custom-control-input" type="checkbox"><i class="czi-eye password-toggle-indicator"></i><span class="sr-only">Show password</span>
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="su-password-confirm">Confirm password</label>
+								<div class="password-toggle">
+									<input class="form-control" type="password" id="txtMRegPwdCrfm" required>
+									<label class="password-toggle-btn">
+										<input class="custom-control-input" type="checkbox"><i class="czi-eye password-toggle-indicator"></i><span class="sr-only">Show password</span>
+									</label>
+								</div>
+							</div>
+							<button class="btn btn-primary btn-block btn-shadow" type="button" id="btnMRegVerify">Sign up</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Login OTP Modal -->
+		<div class="modal fade" id="modalSignUpOTP" tabindex="-1" role="dialog" aria-labelledby="otpModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnMSignUpOTPClose">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="text-center display-8">Verify your email</h3>
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="row ">
+							<p>Please enter the OTP shared on your email.</p>
+							<div class="form-group col-12">
+								<!-- <label for="exampleInputEmail1">Enter OTP </label> -->
+								<input type="password" class="form-control" id="txtMVerOTP" placeholder="Enter OTP" maxlength="6">
+							</div>
+							<div class="col-12 mt-2">
+								<a href="javascript:void(0)" id="btnMVerSignup" class="btn btn-block btn-primary">Continue</a>
+							</div>
+							<a href="javascript:void(0)" id="btnMVerResend" class="btn btn-link w-100">Resend OTP</a>
+						</div>
+						<div class="row ">
+							<div class="col-12 text-danger" id="divMVerOTPMsg">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="modalProgressBox" class="modal" role="dialog" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Please wait...</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Regular Modal 2 -->
+		<div id="modalSiteMsgBox" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 id="modalSiteMsgBoxTitle" class="modal-title">Title</h3>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div id="modalSiteMsgBoxBody" class="modal-body">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Quick View Modal-->
+		<div id="modalProdQuickView" class="modal-quick-view modal fade" tabindex="-1">
+			<div class="modal-dialog modal-xl">
+				<div class="modal-content" id="modalProdQuickViewContent">
+					<div class="modal-header">
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<%--<div class="modal-body">
+						<div class="row">
+							<!-- Product gallery-->
+							<div class="col-lg-5 pr-lg-0">
+								<div class="cz-product-gallery">
+									<div class="cz-preview order-sm-2">
+										<div class="cz-preview-item active" id="first">
+											<img class="cz-image-zoom" src="images/book_01.png"
+												data-zoom="images/book_01.png" alt="Product image">
+											<div class="cz-image-zoom-pane"></div>
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+							<!-- Product details-->
+							<div class="col-lg-7 pt-4 pt-lg-0 cz-image-zoom-pane">
+								<div class=" ml-auto pb-3">
+									<div class="h3 font-weight-normal text-accent mb-3 mr-1">$12.<small>99</small></div>
+									<div class="font-size-sm mb-4">
+										<span class="text-heading font-weight-medium mr-1">By: Prasanta Behera
+                                    </span>
+									</div>
+									<div class="d-flex align-items-center pt-2 pb-4">
+										<select class="custom-select mr-3" style="width: 5rem;">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>
+										<button class="btn btn-primary " type="button" data-toggle="toast" data-target="#cart-toast">
+											<i class="czi-cart font-size-lg mr-2"></i>ADD                                   
+										</button>
+									</div>
+									<h5 class="h6 mb-3 py-2 border-bottom">
+										<i class="czi-announcement text-muted font-size-lg align-middle mt-n1 mr-2"></i>Product info
+									</h5>
+									<h6 class="font-size-sm mb-2">Product Detail</h6>
+									<ul class="font-size-sm pb-2">
+										<li><span class="text-muted">ISBN-13: </span>978-1645600817</li>
+										<li><span class="text-muted">Publisher: </span>BLACK EAGLE BOOKS</li>
+										<li><span class="text-muted">ISBN-10: </span>1645600815</li>
+										<li><span class="text-muted">Publisher Date: </span>10-Jun-2020</li>
+									</ul>
+									<h6 class="font-size-sm mb-2">ABOUT THE BOOK</h6>
+									<p class="font-size-sm pb-2">
+										<span class="text-muted">Walks that remain in the heart remind us of memories and connections allows us to carry our journey
+                                        from today to tomorrow. In many such walks (or hikes) alone, I have started to observe little things
+                                        unnoticed before. I have captured some of those memories, observations and conscious thoughts as
+                                        "Treasure Walks". May you find your own reflective thoughts in your walks.                               
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>--%>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
+<script src="js/theme.min.js"></script>

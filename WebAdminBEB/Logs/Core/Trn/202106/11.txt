@@ -1,0 +1,24 @@
+11-06-2021 17:08:37|CORE-TFN-EXT|TrnExecuter_GetOrderDataSearchReport|500|Column 'AppId' does not belong to table Table.|   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at Lib.Core.Trn.Data.TrnDataMapper.MapOrderDataList(DataTable dataTable) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Data\TrnDataMapper.cs:line 491
+   at Lib.Core.Trn.Helpers.AppDataHelper.GetOrderDataSearchReport(TrnRptOrderDataGetParams trnOrderDataRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\Helpers\AppDataHelper.cs:line 237
+   at Lib.Core.Trn.TrnManager.GetOrderDataSearchReport(TrnRptOrderDataGetParams trnOrderDataRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\TrnManager.cs:line 288
+   at Lib.Core.Trn.Executer.TrnExecuter.GetOrderDataSearchReport(TrnRptOrderDataGetParams trnOrderDataRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Executer\TrnExecuter.cs:line 1048
+11-06-2021 17:12:08|CORE-TFN-EXT|TrnExecuter_GetOrderDataSearchReport|500|Column 'OrderDeliveryCharges' does not belong to table Table.|   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at Lib.Core.Trn.Data.TrnDataMapper.MapOrderDataList(DataTable dataTable) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Data\TrnDataMapper.cs:line 491
+   at Lib.Core.Trn.Helpers.AppDataHelper.GetOrderDataSearchReport(TrnRptOrderDataGetParams trnOrderDataRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\Helpers\AppDataHelper.cs:line 237
+   at Lib.Core.Trn.TrnManager.GetOrderDataSearchReport(TrnRptOrderDataGetParams trnOrderDataRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\TrnManager.cs:line 288
+   at Lib.Core.Trn.Executer.TrnExecuter.GetOrderDataSearchReport(TrnRptOrderDataGetParams trnOrderDataRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Executer\TrnExecuter.cs:line 1048
+11-06-2021 17:15:26|CORE-TFN-EXT|TrnExecuter_GetOrderDataSearchReport|500|Column 'ProductThumbnail' does not belong to table Table.|   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at Lib.Core.Trn.Data.TrnDataMapper.MapOrderDataList(DataTable dataTable) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Data\TrnDataMapper.cs:line 539
+   at Lib.Core.Trn.Helpers.AppDataHelper.GetOrderDataSearchReport(TrnRptOrderDataGetParams trnOrderDataRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\Helpers\AppDataHelper.cs:line 237
+   at Lib.Core.Trn.TrnManager.GetOrderDataSearchReport(TrnRptOrderDataGetParams trnOrderDataRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\TrnManager.cs:line 288
+   at Lib.Core.Trn.Executer.TrnExecuter.GetOrderDataSearchReport(TrnRptOrderDataGetParams trnOrderDataRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Executer\TrnExecuter.cs:line 1048
+11-06-2021 17:16:18|CORE-TFN-EXT|TrnExecuter_GetOrderDataSearchReport|500|Column 'Description' does not belong to table Table.|   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at Lib.Core.Trn.Data.TrnDataMapper.MapOrderDataList(DataTable dataTable) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Data\TrnDataMapper.cs:line 539
+   at Lib.Core.Trn.Helpers.AppDataHelper.GetOrderDataSearchReport(TrnRptOrderDataGetParams trnOrderDataRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\Helpers\AppDataHelper.cs:line 237
+   at Lib.Core.Trn.TrnManager.GetOrderDataSearchReport(TrnRptOrderDataGetParams trnOrderDataRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\TrnManager.cs:line 288
+   at Lib.Core.Trn.Executer.TrnExecuter.GetOrderDataSearchReport(TrnRptOrderDataGetParams trnOrderDataRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Executer\TrnExecuter.cs:line 1048

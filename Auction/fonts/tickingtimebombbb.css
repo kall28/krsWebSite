@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'TickingTimebombBBRegular';
+    src: url('tickingtimebombbb.eot');
+    src: url('tickingtimebombbb.eot') format('embedded-opentype'),
+         url('tickingtimebombbb.woff2') format('woff2'),
+         url('tickingtimebombbb.woff') format('woff'),
+         url('tickingtimebombbb.ttf') format('truetype'),
+         url('tickingtimebombbb.svg#TickingTimebombBBRegular') format('svg');
+}

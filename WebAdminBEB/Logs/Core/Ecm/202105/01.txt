@@ -1,0 +1,23 @@
+01-05-2021 20:57:15|CORE-ECM-EXT|EcmExecuter|1000|Object reference not set to an instance of an object.|   at Lib.Core.Ecm.Data.Settings.AppConfig.get_EcmDBConnection() in D:\Apps\TFS\DotNet\Default-4.8\Lib-4.8\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm.Data\Settings\AppConfig.cs:line 12
+   at Lib.Core.Ecm.Data.EcmDataManager..ctor() in D:\Apps\TFS\DotNet\Default-4.8\Lib-4.8\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm.Data\EcmDataManager.cs:line 22
+   at Lib.Core.Ecm.Helpers.AppDataHelper.GetCategory(EcmCategoryGetParams ecmCategoryGetParams) in D:\Apps\TFS\DotNet\Default-4.8\Lib-4.8\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm\Helpers\AppDataHelper.cs:line 23
+   at Lib.Core.Ecm.EcmManager.GetCategory(EcmCategoryGetParams ecmCategoryGetParams) in D:\Apps\TFS\DotNet\Default-4.8\Lib-4.8\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm\EcmManager.cs:line 35
+   at Lib.Core.Ecm.Executer.EcmExecuter.GetCategory(EcmCategoryGetParams ecmCategoryGetParams) in D:\Apps\TFS\DotNet\Default-4.8\Lib-4.8\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm.Executer\EcmExecuter.cs:line 30
+01-05-2021 23:41:07|LIB-ECM-DATA|EcmDataManager_GetProductType|500|The stored procedure 'sp_ECM_ProdType_Get' doesn't exist.|   at System.Data.SqlClient.SqlCommand.DeriveParameters()
+   at System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(SqlCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.DeriveParameters(DbCommand discoveryCommand)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DiscoverParameters(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.ParameterCache.SetParameters(DbCommand command, Database database)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.Execute[T](T& resultSet, String commandText, Object[] parameterValues) in D:\Apps\TFS\Lib-4.8\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 65
+01-05-2021 23:43:10|LIB-ECM-DATA|EcmDataManager_GetProductType|500|The stored procedure 'sp_ECM_ProdType_Get' doesn't exist.|   at System.Data.SqlClient.SqlCommand.DeriveParameters()
+   at System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(SqlCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.DeriveParameters(DbCommand discoveryCommand)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DiscoverParameters(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.ParameterCache.SetParameters(DbCommand command, Database database)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.Execute[T](T& resultSet, String commandText, Object[] parameterValues) in D:\Apps\TFS\Lib-4.8\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 65
+01-05-2021 23:43:10|||500|Error while processing request. Please contact administrator.|
+01-05-2021 23:43:10|||500|Error while processing request. Please contact administrator.|

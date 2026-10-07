@@ -1,0 +1,5 @@
+15-05-2021 21:39:28|CORE-ECM-EXT|EcmExecuterGetProductByConfigId|1000|Guid should contain 32 digits with 4 dashes (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).|   at System.Guid.TryParseGuidWithNoStyle(String guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(String g, GuidStyles flags, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at Lib.Core.Ecm.Executer.EcmExecuter.GetProductByConfigId(BaseByConfigIdGetParams baseByConfigIdGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm.Executer\EcmExecuter.cs:line 1650
+15-05-2021 21:39:28|||1000|Guid should contain 32 digits with 4 dashes (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).|

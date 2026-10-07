@@ -1,0 +1,3 @@
+04-05-2021 12:31:27|LIB-MST-DATA|MstDataManager_GetCurrency|500|The number of parameters does not match number of values for stored procedure.|   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.Execute[T](T& resultSet, String commandText, Object[] parameterValues) in D:\Apps\TFS\Lib-4.8\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 65

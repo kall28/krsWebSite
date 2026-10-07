@@ -1,0 +1,95 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="masterpages_SiteMaster, App_Web_sitemaster.master.7371103c" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+	<title>
+		<asp:Literal ID="xlitPageTitle" runat="server"></asp:Literal></title>
+
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<meta name="robots" content="noindex, nofollow" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0" />
+
+	<!-- Icons -->
+	<!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+	<link rel="shortcut icon" href="../img/favicon.png" />
+	<link rel="apple-touch-icon" href="../img/icon57.png" sizes="57x57" />
+	<link rel="apple-touch-icon" href="../img/icon72.png" sizes="72x72" />
+	<link rel="apple-touch-icon" href="../img/icon76.png" sizes="76x76" />
+	<link rel="apple-touch-icon" href="../img/icon114.png" sizes="114x114" />
+	<link rel="apple-touch-icon" href="../img/icon120.png" sizes="120x120" />
+	<link rel="apple-touch-icon" href="../img/icon144.png" sizes="144x144" />
+	<link rel="apple-touch-icon" href="../img/icon152.png" sizes="152x152" />
+	<link rel="apple-touch-icon" href="../img/icon180.png" sizes="180x180" />
+	<!-- END Icons -->
+
+	<!-- Stylesheets -->
+	<!-- Bootstrap is included in its original form, unaltered -->
+	<link rel="stylesheet" href="../css/bootstrap.min.css" />
+
+	<!-- Related styles of various icon packs and plugins -->
+	<link rel="stylesheet" href="../css/plugins.css" />
+
+	<!-- The main stylesheet of this template. All Bootstrap overwrites are defined in here -->
+	<link rel="stylesheet" href="../css/main.css" />
+
+	<!-- Include a specific file here from css/themes/ folder to alter the default theme of the template -->
+
+	<!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
+	<link rel="stylesheet" href="../css/themes.css" />
+	<!-- END Stylesheets -->
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<form id="form1" runat="server">
+		<asp:ScriptManager ID="xScrMgrAdmin" runat="server">
+			<Scripts>
+				<asp:ScriptReference Path="~/js/vendor/modernizr.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/jquery.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/bootstrap.min.js" />
+				<asp:ScriptReference Path="~/js/plugins.js" />
+				<asp:ScriptReference Path="~/js/app.js" />
+				<asp:ScriptReference Path="~/js/web.comm-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.nav-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.req-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.form.req-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.form.ctrl-1.0.js" />
+			</Scripts>
+		</asp:ScriptManager>
+		<div>
+			<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+			</asp:ContentPlaceHolder>
+		</div>
+		<div id="modalProgressBox" class="modal fade" role="dialog" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Please wait...</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Regular Modal 2 -->
+		<div id="modalSiteMsgBox" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h3 id="modalSiteMsgBoxTitle" class="modal-title">Title</h3>
+					</div>
+					<div id="modalSiteMsgBoxBody" class="modal-body">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END Regular Modal 2 -->
+	</form>
+</body>
+</html>

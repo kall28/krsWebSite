@@ -1,0 +1,445 @@
+
+----------------------------------- Service -----------------------------------------------
+HelperConstant
+--------------
+
+            CAT = 24,
+            CRE = 25
+------------------------------------------------------------------------------------------
+
+Mapper--MapVendorAdditionDet
+----------------------------
+ case "CAT"://Upload Catalogue
+                            objVendor.Code = HelperConstants.DetailsType.CAT;
+                            break;
+                        case "CRE"://Credit Rating
+                            objVendor.Code = HelperConstants.DetailsType.CRE;
+                            break;
+
+
+Mapper--MapCompanyInfo
+----------------------------
+lobjCompany.Rating = Convert.ToInt32(pdsCompanyList.Tables[0].Rows[lintCount][DBFields.Rating]);
+                    lobjCompany.CompletedProfile = Convert.ToInt32(pdsCompanyList.Tables[0].Rows[lintCount][DBFields.CompleteProfile]);
+-----------------------------------------------------------------------------------------
+Constants--Vendor
+------------------
+public static string ProfileRatingReset = "Sp_ProfileRatingReset";
+
+------------------------------------------------------------------------------------------
+Entities -- Company
+--------------------
+ [DataMember]
+        public int Rating { get; set; }
+
+        [DataMember]
+        public int CompletedProfile { get; set; }
+
+ this.Rating = 0;
+this.CompletedProfile = 0;
+---------------------------------------------------------------------------------------
+Wrapper --UpdateVendorRating--Replace
+-----------------------------------
+public static int UpdateProfileRating(int EntityId, HelperConstants.UserType objUserType)
+        {
+            int errcode = 0;
+            IDBConnection lobjConn = DBManager.Open(DataAccessSettings.GetDataAccessSettings().DefaultDatabase, false, Provider.SQL);
+            IDBCommand oCmd = lobjConn.CreateCommand(StoredProcedures.ProfileRatingReset, CommandType.StoredProcedure);
+            try
+            {
+                oCmd[DBFields.EntityId] = EntityId;
+                oCmd[DBFields.EntityType] = objUserType.ToString();
+                errcode = Convert.ToInt32(oCmd.ExecuteNonQuery());
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("Profile Ratings Reset" + ex.Message + Environment.NewLine);
+            }
+            finally
+            {
+                lobjConn.Close();
+                lobjConn = null;
+            }
+            return errcode;
+        }
+--------------------------------------------------------------------------
+facade--UpdateVendorRating--Replace
+-----------------------------------
+ public int UpdateProfileRating(int EntityId, HelperConstants.UserType objUserType)
+        {
+            return SPWrapper.UpdateProfileRating(EntityId, objUserType);
+        }
+
+-------------------------------------------------------------------------------
+IAuction--UpdateVendorRating--Replace
+-----------------------------------
+ #region Update Profile Rating
+        [OperationContract]
+        [FaultContract(typeof(ExceptionFault))]
+        [FaultContract(typeof(ApplicationFault))]
+        int UpdateProfileRating(int EntityId, HelperConstants.UserType objUserType);
+        #endregion
+------------------------------------------------------------------------------
+Implementor--UpdateVendorRating--Replace
+-----------------------------------
+#region Update Vendor Rating
+    //[OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
+        public int UpdateProfileRating(int EntityId, HelperConstants.UserType objUserType)
+        {
+            int errorcode = 0;
+            try
+            {
+                InfiAuctionFacade lobjInfiAuctionFacade = new InfiAuctionFacade();
+                errorcode = lobjInfiAuctionFacade.UpdateProfileRating(EntityId, objUserType);
+                RefreshCache(HelperConstants.CacheKey.Vendor);
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("Profile Ratings Reset:" + ex.Message + Environment.NewLine + ex.StackTrace);
+                return 0;
+            }
+            return errorcode;
+        }
+        #endregion
+
+
+Implementor--InsertVendorAdditionDet--Replace
+-------------------------------------------
+#region Insert Vendor Addition Details
+    //[OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]
+        public ServiceResponse InsertVendorAdditionDet(IList<VendorDetails> lobjVendorDetails)
+        {
+            IList<Customer> objCustomer = new List<Customer>();
+            ServiceResponse response = new ServiceResponse();
+            try
+            {
+                InfiAuctionFacade lobjInfiAuctionFacade = new InfiAuctionFacade();
+                //for (int i = 0; i < lobjVendorDetails.Count;i++)
+                foreach (VendorDetails objVendorDetails in lobjVendorDetails)
+                {
+                    response = lobjInfiAuctionFacade.InsertVendorAdditionDet(objVendorDetails);
+                    if (response.Errcode <= 0)
+                    {
+                        return response;
+                    }
+                }
+                objCustomer = lobjInfiAuctionFacade.GetCustomerById(lobjVendorDetails[0].CreatedBy);
+                switch (objCustomer[0].EntityType)
+                {
+                    case HelperConstants.UserType.CMP:
+                        lobjInfiAuctionFacade.UpdateProfileRating(lobjVendorDetails[0].EntityId, HelperConstants.UserType.CMP);
+                        RefreshCache(HelperConstants.CacheKey.Company);
+                        break;
+                    case HelperConstants.UserType.VND:
+                        lobjInfiAuctionFacade.UpdateProfileRating(lobjVendorDetails[0].EntityId, HelperConstants.UserType.VND);
+                        RefreshCache(HelperConstants.CacheKey.Vendor);
+                        break;
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("Insert Vendor Addition Details:" + ex.Message + Environment.NewLine + ex.StackTrace);
+            }
+            return response;
+        }
+        #endregion
+
+
+Implementor-- InsertCompany & UpdateCompany
+-------------------------------------------
+lobjInfiAuctionFacade.UpdateProfileRating(response.Id, HelperConstants.UserType.CMP);
+                        RefreshCache(HelperConstants.CacheKey.Company);
+
+
+Implementor-- InsertVendor & UpdateVendor
+-------------------------------------------
+lobjInfiAuctionFacade.UpdateProfileRating(pobjVendor.Id, HelperConstants.UserType.VND);
+                                RefreshCache(HelperConstants.CacheKey.Vendor);
+
+--------------------------------------------------------------------------------------
+Client--UpdateVendorRating--Replace
+-----------------------------------
+#region UpdateVendorRating
+        public int UpdateProfileRating(int EntityId, HelperConstants.UserType objUserType)
+        {
+            int lintId = 0;
+            AuctionClient lobjAuctionClient = new AuctionClient();
+            try
+            {
+                lintId = lobjAuctionClient.UpdateProfileRating(EntityId, objUserType);
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("Update Profile Rating Client Logging -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
+                if (ex is FaultException<ExceptionFault>)
+                {
+                    throw new Exception(ex.Message, ex);
+                }
+                else if (ex is FaultException<ApplicationFault>)
+                {
+                    throw new ApplicationException(ex.Message, ex);
+                }
+                else
+                {
+                    throw ex;
+                }
+            }
+            finally
+            {
+                lobjAuctionClient.Close();
+            }
+            return lintId;
+        }
+        #endregion
+------------------------------------------------------------------------
+Model--UpdateVendorRating--Replace
+-----------------------------------
+public int UpdateProfileRating(int EntityId, HelperConstants.UserType objUserType)
+        {
+            return lobjInfiAuctionClient.UpdateProfileRating(EntityId, objUserType);
+        }
+
+
+  public static string GetRatingImg(Int16 pint16Ratings)
+        {
+            string strImg = "<img src='";
+
+            switch (pint16Ratings)
+            {
+                case 1:
+                    //  strImg += System.Web.HttpContext.Current.Server.MapPath("~/images/rate1.png") + "' alt='1'";
+                    //WebHelper objWebHelper = new WebHelper();
+                    strImg += WebHelper.ToAbsoluteUrl(("~/images/rate1.png") + "' alt='1'");
+                    break;
+                case 2:
+                    //strImg += System.Web.HttpContext.Current.Server.MapPath("~/images/rate2.png") + "' alt='2'";
+                    strImg += WebHelper.ToAbsoluteUrl(("~/images/rate2.png") + "' alt='2'");
+                    break;
+                case 3:
+                    // strImg += System.Web.HttpContext.Current.Server.MapPath("~/images/rate3.png") + "' alt='3'";
+                    strImg += WebHelper.ToAbsoluteUrl(("~/images/rate3.png") + "' alt='3'");
+                    break;
+                case 4:
+                    // strImg += System.Web.HttpContext.Current.Server.MapPath("~/images/rate4.png") + "' alt='4'";
+                    strImg += WebHelper.ToAbsoluteUrl(("~/images/rate4.png") + "' alt='4'");
+                    break;
+                case 5:
+                    //strImg += System.Web.HttpContext.Current.Server.MapPath("~/images/rate5.png") + "' alt='5'";
+                    strImg += WebHelper.ToAbsoluteUrl(("~/images/rate5.png") + "' alt='5'");
+                    break;
+                default:
+                    strImg += WebHelper.ToAbsoluteUrl(("~/images/rate0.png") + "' alt='0'");
+                    //strImg += System.Web.HttpContext.Current.Server.MapPath("~/images/rate0.png") + "' alt='0'";
+                    break;
+            }
+
+            strImg += ">";
+            return strImg;
+        }
+
+        public static string GetVerifiedImg(int pintVerified)
+        {
+            string strImg = string.Empty;
+            switch (pintVerified)
+            {
+                case 1:
+                    strImg = "<img src='";
+                    strImg += WebHelper.ToAbsoluteUrl(("~/images/icon-infi-verified.png") + "' alt='Verified by InfiAuction'");
+                    //~/images/icon-infi-verified.png
+                    strImg += " class='icn-verify'>";
+                    break;
+                default:
+                    break;
+            }
+            return strImg;
+        }
+==========================================Pages========================================
+RegistrationBuyer.ASPX
+---------------------
+ <label>Pan</label>
+                                <asp:TextBox ID="xtxtPan" runat="server" CssClass="imw97p" onkeydown="RestrictText(event);"></asp:TextBox>
+                                <label>Credit Rating</label>
+                                <div class="styled-select fl selOrganization">
+                                    <asp:DropDownList ID="xddlCredit" runat="server">
+                                         <asp:ListItem Text="-Select-" Value="0"></asp:ListItem>
+                                        <asp:ListItem Value="Crisil" Text="Crisil"></asp:ListItem>
+                                        <asp:ListItem Value="CIBIL" Text="CIBIL"></asp:ListItem>
+                                        <asp:ListItem Value="CARE" Text="CARE"></asp:ListItem>
+                                        <asp:ListItem Value="ICRA" Text="ICRA"></asp:ListItem>
+                                        <asp:ListItem Value="ONICRA" Text="ONICRA"></asp:ListItem>
+                                        <asp:ListItem Value="SMERA" Text="SMERA"></asp:ListItem>
+                                        <asp:ListItem Value="Other" Text="Other"></asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+
+RegistrationBuyer.CS
+---------------------
+ //=========== Pan ==============================================
+        if (xtxtPan.Text.Trim() != "")
+        {
+            pobjVendorDetails = lstVendorDetails.FirstOrDefault(v => v.DetId == Convert.ToInt32(HelperConstants.DetailsType.PAN));
+            if (pobjVendorDetails == null)
+            {
+                pobjVendorDetails = new VendorDetails();
+                pobjVendorDetails.EntityId = CompanyId;
+                pobjVendorDetails.EntityType = EntityType;
+                pobjVendorDetails.VendorId = CompanyId;
+                pobjVendorDetails.CreatedBy = CustomerId;
+                pobjVendorDetails.DetId = Convert.ToInt32(HelperConstants.DetailsType.PAN);
+            }
+            pobjVendorDetails.CreatedBy = CustomerId;
+            pobjVendorDetails.Value = xtxtPan.Text;
+            pobjVendorDetails.Code = HelperConstants.DetailsType.PAN;
+            pobjVendorDetails.Document = "";
+            pobjVendorDetails.Status = 1;
+            pobjVendorDetails.Points = 0;
+            pobjVendorDetails.UpdatedBy = CustomerId;
+            lobjVendorDetails.Add(pobjVendorDetails);
+        }
+        else
+        {
+            pobjVendorDetails = null;
+            pobjVendorDetails = lstVendorDetails.FirstOrDefault(v => v.DetId == Convert.ToInt32(HelperConstants.DetailsType.PAN));
+            if (pobjVendorDetails != null)
+            {
+                pobjVendorDetails.Status = 0;
+                pobjVendorDetails.Points = 0;
+                pobjVendorDetails.CreatedBy = CustomerId;
+                pobjVendorDetails.Code = HelperConstants.DetailsType.PAN;
+                pobjVendorDetails.UpdatedBy = CustomerId;
+                lobjVendorDetails.Add(pobjVendorDetails);
+            }
+        }
+        //=========== Credit Period ==============================================
+        if (xddlCredit.SelectedIndex > 0)
+        {
+            pobjVendorDetails = lstVendorDetails.FirstOrDefault(v => v.DetId == Convert.ToInt32(HelperConstants.DetailsType.CRE));
+            if (pobjVendorDetails == null)
+            {
+                pobjVendorDetails = new VendorDetails();
+                pobjVendorDetails.EntityId = CompanyId;
+                pobjVendorDetails.EntityType = EntityType;
+                pobjVendorDetails.VendorId = CompanyId;
+                pobjVendorDetails.CreatedBy = CustomerId;
+                pobjVendorDetails.DetId = Convert.ToInt32(HelperConstants.DetailsType.CRE);
+            }
+            pobjVendorDetails.CreatedBy = CustomerId;
+            pobjVendorDetails.Value = xddlCredit.SelectedItem.Value;
+            pobjVendorDetails.Code = HelperConstants.DetailsType.CRE;
+            pobjVendorDetails.Document = "";
+            pobjVendorDetails.Status = 1;
+            pobjVendorDetails.Points = 0;
+            pobjVendorDetails.UpdatedBy = CustomerId;
+            lobjVendorDetails.Add(pobjVendorDetails);
+        }
+        else
+        {
+            pobjVendorDetails = null;
+            pobjVendorDetails = lstVendorDetails.FirstOrDefault(v => v.DetId == Convert.ToInt32(HelperConstants.DetailsType.CRE));
+            if (pobjVendorDetails != null)
+            {
+                pobjVendorDetails.Status = 0;
+                pobjVendorDetails.Points = 0;
+                pobjVendorDetails.CreatedBy = CustomerId;
+                pobjVendorDetails.Code = HelperConstants.DetailsType.CRE;
+                pobjVendorDetails.UpdatedBy = CustomerId;
+                lobjVendorDetails.Add(pobjVendorDetails);
+            }
+        }
+
+GetBuyerDetails
+-------------------
+ case HelperConstants.DetailsType.CRE:
+                            xddlCredit.SelectedIndex = xddlCredit.Items.IndexOf(xddlCredit.Items.FindByValue(compprofile.Value));
+                            break;
+
+------------------------------------------------------------------------------------
+RegistrationSupplierAdditionDet.ASPX
+-------------------------------------
+<label>Upload Catalogue</label>
+                                <asp:TextBox ID="xtxtCatlog" runat="server" CssClass="imw97p" placeholder="Upload Catalogue"></asp:TextBox>
+                                <ctrl:UploadFile ID="xctrlCatlog" runat="server" UserType="Vendor" UploadDocType="SupplierProfileDoc"
+                                    UploadFileType="Doc" Caption="Upload Other Document" />
+
+RegistrationSupplierAdditionDet.CS
+-------------------------------------
+
+InsertAdditionalDet
+--------------------
+//============= Upload Catalogue =============================================
+            if (xtxtCatlog.Text != "")
+            {
+                pobjVendorDetails = null;
+                pobjVendorDetails = lstVendorDetails.FirstOrDefault(v => v.DetId == Convert.ToInt32(HelperConstants.DetailsType.CAT));
+                if (pobjVendorDetails == null)
+                {
+                    pobjVendorDetails = new VendorDetails();
+                    pobjVendorDetails.EntityId = pintVendorId;
+                    pobjVendorDetails.EntityType = pstrEntityType;
+                    pobjVendorDetails.VendorId = pintVendorId;
+                    pobjVendorDetails.CreatedBy = pintCustomerId;
+                    pobjVendorDetails.DetId = Convert.ToInt32(HelperConstants.DetailsType.CAT);
+                }
+
+                pobjVendorDetails.Value = xtxtCatlog.Text;
+                pobjVendorDetails.Document = xctrlCatlog.FileName;
+                pobjVendorDetails.Status = 1;
+                pobjVendorDetails.UpdatedBy = pintCustomerId;
+                pobjVendorDetails.Code = HelperConstants.DetailsType.CAT;
+                lobjVendorDetails.Add(pobjVendorDetails);
+            }
+            else
+            {
+                pobjVendorDetails = null;
+                pobjVendorDetails = lstVendorDetails.FirstOrDefault(v => v.DetId == Convert.ToInt32(HelperConstants.DetailsType.CAT));
+                if (pobjVendorDetails != null)
+                {
+                    pobjVendorDetails.Status = 0;
+                    pobjVendorDetails.Points = 0;
+                    pobjVendorDetails.CreatedBy = pintCustomerId;
+                    pobjVendorDetails.UpdatedBy = pintCustomerId;
+                    pobjVendorDetails.Code = HelperConstants.DetailsType.CAT;
+                    lobjVendorDetails.Add(pobjVendorDetails);
+                }
+            }
+
+GetDetails
+------------
+
+
+ #region Get Vendor
+    private void GetVendor(int pintVendorId)
+    {
+        InfiModel lobjInfiModel = new InfiModel();
+        Vendor objvendor = new Vendor();
+        string strProfile = "";
+        objvendor = lobjInfiModel.GetVendor(pintVendorId);
+        FillCities(null, objvendor.CustomerDet.AddressDet.CountryDet.Id);
+        // show Profile Point
+        strProfile = "<h2> " + objvendor.CompletedProfile + "% Profile Completed</h2><br/>";
+        strProfile += ResolveUrl(InfiModel.GetRatingImg(Convert.ToInt16(objvendor.Rating))) + "<br class='cl'/>";
+        //strProfile += Convert.ToInt32(objvendor.Verified) > 0 ? ResolveUrl(InfiModel.GetRatingImg(Convert.ToInt16(objvendor.Rating))) : "";
+        lxitProfile.Text = strProfile;
+    }
+    #endregion
+
+ #region SetControl
+    private void SetControl(int VendorId)
+    {
+        xctrlCompanyLogo.EntityId = VendorId.ToString();
+        xctrlAccediations.EntityId = VendorId.ToString();
+        xctrlAffiliations.EntityId = VendorId.ToString();
+        xctrlAward.EntityId = VendorId.ToString();
+        xctrlOtherDoc.EntityId = VendorId.ToString();
+        xctrlTinCards.EntityId = VendorId.ToString();
+        xctrlCatlog.EntityId = VendorId.ToString();
+    }
+    #endregion
+
+ShowVendorDetails
+--------------------
+case HelperConstants.DetailsType.CAT:
+                        xtxtCatlog.Text = objVendorDetails.Value;
+                        xctrlCatlog.FileName = objVendorDetails.Document;
+                        break;

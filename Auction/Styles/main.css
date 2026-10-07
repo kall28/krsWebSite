@@ -1,0 +1,374 @@
+.pgHmHdr {
+	padding: 2%;
+	margin-bottom: 1%;
+}
+.homeSign {
+	font-size: 12px;
+}
+ul.homeSign {
+	margin: 0;
+	padding: 0;
+}
+.homeSign li {
+	list-style: none;
+	text-align: center;
+}
+.buySign {
+	font-size: 16px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+.buySign a {
+	color: #ed1c24;
+}
+#hRow1, #hRow3 {
+	padding: 30px;
+	padding-left: 0px;
+	background-color: #f0f0f0;
+}
+#hRow2, #hRow4 {
+	padding: 30px;
+	padding-left: 0px;
+	background-color: #fff;
+}
+.hPgAuc p {
+	width: 600px;
+	padding: 20px 0px;
+}
+#hRow3 ul {
+	margin: 0;
+	padding: 0;
+}
+#hRow3 ul li {
+	font-weight: 700;
+	color: #FF0004;
+	list-style: none;
+}
+#hRow3 ul li p {
+	margin: 0;
+	padding-top: 5px;
+	color: #000;
+	font-weight: 100;
+}
+.video img {
+	width: 600px;
+}
+.pgHmHdr .affix {
+	position: fixed;
+	top: 20px;
+}
+.pg-ind .col1, .pg-ind .col2 {
+	float: left;
+	width: 25%;
+}
+.pg-ind .col1 {
+	padding-right: 2%;
+}
+.pg-ind .col2 {
+	padding-left: 5%;
+	border-left: 1px solid #ccc;
+}
+.head {
+	font-size: 14px;
+	font-weight: 700;
+	color: #FF0004;
+}
+.footer {
+}
+.footer li {
+	list-style: none;
+	float: left;
+	text-align: left;
+	color: #FF0004;
+	text-transform: uppercase;
+	font-weight: 700;
+	width: 20%;
+}
+.footer li ul {
+	padding: 0;
+	margin-right: 20px;
+	color: #000;
+}
+.footer li ul li {
+	padding: 0;
+	width: 100%;
+	color: #000;
+	text-transform: initial;
+	clear: both;
+	font-weight: 100;
+}
+
+.ftHdr {
+	text-align: center;
+	margin: 0 auto;
+	background-color: #efefef;
+	padding: 20px 0px 20px 0px;
+}
+.ftHdr #myNavbar {
+	margin: 0 auto;
+	width: 1024px;
+	padding-bottom: 10px;
+}
+.ftHdr p {
+	background-color: #fff;
+	line-height: 40px;
+}
+.leftPan {
+	background-color: #262626;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+.leftPan .nav > li > a {
+	border-bottom: 1px solid #000;
+	color: #fff;
+	cursor: pointer;
+}
+.proLog {
+    height: 140px; position:relative;
+}
+.proLog p {
+    top: 30px;
+    position: relative; 
+}
+.proLog p span {
+	font-size:11px;color:#999;
+}
+.proLog img{     border-radius: 100px;
+    float: left;
+    padding: 10px;}
+ul.leftPanTab1 {
+	padding: 0;
+}
+.leftPanTab1 li a {
+	display: block;
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+	color: #fff;
+	padding-left: 52px;
+	line-height: 40px;
+	border-top: 1px solid #262626;
+}
+.leftPanTab1 li {
+	list-style: none;
+}
+.leftPanTab span.glyphicon.glyphicon-menu-down {
+	position: absolute;
+	right: 20px;
+	top: 10px;
+}
+.leftPan li p {
+	display: inline;
+	padding-left: 20px;
+}
+.leftPanTab1 ul {
+	padding: 0;
+}
+.leftPanTab > .nav > li > a:hover, .nav > li > a:focus, .nav > li > a.active {
+	cursor: pointer;
+	background-color: #000;
+	font-weight: 700;
+}
+.leftPanTab1 li a {
+	cursor: pointer;
+	background-color: #000;
+	font-weight: 200;
+}
+.leftPanTab1 li a:hover, .leftPanTab1 li a.active {
+	background-color: #262626;
+	font-weight: 700;
+}
+.leftPanTab > .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+	background-color: #000;
+	color: #fff;
+}
+.contHdr .row {
+	box-shadow: 0px 0px 10px #ccc;
+	height: 60px;
+	background-color: #fff;
+}
+.topPan .search {
+	float: left;
+	width: 30%;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+.topPan .login {
+	padding-top: 20px;
+	float: right;
+	padding-right: 30px;
+}
+.topPan .login a {
+	margin-right: 20px;
+}
+.bgGrLig {
+	background-color: #efefef;
+}
+.col2Cont {
+	width: 70%;
+	background-color: #fff;
+	margin-left: 20px;
+}
+.prod-name {
+	font-weight: bold;
+}
+.prod-price {
+}
+.prod-slide {
+    width: 95%;
+    margin: 0 auto;
+}
+.prod-slide p {
+	margin-bottom: 0;
+	padding: 0;
+}
+.prod-slide .thumbnail {
+	background: none;
+	border: none;
+}
+.prod-slide .thumbnail img {
+	padding-bottom: 0;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+}
+.dealHdr .dealImg {
+	float: left;
+	border: 1px solid #ccc;
+	padding: 20px;
+	margin: 20px;
+	width: 30%;
+}
+.dealHdr .dealCont {
+	width: 50%;
+	float: left;
+}
+.dealHdr ul.dealForm {
+	padding: 0;
+}
+.dealHdr ul.dealForm li {
+	border-bottom: 1px solid #FF0004;
+	margin-bottom: 10px;
+}
+.dealHdr ul.dealForm input {
+	border: none;
+	color: #000;
+	padding: 10px;
+	padding-left: 0px;
+	width: 100%;
+}
+.dealHdr ul.dealForm li {
+	list-style: none;
+}
+.crtHdr {
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}.crtHdr p{font-weight:700;}
+.crtHdr .btn{width:15%; margin-right:20px;}
+.prodList{  padding-top:20px;
+	font-weight:700;}
+	.contHdr h1{padding-left:20px; float:left;}
+
+.pg-purBtHdr {
+    float: right;
+    padding: 10px;
+}
+.pg-purBtHdr .btn{margin-right:10px;}
+.pg-purOrdHdr {
+    padding: 20px;
+}
+.schHdr{ }
+ul.schHdr { padding:0; text-align:left;}
+.schHdr li{     list-style: none;
+    display: inline-block;
+    margin-right: 20px;
+    width: 30%;
+}
+.schHdr li input{width:100%;}
+
+@media (max-width: 767px) {
+.pgHmHdr .affix {
+	position: inherit;
+	top: 20px;
+}
+.footer li {
+	width: 100%;
+	margin-bottom: 10px;
+}
+.footer li li {
+	margin-bottom: 0px;
+}
+.footer ul {
+	padding-left: 0;
+}
+.ftHdr .navbar-header .navbar-toggle .icon-bar {
+	background-color: #999;
+}
+.ftHdr .navbar-header .navbar-toggle {
+	background-color: #fff;
+	border: 0;
+	width: 100%;
+	text-align: left;
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #999;
+	padding: 0;
+	padding-left: 10px;
+}
+.ftHdr .navbar-header .navbar-toggle {
+	margin-right: 0px;
+	padding: 10px;
+}
+.video img {
+	width: 100%;
+}
+.hPgAuc p {
+	width: 100%;
+}
+.pg-ind .col1, .pg-ind .col2 {
+	width: 50%;
+}
+}
+.clr {
+	clear: both;
+}
+.bgColRed{
+	background-color:#FF0004 !important;}
+	.bgColBlk{
+	background-color:#000 !important;}
+.btHdr1 .btn, .btHdr2 .btn {
+	background-color: #fff;
+	color: #FF0004;
+	border: 1px solid #FF0004;
+	text-transform: uppercase;
+	border-radius: 0px;
+}
+.btHdr1 {
+	padding-left: 19%;
+	padding-top: 2%;
+	padding-bottom: 3%;
+}.btHdr3 .btn {
+	background-color: #000;
+	color: #fff;
+	text-transform: uppercase;
+	border-radius: 5px;
+}
+.btHdr3 .btn:hover, .btHdr3 .btn.select{	background-color: #FF0004;
+}
+
+h3, .h3 {
+    font-size: 18px;
+    font-weight: 700;
+}h1, .h1 {
+    font-size: 24px; color:#FF0004;
+}
+input {
+    border: 0px;
+    border-bottom: 1px solid #FF0004;
+    padding: 5px;
+}
+
+

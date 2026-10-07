@@ -1,0 +1,214 @@
+@font-face {
+	font-family: 'gothambold1';
+	src: url('../fonts/gothambold1.eot');
+	src: local('gothambold1'), url('../fonts/gothambold1.woff') format('woff'), url('../fonts/gothambold1.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'GothamBook';
+	src: url('../fonts/GothamBook.eot');
+	src: local('GothamBook'), url('../fonts/GothamBook.woff') format('woff'), url('../fonts/GothamBook.ttf') format('truetype');
+}
+body {
+	font-family: 'GothamBook';
+	font-family: Gotham, Arial, sans-serif;
+}
+body {
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	background-color: #000;
+}
+.wraperJn {
+	display: table;
+	width: 100%;
+}
+.col1J {
+	width: 25%;
+	float: left;
+}
+.col2J {
+	width: 74.9%;
+	float: left;
+}
+.showCont {
+	background-color: #fff;
+	position: relative;
+}
+.showCont li {
+	list-style: none;
+}
+header {
+	background: #E9C178;
+	height: 100px;
+}
+.head {
+	font-size: 34px;
+	background-color: #ff888a;
+	line-height: 100px;
+	color: #000; font-weight:500;
+	text-align: center; font-family: 'GothamBook';
+}
+.logo {
+	height: 100px;
+	background-color: #fff;
+	text-align: center;
+}
+.logo img {
+	height: 100%;
+	width: auto;
+}
+.mvImg {
+	background-color: #ffa509;
+	text-align: center;
+}
+.mvImg img {
+	height: 50%;
+	text-align: center;
+	width: 75%;
+	padding: 10%;
+}
+footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	background-color: #221f1f;
+}
+.footHlr {
+	color: #fff;
+}
+.schLegnd {
+	float: left;
+	color: #FFFADB;
+	padding: 10px;
+}
+.schLegnd span {
+	padding: 0 8px;
+	margin: 30px;
+}
+.clr {
+	clear: both;
+}
+.col1 {
+	width: 48.4%;
+	float: left;
+}
+.beanBag, .dechChr, .cinSeat, .sofaBed {
+	padding: 10px;
+	background-color: #5c5479;
+	color: #fff;
+}
+.dechChr {
+	background-color: #008b48;
+}
+.cinSeat {
+	background-color: #e16326;
+}
+.sofaBed {
+	background-color: #4d3739;
+}
+.showCont {
+	padding: 0 5% 5%;
+}
+.seatCont img {
+	margin-right: 10px;
+	float: left;
+	width: 9%;
+	padding-left: 4%;
+	height: auto;
+}
+.col2 {
+	float: left;
+	width: 25%
+}
+.showCont h1 {
+	color: #693327;
+	font-size: 32px;
+	position: relative;
+}
+.showCont h1 span {
+	position: absolute;
+	right: 0;
+}
+.door {
+	float: left;
+	width: 49%;
+	border-right: 1px dashed #ccc;
+}
+.ftItlic {
+	font-style: oblique !important;
+}
+.door ul {
+	margin: 0;
+	padding: 0;
+}
+.door li {
+	padding: 5px 0 5px 0;
+	font-size: 34px;
+	list-style: none;
+	color: #693327;
+	border-bottom: 1px dashed #ccc;
+	font-weight: 500;
+}
+.showTime {
+	border-right: 0px;
+}
+.showTime li {
+	padding-left: 10%;
+}
+.col3 {
+	width: 64.9%;
+	float: left;
+}
+.seatCont ul {
+	float: left;
+	width: 71%;
+	margin: 0;
+	padding-left: 3%;
+}
+.seatCont li {
+	list-style: none;
+}
+.seatCont span {
+	float: right;
+	font-weight: 700;
+}
+.sem {
+	background-color: #6f6f6d;
+	color: #fff;
+	padding: 10px;
+	float: right;
+	width: 30%;
+	text-align: center;
+}
+.centCont {
+	display: flex;
+	min-height: 600px;
+	width: 100%;
+}
+.ftNorm {
+	font-weight: 100 !important;
+}
+.colRed {
+	color: #E20613 !important;
+}
+.colOrg {
+	color: #fba600 !important;
+}
+.colBlue {
+	color: #C7EAFB !important;
+}
+.bgcolBlue {
+	background-color: #C7EAFB !important;
+}
+.bgcolRed {
+	background-color: #E20613;
+}
+.bgcolOrg {
+	background-color: #fba600;
+}
+.bgcolBrw {
+	background-color: #683a2a;
+}
+.p15 {
+	padding: 15px;
+}

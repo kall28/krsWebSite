@@ -1,0 +1,66 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="MasterPages_Module, App_Web_module.master.fdf7a39c" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="CSS/Style.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/jquery.ui.all.css" rel="stylesheet" type="text/css" />
+    <link href="ScriptDate/jquery.ui.theme.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/jquery.ui.datepicker.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript">
+        function ShowProcessingPanel() {
+            ShowModalPopup("divMsg");
+        }
+
+        function HideProcessingPanel() {
+            HideModalPopup("divMsg");
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="xScrMgrModuleMaster" runat="server" EnablePageMethods="true">
+        <Scripts>
+            <asp:ScriptReference Path="~/Admin/Scripts/jquery-1.10.2.js" />
+            <asp:ScriptReference Path="~/Admin/Scripts/jquery.ui.core.js" />
+            <asp:ScriptReference Path="~/Admin/Scripts/ui/jquery.ui.widget.js"/>
+            <asp:ScriptReference Path="~/Admin/Scripts/ui/jquery.ui.datepicker.js" />
+            <asp:ScriptReference Path="~/Admin/Scripts/app-1.1.Common.js" />
+            <asp:ScriptReference Path="~/Admin/Scripts/app-1.1.js" />
+        </Scripts>
+    </asp:ScriptManager>
+    <div>
+        <table style="width: 100%;">
+            <tr>
+                <td align="center">
+                    <b>
+                        <asp:Literal ID="xlitCaption" runat="server"></asp:Literal></b>
+                </td>
+            </tr>
+            <tr>
+                <td style="border-bottom: solid 1pt black;">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <asp:ContentPlaceHolder ID="xcthMain" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div id="blackOverlay" style="position: fixed; top: 0; left: 0; background: #000;
+        z-index: 2001; display: none;">
+    </div>
+    <div id="divMsg" style="display: none;">
+        <div style='width: 100%; text-align: center; padding: 20px; font-weight: bold; font-size: 11pt;
+            background: #fff;'>
+            <asp:Image ID="ximgProcess" runat="server" ImageUrl="~/Images/loading.GIF" Height="49" Width="49" />&nbsp;&nbsp;&nbsp;Please
+            Wait....
+        </div>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,2 @@
+16-06-2021 21:08:06|CORE-CMN-EXT|CmnExecuter_GetActivityConfigBySysName|1010|No data found|
+16-06-2021 21:08:58|CORE-CMN-EXT|CmnExecuter_GetActivityConfigBySysName|1010|No data found|

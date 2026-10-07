@@ -1,0 +1,413 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="MasterPage_SitePageMaster, App_Web_sitepagemaster.master.ec608581" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+	<title>
+		<asp:Literal ID="xlitPageTitle" runat="server"></asp:Literal>
+	</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+	<link rel="stylesheet" href="../css/vendor.css" />
+	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" href="../css/main.css" />
+	<link rel="icon" href="../images/favicon.png" />
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<form id="form1" runat="server">
+		<asp:ScriptManager ID="xScrMgrMaster" runat="server">
+			<Scripts>
+				<asp:ScriptReference Path="~/js/vendor.min.js" />
+				<asp:ScriptReference Path="~/js/app.js" />
+				<asp:ScriptReference Path="~/js/web.comm-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.nav-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.req-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.form.req-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.form.ctrl-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.cart-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.page-1.0.js" />
+			</Scripts>
+		</asp:ScriptManager>
+		<div class="toastHdr">
+			<div class="toast fade hide" data-autohide="true">
+				<!-- 	<div class="toast-header">
+            <strong class="mr-auto text-primary" id="toastTitle"></strong>
+          <small class="text-muted">5 mins ago</small> 
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+          </div>-->
+				<div class="toast-body" id="toastBody">
+				</div>
+			</div>
+		</div>
+		<!-- header -->
+		<header class="header header-dark bg-dark header-sticky">
+			<div class="container">
+				<div class="row">
+					<nav class="navbar navbar-expand-lg navbar-dark">
+						<a href="javascript:void(0)" id="lnkHdrLogo" class="navbar-brand order-1 order-lg-2">
+							<img id="imgHrdLogo" runat="server" src="~/images/logoW.png" alt="Aqua Leaf Farms"></a>
+						<button class="navbar-toggler order-2" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+							aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse order-3 order-lg-1" id="navbarMenu">
+							<ul class="navbar-nav mr-auto">
+								<li class="nav-item">
+									<a class="nav-link " href="javascript:void(0);" id="lnkHdrNavHome">Home
+									</a>
+								</li>
+								<li class="nav-item dropdown ">
+									<a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown-11" role="button"
+										data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Shop
+									</a>
+									<ul class="dropdown-menu dropmeuHdr " aria-labelledby="navbarDropdown-11">
+										<li>
+											<a class="nav-link " href="javascript:void(0);" id="lnkHdrNavShop">Fresh Produce 
+											</a>
+										</li>
+										<li>
+											<a class="nav-link" href="javascript:void(0);" id="lnkHdrNavSubscription">Subscription
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="javascript:void(0)" id="lnkHdrNavBlogs">Blogs
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="javascript:void(0)" id="lnkHdrNavRecipes">Recipes
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="collapse navbar-collapse order-4 order-lg-3" id="navbarMenu2">
+							<ul class="navbar-nav ml-auto">
+								<asp:Literal ID="xlitLoginInfo" runat="server"></asp:Literal>
+								<!--li class="nav-item">
+									<a data-toggle="modal" data-target="#search" class="nav-link"><i class="icon-search"></i></a>
+								</li-->
+
+							</ul>
+						</div>
+						<!-- cart seprate -->
+						<div class="carthdr">
+							<asp:Literal ID="xlitCartInfo" runat="server"></asp:Literal>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<%--<header class="header header-dark bg-dark header-sticky">
+			<div class="container">
+				<div class="row">
+					<nav class="navbar navbar-expand-lg navbar-dark">
+						<a href="javascript:void(0)" id="lnkHdrLogo" class="navbar-brand order-1 order-lg-2">
+							<img id="imgHrdLogo" runat="server" src="~/images/logoW.png" alt="Aqua Leaf Farms">
+						</a>
+						<button class="navbar-toggler order-2" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+							aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse order-3 order-lg-1" id="navbarMenu">
+							<ul class="navbar-nav mr-auto">
+								<li class="nav-item  ">
+									<a class="nav-link" href="javascript:void(0)" id="lnkHdrNavHome" role="button" data-toggle="dropdown"
+										aria-haspopup="true" aria-expanded="false">Home
+									</a>
+								</li>
+								<li class="nav-item  ">
+									<a class="nav-link" href="javascript:void(0)" id="lnkHdrNavShop">Shop</a>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link" href="javascript:void(0)" id="lnkHdrNavSubscription">Subscription
+                                </a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="collapse navbar-collapse order-4 order-lg-3" id="navbarMenu2">
+							<ul class="navbar-nav ml-auto">
+								<asp:Literal ID="xlitLoginInfo" runat="server"></asp:Literal>
+								<li class="nav-item">
+									<a data-toggle="modal" data-target="#search" class="nav-link"><i class="icon-search"></i></a>
+								</li>
+								<asp:Literal ID="xlitCartInfo" runat="server"></asp:Literal>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</header>--%>
+
+		<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+		</asp:ContentPlaceHolder>
+
+		<!-- footer -->
+		<footer class="bg-dark text-white py-0">
+			<div class="container">
+				<div class="row separated">
+					<div class="col-lg-6 py-10">
+
+						<div class="row">
+							<div class="col-md-10">
+								<h4 class="eyebrow mb-2">Quick Links</h4>
+								<ul class="list-group list-group-columns">
+									<li class="list-group-item"><a href="javascript:void(0)" id="lnkFtrAbout">About</a></li>
+									<li class="list-group-item"><a href="javascript:void(0)" id="lnkFtrContact">Contact Us</a></li>
+									<li class="list-group-item"><a href="javascript:void(0)" id="lnkFtrFAQ">FAQ</a></li>
+									<li class="list-group-item"><a href="javascript:void(0)" id="lnkFtrBlog">Blog</a></li>
+									<li class="list-group-item"><a href="javascript:void(0)" id="lnkFtrTNC">Terms of Use</a></li>
+									<li class="list-group-item"><a href="javascript:void(0)" id="lnkFtrPolicy">Privacy Policy</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 py-10">
+						<div class="row justify-content-end">
+							<div class="col-lg-10">
+								<h4 class="eyebrow mb-2">Subscribe</h4>
+								<div class="input-group">
+									<input type="text" id="txtFtrSubEmail" class="form-control form-control-lg" placeholder="Email" aria-label="Subscribe"
+										aria-describedby="button-addon2">
+									<div class="input-group-append">
+										<button id="btnFtrSubSubmit" class="btn btn-white" type="button">Subscribe</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row justify-content-end">
+							<div class="col-lg-10">
+								<h4 class="eyebrow mb-2">Follow us</h4>
+								<nav class="nav nav-icons">
+									<a class="nav-link" href="https://www.facebook.com/aqualeaffarms/" target="_blank"><i
+										class="icon-facebook-o"></i></a>
+									<a class="nav-link" href="https://www.instagram.com/aqualeaf.farms/" target="_blank"><i
+										class="icon-instagram"></i></a>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Login Modal -->
+		<div class="modal fade" id="modalSignIn" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<button type="button" class="close" aria-label="Close" id="btnMSignInClose">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<div class="modal-header">
+						<div class="accordion accordion-portal signinModalHdr" id="accordionSignIn">
+							<div class="card active">
+								<div class="card-header" id="headingOne">
+									<h2 class="mb-0">
+										<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSignIn"
+											aria-expanded="true" aria-controls="collapseSignIn">
+											Sign In                                   
+										</button>
+									</h2>
+								</div>
+								<div id="collapseSignIn" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionSignIn">
+									<div class="card-body">
+										<div class="row mt-2">
+											<div class="form-group col-12">
+												<label for="txtUserName">Email address</label>
+												<input type="email" class="form-control" id="txtMUserName" maxlength="100">
+											</div>
+											<div class="form-group col-12 mt-1">
+												<label for="txtPwd">Password</label>
+												<input type="password" class="form-control" id="txtMPassword" maxlength="20">
+											</div>
+											<div class="col-12 mt-1">
+												<a href='javascript:void(0)' id="lnkModFPwd">Forgot Password?</a>
+												<%--<div class="custom-control custom-switch mb-2">
+													<input type="checkbox" class="custom-control-input" id="customSwitch1">
+													<label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+												</div>--%>
+											</div>
+											<div class="col-12 mt-2">
+												<a href="javascript:void(0)" id="btnMSignin" class="btn btn-block btn-primary">Log In</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingTwo">
+									<h2 class="mb-0">
+										<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseReg"
+											aria-expanded="false" aria-controls="collapseReg">
+											Create Account                                   
+										</button>
+									</h2>
+								</div>
+								<div id="collapseReg" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSignIn">
+									<div class="card-body">
+										<div class="row mt-2">
+											<div class="form-group col-12">
+												<label for="txtMRegFirstName">First Name</label>
+												<input type="email" class="form-control" id="txtMRegFirstName" maxlength="50">
+											</div>
+											<div class="form-group col-12">
+												<label for="txtMRegFirstName">Last Name</label>
+												<input type="email" class="form-control" id="txtMRegLastName" maxlength="50">
+											</div>
+											<div class="form-group col-12">
+												<label for="txtMRegEmail">Email address</label>
+												<input type="email" class="form-control" id="txtMRegEmail" maxlength="100">
+											</div>
+											<div class="form-group col-12">
+												<label for="txtMRegMobileNo">Mobile Number</label>
+												<input type="text" class="form-control" id="txtMRegMobileNo" maxlength="10">
+											</div>
+											<div class="form-group col-12 mt-1">
+												<label for="txtMRegPwd">Password</label>
+												<input type="password" class="form-control" id="txtMRegPwd" maxlength="20">
+											</div>
+											<div class="form-group col-12 mt-1">
+												<label for="txtMRegPwdCrfm">Repeat Password</label>
+												<input type="password" class="form-control" id="txtMRegPwdCrfm" maxlength="20">
+											</div>
+											<div class="col-12 mt-2">
+												<a href="javascript:void(0)" id="btnMRegVerify" class="btn btn-block btn-primary">Register</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Login OTP Modal -->
+		<div class="modal fade" id="modalSignUpOTP" tabindex="-1" role="dialog" aria-labelledby="otpModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnMSignUpOTPClose">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="modal-content">
+					<div class="modal-header">
+						<div class="card active">
+							<div class="card-header" id="headingOne">
+								<h2 class="text-center display-8">Verify your email</h2>
+							</div>
+							<div class="card-body">
+								<div class="row ">
+									<p>Please enter the OTP shared on your email.</p>
+									<div class="form-group col-12">
+										<!-- <label for="exampleInputEmail1">Enter OTP </label> -->
+										<input type="password" class="form-control" id="txtMVerOTP" placeholder="Enter OTP" maxlength="6">
+									</div>
+									<div class="col-12 mt-2">
+										<a href="javascript:void(0)" id="btnMVerSignup" class="btn btn-block btn-primary">Continue</a>
+									</div>
+									<a href="javascript:void(0)" id="btnMVerResend" class="btn btn-link w-100">Resend OTP</a>
+								</div>
+								<div class="row ">
+									<div class="col-12 text-danger" id="divMVerOTPMsg">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- cart -->
+		<div class="modal fade sidebar" id="cart" tabindex="-1" role="dialog" aria-labelledby="cartLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="cartLabel">Your Cart</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="row gutter-3" id="divCartLst">
+						</div>
+					</div>
+					<div class="modal-footer ">
+						<div class="container-fluid">
+							<div class="row gutter-0">
+								<div class="col d-none d-md-block">
+									<a href="javascript:void(0)" id="lnkHdrCartViewItems" class="btn btn-lg btn-block btn-secondary">View Cart</a>
+								</div>
+								<div class="col">
+									<a href="javascript:void(0)" id="lnkHdrCartCheckOut" class="btn btn-lg btn-block btn-primary">Checkout</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- search -->
+		<div class="modal fade search" id="search" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<input type="text" class="form-control" placeholder="Type your search here" aria-label="Type your search here"
+							aria-describedby="button-addon2">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="modalProgressBox" class="modal" role="dialog" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Please wait...</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Regular Modal 2 -->
+		<div id="modalSiteMsgBox" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h3 id="modalSiteMsgBoxTitle" class="modal-title">Title</h3>
+					</div>
+					<div id="modalSiteMsgBoxBody" class="modal-body">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<%--<div class="toastHdr">
+			<div class="toast rounded" data-autohide="true">
+				<div class="toast-header">
+					<strong class="mr-auto text-primary" id="toastTitle"></strong>
+					<!-- <small class="text-muted">5 mins ago</small> -->
+					<button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+				</div>
+				<div class="toast-body" id="toastBody">
+				</div>
+			</div>
+		</div>--%>
+	</form>
+</body>
+</html>

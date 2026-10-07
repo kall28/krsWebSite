@@ -1,0 +1,128 @@
+10-06-2021 16:52:51|LIB-ECM-DATA|EcmDataManager_UpdateProductCategory|500|The stored procedure 'sp_ECM_ProductCategories_Upd' doesn't exist.|   at System.Data.SqlClient.SqlCommand.DeriveParameters()
+   at System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(SqlCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.DeriveParameters(DbCommand discoveryCommand)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DiscoverParameters(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.ParameterCache.SetParameters(DbCommand command, Database database)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.ExecuteNonQuery(Int32& resultCount, String commandText, Object[] parameterValues) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 195
+10-06-2021 16:52:51|||500|Error while processing request. Please contact administrator.|
+10-06-2021 16:52:51|CORE-ECM-EXT|EcmExecuter_GetProductEntityById|1003|Invalid Data(Entity Id)|
+10-06-2021 16:52:51|||1003|Invalid Data(Entity Id)|
+10-06-2021 16:52:51|||1003|Invalid Data(Entity Id)|
+10-06-2021 16:55:02|LIB-ECM-DATA|EcmDataManager_UpdateProductCategory|500|The stored procedure 'sp_ECM_ProductCategories_Upd' doesn't exist.|   at System.Data.SqlClient.SqlCommand.DeriveParameters()
+   at System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(SqlCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.DeriveParameters(DbCommand discoveryCommand)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DiscoverParameters(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.ParameterCache.SetParameters(DbCommand command, Database database)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.ExecuteNonQuery(Int32& resultCount, String commandText, Object[] parameterValues) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 195
+10-06-2021 16:55:02|||500|Error while processing request. Please contact administrator.|
+10-06-2021 16:55:02|CORE-ECM-EXT|EcmExecuter_GetProductEntityById|1003|Invalid Data(Entity Id)|
+10-06-2021 16:55:02|||1003|Invalid Data(Entity Id)|
+10-06-2021 16:55:02|||1003|Invalid Data(Entity Id)|
+10-06-2021 16:55:15|LIB-ECM-DATA|EcmDataManager_UpdateProductCategory|500|The stored procedure 'sp_ECM_ProductCategories_Upd' doesn't exist.|   at System.Data.SqlClient.SqlCommand.DeriveParameters()
+   at System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(SqlCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.DeriveParameters(DbCommand discoveryCommand)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DiscoverParameters(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.ParameterCache.SetParameters(DbCommand command, Database database)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.ExecuteNonQuery(Int32& resultCount, String commandText, Object[] parameterValues) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 195
+10-06-2021 16:55:15|||500|Error while processing request. Please contact administrator.|
+10-06-2021 16:55:15|CORE-ECM-EXT|EcmExecuter_GetProductEntityById|1003|Invalid Data(Entity Id)|
+10-06-2021 16:55:15|||1003|Invalid Data(Entity Id)|
+10-06-2021 16:55:15|||1003|Invalid Data(Entity Id)|
+10-06-2021 16:55:38|LIB-ECM-DATA|EcmDataManager_UpdateProductCategory|500|The stored procedure 'sp_ECM_ProductCategories_Upd' doesn't exist.|   at System.Data.SqlClient.SqlCommand.DeriveParameters()
+   at System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(SqlCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.DeriveParameters(DbCommand discoveryCommand)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DiscoverParameters(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.ParameterCache.SetParameters(DbCommand command, Database database)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.ExecuteNonQuery(Int32& resultCount, String commandText, Object[] parameterValues) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 195
+10-06-2021 16:55:38|||500|Error while processing request. Please contact administrator.|
+10-06-2021 16:55:38|CORE-ECM-EXT|EcmExecuter_GetProductEntityById|1003|Invalid Data(Entity Id)|
+10-06-2021 16:55:38|||1003|Invalid Data(Entity Id)|
+10-06-2021 16:55:38|||1003|Invalid Data(Entity Id)|
+10-06-2021 16:55:50|LIB-ECM-DATA|EcmDataManager_UpdateProductCategory|500|The stored procedure 'sp_ECM_ProductCategories_Upd' doesn't exist.|   at System.Data.SqlClient.SqlCommand.DeriveParameters()
+   at System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(SqlCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.DeriveParameters(DbCommand discoveryCommand)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DiscoverParameters(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.ParameterCache.SetParameters(DbCommand command, Database database)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.ExecuteNonQuery(Int32& resultCount, String commandText, Object[] parameterValues) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 195
+10-06-2021 16:55:50|||500|Error while processing request. Please contact administrator.|
+10-06-2021 16:55:50|CORE-ECM-EXT|EcmExecuter_GetProductEntityById|1003|Invalid Data(Entity Id)|
+10-06-2021 16:55:50|||1003|Invalid Data(Entity Id)|
+10-06-2021 16:55:50|||1003|Invalid Data(Entity Id)|
+10-06-2021 16:56:03|LIB-ECM-DATA|EcmDataManager_UpdateProductCategory|500|The stored procedure 'sp_ECM_ProductCategories_Upd' doesn't exist.|   at System.Data.SqlClient.SqlCommand.DeriveParameters()
+   at System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(SqlCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.DeriveParameters(DbCommand discoveryCommand)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DiscoverParameters(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.ParameterCache.SetParameters(DbCommand command, Database database)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.ExecuteNonQuery(Int32& resultCount, String commandText, Object[] parameterValues) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 195
+10-06-2021 16:56:03|||500|Error while processing request. Please contact administrator.|
+10-06-2021 16:56:03|CORE-ECM-EXT|EcmExecuter_GetProductEntityById|1003|Invalid Data(Entity Id)|
+10-06-2021 16:56:03|||1003|Invalid Data(Entity Id)|
+10-06-2021 16:56:03|||1003|Invalid Data(Entity Id)|
+10-06-2021 16:56:13|LIB-ECM-DATA|EcmDataManager_UpdateProductCategory|500|The stored procedure 'sp_ECM_ProductCategories_Upd' doesn't exist.|   at System.Data.SqlClient.SqlCommand.DeriveParameters()
+   at System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(SqlCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.DeriveParameters(DbCommand discoveryCommand)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DiscoverParameters(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.ParameterCache.SetParameters(DbCommand command, Database database)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.ExecuteNonQuery(Int32& resultCount, String commandText, Object[] parameterValues) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 195
+10-06-2021 16:56:13|||500|Error while processing request. Please contact administrator.|
+10-06-2021 16:56:13|CORE-ECM-EXT|EcmExecuter_GetProductEntityById|1003|Invalid Data(Entity Id)|
+10-06-2021 16:56:13|||1003|Invalid Data(Entity Id)|
+10-06-2021 16:56:13|||1003|Invalid Data(Entity Id)|
+10-06-2021 17:04:19|LIB-ECM-DATA|EcmDataManager_UpdateProductCategory|500|The stored procedure 'sp_ECM_ProductCategories_Upd' doesn't exist.|   at System.Data.SqlClient.SqlCommand.DeriveParameters()
+   at System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(SqlCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.DeriveParameters(DbCommand discoveryCommand)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DiscoverParameters(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.ParameterCache.SetParameters(DbCommand command, Database database)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.ExecuteNonQuery(Int32& resultCount, String commandText, Object[] parameterValues) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 195
+10-06-2021 17:04:20|LIB-ECM-DATA|EcmDataManager_UpdateProductCategory|500|The stored procedure 'sp_ECM_ProductCategories_Upd' doesn't exist.|   at System.Data.SqlClient.SqlCommand.DeriveParameters()
+   at System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(SqlCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.DeriveParameters(DbCommand discoveryCommand)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DiscoverParameters(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.ParameterCache.SetParameters(DbCommand command, Database database)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.ExecuteNonQuery(Int32& resultCount, String commandText, Object[] parameterValues) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 195
+10-06-2021 17:04:20|||500|Error while processing request. Please contact administrator.|
+10-06-2021 17:04:20|CORE-ECM-EXT|EcmExecuter_GetProductEntityById|1003|Invalid Data(Entity Id)|
+10-06-2021 17:04:20|||1003|Invalid Data(Entity Id)|
+10-06-2021 17:04:20|||1003|Invalid Data(Entity Id)|
+10-06-2021 17:04:42|LIB-ECM-DATA|EcmDataManager_UpdateProductCategory|500|The stored procedure 'sp_ECM_ProductCategories_Upd' doesn't exist.|   at System.Data.SqlClient.SqlCommand.DeriveParameters()
+   at System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(SqlCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.DeriveParameters(DbCommand discoveryCommand)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DiscoverParameters(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.ParameterCache.SetParameters(DbCommand command, Database database)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.ExecuteNonQuery(Int32& resultCount, String commandText, Object[] parameterValues) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 195
+10-06-2021 17:04:42|||500|Error while processing request. Please contact administrator.|
+10-06-2021 17:04:42|CORE-ECM-EXT|EcmExecuter_GetProductEntityById|1003|Invalid Data(Entity Id)|
+10-06-2021 17:04:42|||1003|Invalid Data(Entity Id)|
+10-06-2021 17:04:42|||1003|Invalid Data(Entity Id)|
+10-06-2021 17:05:08|LIB-ECM-DATA|EcmDataManager_UpdateProductCategory|500|The stored procedure 'sp_ECM_ProductCategories_Upd' doesn't exist.|   at System.Data.SqlClient.SqlCommand.DeriveParameters()
+   at System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(SqlCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.DeriveParameters(DbCommand discoveryCommand)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DiscoverParameters(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.ParameterCache.SetParameters(DbCommand command, Database database)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.ExecuteNonQuery(Int32& resultCount, String commandText, Object[] parameterValues) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 195
+10-06-2021 17:05:08|||500|Error while processing request. Please contact administrator.|
+10-06-2021 17:05:08|CORE-ECM-EXT|EcmExecuter_GetProductEntityById|1003|Invalid Data(Entity Id)|
+10-06-2021 17:05:08|||1003|Invalid Data(Entity Id)|
+10-06-2021 17:05:08|||1003|Invalid Data(Entity Id)|

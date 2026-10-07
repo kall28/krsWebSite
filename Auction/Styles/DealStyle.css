@@ -1,0 +1,74 @@
+﻿body { font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif; font-weight:100; margin:auto; padding:0px; font-size:14px;width: 1000px; }
+.wrapper {margin: 0 auto;}
+.header {margin:5px auto 0;padding:0px; overflow:hidden; border-bottom:1px solid #dcddde; width:1000px; background:url(../images/header-bg.jpg); background-repeat:repeat-y;}
+.main {margin:0 auto; overflow:hidden; padding: 25px 0 0 30px;}
+.main p1{ font-size:40px; color:#FF0004; text-transform:uppercase; font-weight:bold;}
+.main p2{ font-size:30px; color:#000; font-weight:bold; }
+.bookcont{ font-size:30px; color:#000; font-weight:bold; margin:20px; text-align:center;}
+.bookimg{ float:left; margin:0; padding:0; width:30%;}
+.greybg{  background-image: url("../images/grey-bg.jpg"); background-repeat: no-repeat; color: #fff; float: right; font-size: 30px; margin: auto; padding: 45px 0 65px; width: 50%;}
+
+.greybg p span{ font-weight:bold;}
+.btn:hover {background-color: #666;}
+.footer{ background-color:#f7f9f9; margin:0 auto; padding:0; }
+.footercont{margin: 0 auto; overflow: hidden; width: 100%;}
+.footer ul{ margin:auto; padding-left:17px;}
+.footer ul li{ font-size:16px;}
+
+
+.tc{ width:70%; float:left; margin:10px 0px 40px 40px;}
+.infi-logo{ width:20%; float:right; margin-top:150px;}
+
+.headercont{ margin:0 auto; overflow:hidden; width:100%; height:300px; }
+.infi{ float:left; width:30%; margin: 82px 0 0 25px;}
+.cart{ float:right; width:30%; margin-top:20px;}
+.text{ font-size:26px; font-weight:bold; width:32%; float:left; margin-top:110px;}
+.text span{ font-size:18px; float:left; margin-top:20px; text-align:center;}
+
+.greybg p {
+    height: 230px;
+    margin: -4px 85px 51px 33px;
+    text-align: center;
+}
+
+
+.btn {
+    background-color: #ed1c24;
+    color: #fff;
+    display: inline-block;
+    font-size: 25px;
+    margin: 80px 50px 10px;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    width: 350px;
+}
+/************************** start change for progress *****************************************/
+#updProgress
+{
+	z-index: 999 !important;
+	left: 0px;
+	position: fixed;
+	bottom: 0px;
+	border: solid 1px #4682B4;
+	opacity: .5;
+	filter: alpha(opacity=40);
+	text-align: center;
+	font-weight: bold;
+	font-size: 12px;
+	width: 100%;
+	height: 80%;
+	padding: 5px 0;
+	background-color: rgba(50, 50, 50, 0.75);
+}
+#updProgress img
+{
+	text-align: left;
+	margin-right: 7px;
+	margin-top: 250px;
+}
+#updProgress p
+{
+	border: 0px solid red;
+}
+/************************** end change for progress *****************************************/

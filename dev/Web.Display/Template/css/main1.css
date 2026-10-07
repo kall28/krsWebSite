@@ -1,0 +1,172 @@
+@font-face {
+	font-family: 'gothambold1';
+	src: url('../fonts/gothambold1.eot');
+	src: local('gothambold1'), url('../fonts/gothambold1.woff') format('woff'), url('../fonts/gothambold1.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'GothamBook';
+	src: url('../fonts/GothamBook.eot');
+	src: local('GothamBook'), url('../fonts/GothamBook.woff') format('woff'), url('../fonts/GothamBook.ttf') format('truetype');
+}
+body {
+	font-family: 'GothamBook' !important;
+	font-family: Gotham, Arial, sans-serif;
+}
+body {
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	background-color: #000;
+}
+header {
+	background: #E9C178;
+	height: 100px;
+}
+.logo {
+	height: 100px;
+	float: left;
+	background-color: #fff;
+	width: 20%;
+	text-align: center;
+}
+.logo img {
+	height: 100%;
+	width: auto;
+}
+header .head {
+	font-family: 'gothambold1';
+	text-align: center;
+	font-size: 3em;
+	line-height: 100px;
+	font-weight: 700;
+}
+.content {
+	width: 99.5%;
+}
+.content .col1 {
+	/*display: table-cell;*/
+	float: left;
+	vertical-align: top;
+	padding: 10px;
+}
+.col3 {
+	width: 49.5%;
+	float: left;
+	vertical-align: top;
+}
+.col3-1 {
+	padding: 15px;
+	clear: both;
+	min-height: 250px;
+	overflow: hidden;
+}
+.col2-1 {
+	padding: 15px;
+	clear: both;
+	min-height: 550px;
+	overflow: hidden;
+}
+.brdTop {
+	border-top: 1px dashed #E9C178;
+}
+.content .col0 {
+	padding: 10px;
+}
+.mvcontHlr {
+	float: left;
+	width: 75%;
+}
+.img {
+	float: left;
+	width: 25%;
+}
+.img img {
+	width: 90%;
+	height: auto;
+}
+.conthead {
+	font-size: 1.8em;
+	font-weight: 700;
+	position: relative;
+}
+.conthead, .screen {
+	color: #FFFADB;
+}
+.conthead p {
+	width: 80%;
+	margin: 0;
+	padding: 0;
+	word-wrap: normal;
+}
+.conthead span {
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-style: italic;
+}
+.screen {
+	font-size: 1.4em;
+	padding-top: 1em;
+}
+.schedule {
+	font-size: 1.8em;
+	color: #C7EAFB;
+}
+.schedule a {
+	padding-right: 10px;
+}
+.footHlr {
+	float: left;
+	width: 70%;
+}
+.convfee, .schLegnd {
+	background-color: #fff;
+	line-height: 30px;
+	text-align: center;
+}
+.schLegnd {
+	background-color: #3C3C3B;
+	clear: both;
+	color: #FFFADB;
+}
+.schLegnd span {
+	padding: 0 8px;
+	margin: 30px;
+}
+.brdr {
+	border-right: 1px dashed #E9C178;
+}
+footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+}
+.footDtl {
+	padding: 10px;
+	background-color: #C6C6C5;
+	text-align: center;
+}
+.clr {
+	clear: both;
+}
+.colRed {
+	color: #E20613;
+}
+.colOrg {
+	color: #F8B133;
+}
+.colBlue {
+	color: #C7EAFB;
+}
+.bgcolBlue {
+	background-color: #C7EAFB;
+}
+.bgcolRed {
+	background-color: #E20613;
+}
+.bgcolOrg {
+	background-color: #F8B133;
+}
+.p15 {
+	padding: 15px;
+}

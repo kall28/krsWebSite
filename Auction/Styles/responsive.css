@@ -1,0 +1,792 @@
+﻿
+table.billInfo {
+display: block;
+overflow-x: scroll;
+white-space: nowrap;
+}
+
+.rowTestimonial .item {
+text-align:center;}
+
+.carousel-control .fa.fa-angle-left{
+    font-size: 65px;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+
+.carousel-control .fa.fa-angle-right {
+    font-size: 65px;
+    position: absolute;
+    top: 40%;
+    right: 40%;
+}
+
+
+.scrollX {
+    display: block;
+    overflow-x: scroll;
+}
+
+/*#tblList {
+    display: block;
+    overflow-x: scroll;
+}*/
+.suppTable .chkBx { float:left; margin-right:10px;}
+.suppTable label {
+    clear: none;
+    padding: 0 0 0 0px;
+}
+/* Slick nav css start here*/
+.slicknav_btn {
+    position: relative;
+    display: block;
+    vertical-align: middle;
+    padding: 0.438em 0.625em 0.438em 0.625em;
+    line-height: 1.125em;
+    cursor: pointer;
+}
+
+.slicknav_menu .slicknav_menutxt {
+    display: block;
+    line-height: 1.188em;
+    float: left;
+}
+
+.slicknav_menu .slicknav_icon {
+    float: right;
+    margin: 0 -4px 0 0;
+}
+
+.slicknav_menu .slicknav_no-text {
+    margin: 0;
+}
+
+.slicknav_menu .slicknav_icon-bar {
+    display: block;
+    width: 1.6em;
+    height: 0.125em;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar {
+    margin-top: 0.24em;
+}
+
+.slicknav_nav {
+    clear: both;
+}
+
+    .slicknav_nav ul, .slicknav_nav li {
+        display: block;
+    }
+
+    .slicknav_nav .slicknav_arrow {
+        font-size: 1em;
+        margin: 0 0 0 0.4em;
+        float: right;
+    }
+
+    .slicknav_nav .slicknav_item {
+        cursor: pointer;
+    }
+
+    .slicknav_nav .slicknav_row {
+        display: block;
+    }
+
+    .slicknav_nav a {
+        display: block;
+    }
+
+    .slicknav_nav .slicknav_item a, .slicknav_nav .slicknav_parent-link a {
+        display: inline;
+    }
+
+.slicknav_menu:before, .slicknav_menu:after {
+    content: " ";
+    display: table;
+}
+
+.slicknav_menu:after {
+    clear: both;
+}
+/* IE6/7 support */
+.slicknav_menu {
+    *zoom: 1;
+}
+/*  User Default Style Change the following styles to modify the appearance of the menu. */
+.slicknav_menu {
+    font-size: 16px;
+}
+/* Button */
+.slicknav_btn {
+    margin: 5px 5px 20px 0;
+    text-decoration: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-indent: 4px;
+}
+/* Button Text */
+.slicknav_menu .slicknav_menutxt {
+    color: #FFF;
+    font-weight: normal;
+}
+/* Button Lines */
+.slicknav_menu .slicknav_icon-bar {
+    background-color: #f5f5f5;
+}
+
+.slicknav_menu {
+    background: #41414f repeat-x top left;
+    width: 100%;
+    position: relative;
+    z-index: 200;
+}
+
+.slicknav_nav {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 0.875em;
+}
+
+    .slicknav_nav, .slicknav_nav ul {
+        list-style: none;
+        overflow: hidden;
+        background-color: #404040;
+    }
+
+        .slicknav_nav ul {
+            padding: 0;
+            margin: 0 0 0 0px;
+        }
+
+        .slicknav_nav .slicknav_row {
+            margin: 0px;
+        }
+
+        .slicknav_nav a {
+            padding: 8px 10px;
+            margin: 0px;
+            text-decoration: none;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: left;
+            border-bottom: 1px solid #555;
+        }
+
+        .slicknav_nav .slicknav_item a, .slicknav_nav .slicknav_parent-link a {
+            padding: 0;
+            margin: 0;
+        }
+
+        .slicknav_nav .slicknav_row:hover {
+            background: #ccc;
+            color: #fff;
+        }
+
+.slicknav_item.slicknav_row:focus {
+    text-decoration: none;
+    color: #fff;
+}
+
+.slicknav_nav li a:hover {
+    background: #dc4340;
+    color: #fff;
+    text-decoration: none;
+}
+
+.slicknav_nav li a > a:hover {
+    background: #ccc;
+}
+
+.slicknav_nav .slicknav_txtnode {
+    margin-left: 15px;
+}
+
+.slicknav_menu {
+    display: none;
+}
+/* Slick nav css end here*/
+.pwrdlogoMob {
+    display: none;
+}
+
+
+.btn-filter {
+    display: none;
+}
+
+
+@media screen and (max-width:1400px) {
+
+
+    .row1 .innerBlk {
+        margin-bottom: 20px;
+        width: 25%;
+    }
+
+    .dashboard .imw45p {
+        width: 90%!important;
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+
+    .dashboard .imw45p {
+        width: 43% !important;
+    }
+
+    .dashboard .immr23 {
+        margin-right: 3%;
+    }
+        .selDate {
+    width: 100%;
+}
+    
+
+}
+
+@media screen and (max-width:1000px) {
+
+    .Liverfp .imw30p {width:45%!important; padding-top:0px!important;}
+    .Liverfp .imw42p {width:52%!important; }
+
+
+       
+
+    .col-sm-6 {
+    width: 50%;
+    float:left;
+}
+
+    .dashboard .clmn1 {
+        width: 67%;
+    }
+
+    .dashboard .clmn2 {
+        width: 30%;
+    }
+
+    .ftHdr #myNavbar {
+        width: auto;
+        padding: 5px;
+    }
+
+    .slicknav_menu {
+        display: block;
+        background: #666;
+    }
+
+    #fnav {
+        display: none;
+    }
+
+    .stick {
+        display: none;
+    }
+
+    .pwrdlogoMob {
+        display: block;
+    }
+
+    .pwrdLogo {
+        display: none!important;
+    }
+
+    footer p {
+        background: none;
+    }
+
+    .pwrdlogoMob > img {
+        float: left;
+    }
+
+    .modal-footer {
+        padding: 5px!important;
+    }
+
+    .bs-signup {
+        width: 70%;
+    }
+
+    #sticky {
+        width: 30%;
+    }
+
+    .bs-signup .byr {
+        margin: 0px;
+    }
+
+    .arr-byrslr, .bs-signup .byr, .bs-signup .slr {
+        width: 28%;
+        margin: 0px 2%;
+        background-size: contain;
+    }
+
+    #ContentPlaceHolder1_lnkRegBuyerImg > img, #ContentPlaceHolder1_lnkRegSupplierImg > img {
+        width: 100%;
+        height: auto;
+    }
+
+    .nav-infologo img {
+        width: 100%;
+    }
+
+    .indlnkspc {
+        display: none;
+    }
+
+    .bg-gry, .bg-wht {
+        padding: 15px;
+    }
+
+    .ind-wrapper {
+        width: 100%;
+    }
+
+    .wabt-act, .hwitwks, .y-auct, .mulur-svgs, .t-monials {
+        width: 100%;
+    }
+
+        .wabt-act h1, .hwitwks h1, .y-auct h1, .mulur-svgs h1, .t-monials h1 {
+            margin-top: 0px;
+            font-size: 30px;
+        }
+
+    .video iframe {
+        width: 100%;
+    }
+
+    #hRow4 {
+        display: none;
+    }
+
+    .pwrdlogoMob > img {
+        width: 15%;
+    }
+
+    .circles {
+        text-align: center;
+    }
+
+    .y-auct .circles li {
+        display: inline-block;
+        margin: 0 5px;
+    }
+
+    /*inner pages css*/
+    #page-wrapper {
+        padding: 0 0px;
+    }
+
+    .navbar-right {
+        margin-top: 0px;
+    }
+
+    .userInfo {
+        padding: 10px;
+    }
+
+    .main {
+        padding: 0 20px 20px;
+    }
+
+    .dashboard .boostIcn {
+        top: 3px;
+    }
+
+    .dashboard .clmn1 > h2 {
+        font-size: 20px;
+    }
+
+    .row1 .innerBlk {
+        margin-bottom: 20px;
+        width: 94%;
+    }
+
+    .dashboard .imw45p {
+        width: 92% !important;
+    }
+
+
+
+        
+
+    .supplier .termCheckbx {
+        width: 100%;
+    }
+
+    .supplier .rightClmn {
+        width: 100%; margin-top:15px;
+    }
+
+    .supplier .leftClmn {
+    width: 100%;
+}
+
+    .supplier .selOrganization select {
+        width: 117%;
+    }
+
+    .supplier .pmntMode {
+        padding: 10px 5% 10px 0;
+        width: 50%;
+    }
+    .dataTables_filter .form-control {
+    width: auto;
+}
+    .topBlk {
+    padding: 10px 0 0px 0; 
+}
+    .mainHead {
+     margin-bottom:20px; width:100%; float:none; font-size:24px;}
+    .rightBtn {
+    float: none;
+    text-align: center;
+}
+    .topBlk > br {
+    display: none;
+}
+    #ContentPlaceHolder1_xupnlSupplier .rightClmn > br {
+    display: none;
+}
+    .topBlk > .fr {
+    float: none;
+    margin-bottom: 15px;
+    width: 100%;
+}
+       .email .leftBlk {
+    float: none;
+    margin-right: 0;
+    width: 100%;
+}
+
+.mailCategory > li {
+    border-right: 1px solid #ddd;
+    display: inline-block;
+    margin-right: 8px;
+    padding: 0 12px 0 0;
+    position: relative;
+}
+    #demo {
+    background: #eee;
+    
+    position: absolute;
+    z-index: 200;}
+    #demo li{
+    border-bottom: 1px solid #ddd; padding: 0 14px;}
+
+    .email .rightBlk {
+    width: 100%;
+}
+        .insd-wrapper {
+    width: 90%;
+}
+.indx-banr h2 {
+    bottom: 0;
+    font-size: 38px;
+    height: 55px;
+    line-height: 55px;
+    padding: 0 40px;
+    top: 40%;
+}
+    .supplier .rightClmn {
+    margin-top:0px;}
+    .righttbl {
+    margin-top:20px!important;}
+    .imw30p {
+    width: 96%; padding:2%!important;
+}
+    .imw58p {
+    float: left;
+    margin-top: 20px;
+    padding: 3%;
+    width: 94%;
+}
+    .negotiation .clmn1 {
+    width:100%; margin-right:0px; }
+    
+.negotiation .imw62p {
+    margin-top: 20px;
+    width: 100%;
+}
+.negotiation .clmn2 {
+    width: 100%;
+    margin-top: 20px;
+}
+.rightBtn > li {
+    margin-bottom: 5px;
+}
+    #divLiveDet .accordion_container {
+    padding:3%!important;
+    width:94%!important;
+    
+    }
+     .dealHdr .dealImg img {
+    width:100%; height:auto;}
+/*help panel css*/
+.srh-help { display: none; }
+.btn-help { display: block; position: absolute; right: 0; top: 150px; z-index: 300000; cursor: pointer;}
+.HelpMoveRight { display: block; z-index: 2147483647; top: 1px; right: 0px; height:100%; background: #fff; margin-right: -768px; position: absolute; width: 60%; }
+.helpBlockAll { z-index: 22000; width: 120%; height: 100%; background: black; opacity: .5; filter: alpha(opacity=40); position: fixed; left:0px; display: none; top: 0px; }
+
+    .imw72p {
+    width: 100%;
+}
+    .imw32p {
+    margin-bottom: 10px;
+    width: 100%;
+}
+}
+
+/* ################################################################################################################## */
+
+@media screen and (max-width:520px) {
+
+     .Liverfp .imw30p {width:100%!important; padding-top:0px!important;}
+    .Liverfp .imw42p {width:100%!important; }
+
+    .navbar-top-links .dropdown-user {
+    left: 0;
+    right:0px;
+}
+
+    .dealHdr .dealImg {
+    margin: 0 5% 20px 0;
+    padding: 3%;
+    width: 25%;
+}
+
+    .dealHdr .dealCont {
+    width: 70%;
+}
+    .dealHdr .dealImg img {
+    width:100%; height:auto;}
+
+    .prodList > img {
+    float: left;
+    height: auto !important;
+    width: 20% !important;
+}
+
+    .prodDetail {
+    width: 65%;
+}
+    .upload a {
+    font-size: 12px;
+}
+
+    .accordion_container h3 {
+    font-size:14px;}
+    .accordion_container {
+    margin-left: 0;
+    width: 100%;
+}
+    .leftMenu ul li input[type="radio"] {
+    margin: 10px 0;
+    }
+    .buyerli, .supplierli {
+    width:50%; float:left;}
+    .leftMenu ul li a { height: 30px;
+    }
+    .leftMenu {
+    width:100%;}
+    .insd-wrapper {
+    top: -23px;
+    width: 90%;
+}
+    .indx-banr h2 {
+    bottom: 0;
+    font-size: 22px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 40px;
+    top: 45%;
+}
+    .plusminus {
+    top: 6px;
+}
+
+    .msgMore #divProfileDet {
+    min-height: auto;
+    position: relative;
+    top: 0;
+    width: 100%;
+}
+
+.msgMore .col-profileData {
+    border-top: 0 none;
+    margin-left: 0;
+    width: 100%;
+}
+        #tblList_wrapper .col-sm-6 {
+    width: 100%;
+}
+    .loginDetail {
+    border-right: 0 solid #cccccc;
+    float: left;
+    font-size: 12px;
+    padding: 2% 0 0 8%;
+    width: 100%;
+}
+
+.signupInfo {
+    border-top: 1px solid #ddd;
+    margin-top: 4%;
+    padding: 5% 0 5% 5%;
+    width: 100%;
+}
+
+
+    .email .rightBlk {
+    float: left;
+    width: 100%;
+}
+    .comingBg {
+ background-size:cover;
+}
+    .main {
+    padding: 0 10px 20px;
+}
+    .icnTime.hasTimepicker, .icnCal.hasDatepicker {
+    width: 100%;
+}
+    .whiteBox label, .editRFP label {
+    font-size:14px;}
+     .btnBlk {padding: 10px 15px!important;}
+     .mainHead {font-size:20px;}
+    /*inner pages css start here*/
+    .userInfo > img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .userName {
+        margin: 0 0 0 15px;
+    }
+
+    /*inner pages css end here*/
+
+
+    .wabt-act h1, .hwitwks h1, .y-auct h1, .mulur-svgs h1, .t-monials h1 {
+        margin-top: 0px;
+        font-size: 20px;
+    }
+
+    #sticky > div {
+        display: none;
+    }
+
+    #sticky {
+        display: none;
+    }
+
+    .bs-signup {
+        width: 100%;
+    }
+
+        .arr-byrslr, .bs-signup .byr, .bs-signup .slr {
+            width: 96%;
+        }
+
+    #ContentPlaceHolder1_lnkRegBuyerImg > img, #ContentPlaceHolder1_lnkRegSupplierImg > img {
+        height: auto;
+        width: auto;
+    }
+
+    .arr-byrslr, .bs-signup .byr, .bs-signup .slr {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .carousel-control .fa.fa-angle-left, .carousel-control .fa.fa-angle-right {
+        font-size: 45px;
+        top: 30%;
+    }
+
+    .rowTestimonial .glyphicon.glyphicon-chevron-left {
+        margin-left: -30px;
+    }
+
+    .rowTestimonial .glyphicon.glyphicon-chevron-right {
+        margin-right: -30px;
+    }
+
+    .infilogo {
+        margin-top: 0;
+        width: 65%;
+    }
+
+    .pwrdlogoMob > img {
+        width: 25%; padding:2% 0;
+    }
+
+    .srh-filter {
+        display: none;
+    }
+
+    .btn-filter {
+        background-color: #dc4340;
+        color: #fff;
+        display: block;
+        margin-top: 15px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .HotelMoveLeft {
+        display: block;
+        z-index: 2147483647;
+        top: -12px;
+        height:100%;
+        left: -8px;
+        background: #fff;
+        margin-left: -768px;
+        position: absolute;
+        width: 60%!important;
+    }
+
+    .divBlockAll {
+        z-index: 22000;
+        float: left;
+        height: 900px;
+        width: 120%;
+        background: black;
+        opacity: .5;
+        margin-left: -20px;
+        filter: alpha(opacity=40);
+        position: fixed;
+        display: none;
+        top: -130px;
+    }
+
+    .srh-filter {
+        float: left;
+        width: 22%;
+        padding: 10px;
+    }
+
+    .dashboard .clmn1 {
+        width: 100%;
+    }
+
+    .supplier input, .supplier textarea, .payment input, .editRFP input, .editRFP textarea {
+    padding: 10px 0;
+}
+    .whiteBox {
+    overflow:hidden;}
+    #tblList_filter label {
+    float: left;
+}
+    .col-sm-6 {
+    float: none; width:100%;
+}
+}

@@ -1,0 +1,1312 @@
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Test, App_Web_test.aspx.cdcab7d2" %>
+
+<!DOCTYPE html>
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<title>Black Eagle Books
+    </title>
+	<!-- SEO Meta Tags-->
+	<meta name="description" content="Black Eagle Books">
+	<meta name="keywords"
+		content="Books, Education, Autobiography & Tablets,  Culture, Fiction,  History, Memoir,  Mythology, Non-Fiction,  Novel,  Poetry,  Science,  Short Story,  Translation, Travelog ">
+	<meta name="author" content="Black Eagle Books">
+	<!-- Viewport-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Favicon and Touch Icons-->
+	<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="mask-icon" color="#fe6a6a" href="safari-pinned-tab.svg">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#ffffff">
+	<!-- Vendor Styles including: Font Icons, Plugins, etc.-->
+	<link rel="stylesheet" media="screen" href="js/vendor/simplebar/dist/simplebar.min.css" />
+	<link rel="stylesheet" media="screen" href="js/vendor/tiny-slider/dist/tiny-slider.css" />
+	<link rel="stylesheet" media="screen" href="js/vendor/drift-zoom/dist/drift-basic.min.css" />
+	<link rel="stylesheet" media="screen" href="js/vendor/lightgallery.js/dist/css/lightgallery.min.css" />
+	<!-- Main Theme Styles + Bootstrap-->
+	<link rel="stylesheet" media="screen" href="css/theme.min.css">
+
+	<link rel="stylesheet" media="screen" href="css/main.css">
+</head>
+<!-- Body-->
+
+<body class="toolbar-enabled page">
+	<form id="form1" runat="server">
+		<asp:ScriptManager ID="xScrMgrMaster" runat="server">
+			<Scripts>
+				<asp:ScriptReference Path="~/js/vendor/jquery/dist/jquery-3.5.1.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/bootstrap/dist/js/bootstrap.bundle.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/bs-custom-file-input/dist/bs-custom-file-input.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/simplebar/dist/simplebar.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/tiny-slider/dist/min/tiny-slider.js" />
+				<asp:ScriptReference Path="~/js/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/drift-zoom/dist/Drift.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/lightgallery.js/dist/js/lightgallery.min.js" />
+				<asp:ScriptReference Path="~/js/vendor/lg-video.js/dist/lg-video.min.js" />
+				<%--<asp:ScriptReference Path="~/js/theme.min.js" />--%>
+				<asp:ScriptReference Path="~/js/web.comm-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.nav-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.req-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.form.req-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.form.ctrl-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.cart-1.0.js" />
+				<asp:ScriptReference Path="~/js/web.comm.page-1.0.js" />
+			</Scripts>
+		</asp:ScriptManager>
+		<!-- Sign in / sign up modal-->
+		<div class="modal fade" id="signin-modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<ul class="nav nav-tabs card-header-tabs" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active" href="#signin-tab" data-toggle="tab" role="tab"
+									aria-selected="true"><i class="czi-unlocked mr-2 mt-n1"></i>Sign in</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#signup-tab" data-toggle="tab" role="tab"
+									aria-selected="false"><i class="czi-user mr-2 mt-n1"></i>Sign up</a>
+							</li>
+						</ul>
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body tab-content py-4">
+						<form class="needs-validation tab-pane fade show active" autocomplete="off" novalidate id="signin-tab">
+							<div class="form-group">
+								<label for="si-email">Email address</label>
+								<input class="form-control" type="email" id="si-email" placeholder="johndoe@example.com" required>
+								<div class="invalid-feedback">Please provide a valid email address.</div>
+							</div>
+							<div class="form-group">
+								<label for="si-password">Password</label>
+								<div class="password-toggle">
+									<input class="form-control" type="password" id="si-password" required>
+									<label class="password-toggle-btn">
+										<input class="custom-control-input" type="checkbox"><i class="czi-eye password-toggle-indicator"></i><span class="sr-only">Show password</span>
+									</label>
+								</div>
+							</div>
+							<div class="form-group d-flex flex-wrap justify-content-between">
+								<div class="custom-control custom-checkbox mb-2">
+									<input class="custom-control-input" type="checkbox" id="si-remember">
+									<label class="custom-control-label" for="si-remember">Remember me</label>
+								</div>
+								<a class="font-size-sm" href="account-password-recovery.html">Forgot password?</a>
+							</div>
+							<button onclick="window.location.href='/account-profile.html'" class="btn btn-primary btn-block btn-shadow"
+								type="submit">
+								Sign in
+                       
+							</button>
+						</form>
+						<form class="needs-validation tab-pane fade" autocomplete="off" novalidate id="signup-tab">
+							<div class="form-group">
+								<label for="su-name">Full name</label>
+								<input class="form-control" type="text" id="su-name" placeholder="John Doe" required>
+								<div class="invalid-feedback">Please fill in your name.</div>
+							</div>
+							<div class="form-group">
+								<label for="su-email">Email address</label>
+								<input class="form-control" type="email" id="su-email" placeholder="johndoe@example.com" required>
+								<div class="invalid-feedback">Please provide a valid email address.</div>
+							</div>
+							<div class="form-group">
+								<label for="su-password">Password</label>
+								<div class="password-toggle">
+									<input class="form-control" type="password" id="su-password" required>
+									<label class="password-toggle-btn">
+										<input class="custom-control-input" type="checkbox"><i class="czi-eye password-toggle-indicator"></i><span class="sr-only">Show password</span>
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="su-password-confirm">Confirm password</label>
+								<div class="password-toggle">
+									<input class="form-control" type="password" id="su-password-confirm" required>
+									<label class="password-toggle-btn">
+										<input class="custom-control-input" type="checkbox"><i class="czi-eye password-toggle-indicator"></i><span class="sr-only">Show password</span>
+									</label>
+								</div>
+							</div>
+							<button class="btn btn-primary btn-block btn-shadow" type="submit">Sign up</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Navbar-->
+		<!-- Quick View Modal-->
+		<div class="modal-quick-view modal fade" id="quick-view-electro" tabindex="-1">
+			<div class="modal-dialog modal-xl">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title product-title">
+							<a href="shop-single-v2.html" data-toggle="tooltip"
+								data-placement="right" title="Go to product page">Treasure Walks<i class="czi-arrow-right font-size-lg ml-2"></i>
+							</a>
+						</h4>
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<!-- Product gallery-->
+							<div class="col-lg-5 pr-lg-0">
+								<div class="cz-product-gallery">
+									<div class="cz-preview order-sm-2">
+										<div class="cz-preview-item active" id="first">
+											<img class="cz-image-zoom" src="images/book_01.png"
+												data-zoom="images/book_01.png" alt="Product image">
+											<div class="cz-image-zoom-pane"></div>
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+							<!-- Product details-->
+							<div class="col-lg-7 pt-4 pt-lg-0 cz-image-zoom-pane">
+								<div class=" ml-auto pb-3">
+
+									<div class="h3 font-weight-normal text-accent mb-3 mr-1">$12.<small>99</small></div>
+									<div class="font-size-sm mb-4">
+										<span class="text-heading font-weight-medium mr-1">By: Prasanta
+                                        Behera
+                                    </span>
+									</div>
+
+									<div class="d-flex align-items-center pt-2 pb-4">
+										<select class="custom-select mr-3" style="width: 5rem;">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>
+										<button class="btn btn-primary " type="button" data-toggle="toast" data-target="#cart-toast">
+											<i class="czi-cart font-size-lg mr-2"></i>ADD
+                                   
+										</button>
+									</div>
+
+									<h5 class="h6 mb-3 py-2 border-bottom">
+										<i class="czi-announcement text-muted font-size-lg align-middle mt-n1 mr-2"></i>Product info
+                                </h5>
+									<h6 class="font-size-sm mb-2">Product Detail</h6>
+									<ul class="font-size-sm pb-2">
+										<li><span class="text-muted">ISBN-13: </span>978-1645600817</li>
+										<li><span class="text-muted">Publisher: </span>BLACK EAGLE BOOKS</li>
+										<li><span class="text-muted">ISBN-10: </span>1645600815</li>
+										<li><span class="text-muted">Publisher Date: </span>10-Jun-2020</li>
+									</ul>
+									<h6 class="font-size-sm mb-2">ABOUT THE BOOK</h6>
+									<p class="font-size-sm pb-2">
+										<span class="text-muted">Walks that remain in the heart remind us of memories and connections allows us to carry our journey
+                                        from today to tomorrow. In many such walks (or hikes) alone, I have started to observe little things
+                                        unnoticed before. I have captured some of those memories, observations and conscious thoughts as
+                                        "Treasure Walks". May you find your own reflective thoughts in your walks.
+
+                               
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Navbar Electronics Store-->
+		<header class="box-shadow-sm">
+
+			<div class="navbar-sticky ">
+
+				<div class="navbar navbar-expand-lg navbar-light">
+					<div class="container ">
+						<!-- Departments menu-->
+						<ul class="navbar-nav mega-nav pr-lg-2 mr-lg-2" id="navbarCollapse">
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle pl-0" href="#" data-toggle="dropdown">
+									<i class="czi-menu align-middle mt-n1 mr-2"></i>Menu
+                            </a>
+								<ul class="dropdown-menu">
+									<li class="dropdown mega-dropdown">
+										<a class="dropdown-item dropdown-toggle" href="#"
+											data-toggle="dropdown"><i class="czi-laptop opacity-60 font-size-lg mt-n1 mr-2"></i>Bookshop</a>
+										<div class="dropdown-menu p-0">
+											<div class="d-flex flex-wrap flex-md-nowrap px-2">
+												<div class="mega-dropdown-column py-4 px-3">
+													<div class="widget widget-links">
+														<!-- <h6 class="font-size-base mb-3">Computers</h6> -->
+														<ul class="widget-list">
+															<li class="widget-list-item pb-1">
+																<a class="widget-list-link"
+																	href="shop-grid-ls.html">Autobiography
+                                                                &amp; Tablets
+                                                            </a>
+															</li>
+															<li class="widget-list-item pb-1">
+																<a class="widget-list-link"
+																	href="shop-grid-ls.html">Culture</a>
+															</li>
+															<li class="widget-list-item pb-1">
+																<a class="widget-list-link"
+																	href="shop-grid-ls.html">Fiction
+                                                            </a>
+															</li>
+															<li class="widget-list-item pb-1">
+																<a class="widget-list-link"
+																	href="shop-grid-ls.html">History</a>
+															</li>
+															<li class="widget-list-item pb-1">
+																<a class="widget-list-link"
+																	href="shop-grid-ls.html">Memoir</a>
+															</li>
+															<li class="widget-list-item pb-1">
+																<a class="widget-list-link"
+																	href="shop-grid-ls.html">Mythology</a>
+															</li>
+															<li class="widget-list-item pb-1">
+																<a class="widget-list-link"
+																	href="shop-grid-ls.html">Non-Fiction</a>
+															</li>
+															<li class="widget-list-item pb-1">
+																<a class="widget-list-link"
+																	href="shop-grid-ls.html">Novel</a>
+															</li>
+															<li class="widget-list-item pb-1">
+																<a class="widget-list-link"
+																	href="shop-grid-ls.html">Poetry</a>
+															</li>
+															<li class="widget-list-item pb-1">
+																<a class="widget-list-link"
+																	href="shop-grid-ls.html">Science</a>
+															</li>
+															<li class="widget-list-item pb-1">
+																<a class="widget-list-link" href="shop-grid-ls.html">Short
+                                                                Story
+                                                            </a>
+															</li>
+															<li class="widget-list-item pb-1">
+																<a class="widget-list-link"
+																	href="shop-grid-ls.html">Translation </a>
+															</li>
+															<li class="widget-list-item pb-1">
+																<a class="widget-list-link"
+																	href="shop-grid-ls.html">Travelog </a>
+															</li>
+														</ul>
+													</div>
+												</div>
+
+												<div class="mega-dropdown-column d-none d-lg-block py-4 text-center">
+													<a class="d-block mb-2"
+														href="#">
+														<img src="images/book_01.png" alt="Computers & Accessories" /></a>
+													<div class="font-size-sm mb-3">
+														Starting from <span class='font-weight-medium'>$149.<small>80</small></span>
+													</div>
+													<a class="btn btn-primary btn-shadow btn-sm" href="shop-grid-ls.html">See offers<i class="czi-arrow-right font-size-xs ml-1"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="widget1">
+										<a class="widget-list-link" href="donate.html" data-toggle="">Donate</a>
+									</li>
+									<li class="widget1">
+										<a class="widget-list-link" href="authors.html" data-toggle="">Authors</a>
+									</li>
+									<li class="widget1">
+										<a class="widget-list-link" href="adoptBook.html" data-toggle="">Adopt a Book</a>
+									</li>
+									<li class="widget1">
+										<a class="widget-list-link" href="publishbooks.html" data-toggle="">Publish your
+                                        Book
+                                    </a>
+									</li>
+									<li class="widget1">
+										<a class="widget-list-link" href="about.html" data-toggle="dropdown">About Us </a>
+									</li>
+									<li class="widget1">
+										<a class="widget-list-link" href="contacts.html" data-toggle="">Contact Us </a>
+									</li>
+
+								</ul>
+							</li>
+						</ul>
+
+						<a class="navbar-brand d-none d-sm-block mr-3 flex-shrink-0" href="index.html" style="min-width: 7rem;">
+							<img width="150" src="images/blackBook_logo.png" alt="Black Eagle Books" />
+						</a><a class="navbar-brand d-sm-none mr-2" href="index.html" style="min-width: 8.625rem;">
+							<img width="74"
+								src="images/blackBook_logo.png" alt="Black Eagle Books" />
+						</a>
+						<!-- Search-->
+						<div class="input-group-overlay d-none d-lg-block mx-4">
+
+							<input class="form-control prepended-form-control appended-form-control" type="text"
+								placeholder="Search your favorite Books">
+							<a href="shop-grid-ls.html" class="input-group-prepend-overlay">
+								<span class="input-group-text">
+									<i class="czi-search"></i>
+								</span>
+							</a>
+
+						</div>
+						<!-- Toolbar-->
+						<div class="navbar-toolbar d-flex flex-shrink-0 align-items-center">
+							<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"><span
+                            class="navbar-toggler-icon"></span></button>
+                            <a class="navbar-tool navbar-stuck-toggler"
+                          href="#"><span class="navbar-tool-tooltip">Expand menu</span>
+                          <div class="navbar-tool-icon-box"><i class="navbar-tool-icon czi-menu"></i></div>
+                        </a> -->
+
+							<a class="navbar-tool ml-1 ml-lg-0 mr-n1 mr-lg-2 dmNone" href="#signin-modal" data-toggle="modal">
+								<div class="navbar-tool-icon-box"><i class="navbar-tool-icon czi-user"></i></div>
+								<div class="navbar-tool-text ml-n3"><small>Hello, Sign in</small>My Account</div>
+							</a>
+							<!-- <a class="navbar-tool ml-1 ml-lg-0 mr-n1 mr-lg-2 " href="account-profile.html">
+                          <div class="navbar-tool-icon-box"><i class="navbar-tool-icon czi-user"></i></div>
+                          <div class="navbar-tool-text ml-n3"><small>Hello, Bijay</small>My Account</div>
+                        </a> -->
+							<div class="navbar-tool dropdown ml-3 dmNone">
+								<a class="navbar-tool-icon-box bg-secondary dropdown-toggle"
+									href="shop-cart.html">
+									<span class="navbar-tool-label">4</span><i class="navbar-tool-icon czi-cart"></i>
+								</a><a class="navbar-tool-text" href="shop-cart.html">
+									<small>My
+                                    Cart
+                                </small>$1,247.00
+                            </a>
+								<!-- Cart dropdown-->
+								<div class="dropdown-menu dropdown-menu-right" style="width: 20rem;">
+									<div class="widget widget-cart px-3 pt-2 pb-3">
+										<div style="height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
+											<div class="widget-cart-item pb-2 border-bottom">
+												<button class="close text-danger" type="button" aria-label="Remove">
+													<span aria-hidden="true">&times;</span>
+												</button>
+												<div class="media align-items-center">
+													<a class="d-block mr-2" href="shop-single-v2.html">
+														<img width="64" src="images/book_01.png" alt="Product" />
+													</a>
+													<div class="media-body">
+														<h6 class="widget-product-title">
+															<a href="shop-single-v2.html">Labanyabatee O Anyanya
+                                                            Galpa
+                                                        </a>
+														</h6>
+														<div class="widget-product-meta">
+															<span class="text-accent mr-2">$25.<small>00</small></span><span class="text-muted">x 1</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="widget-cart-item pb-2 border-bottom">
+												<button class="close text-danger" type="button" aria-label="Remove">
+													<span aria-hidden="true">&times;</span>
+												</button>
+												<div class="media align-items-center">
+													<a class="d-block mr-2" href="shop-single-v2.html">
+														<img width="64" src="images/book_01.png" alt="Product" />
+													</a>
+													<div class="media-body">
+														<h6 class="widget-product-title">
+															<a href="shop-single-v2.html">Labanyabatee O Anyanya
+                                                            Galpa
+                                                        </a>
+														</h6>
+														<div class="widget-product-meta">
+															<span class="text-accent mr-2">$25.<small>00</small></span><span class="text-muted">x 1</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="widget-cart-item pb-2 border-bottom">
+												<button class="close text-danger" type="button" aria-label="Remove">
+													<span aria-hidden="true">&times;</span>
+												</button>
+												<div class="media align-items-center">
+													<a class="d-block mr-2" href="shop-single-v2.html">
+														<img width="64" src="images/book_01.png" alt="Product" />
+													</a>
+													<div class="media-body">
+														<h6 class="widget-product-title">
+															<a href="shop-single-v2.html">Labanyabatee O Anyanya
+                                                            Galpa
+                                                        </a>
+														</h6>
+														<div class="widget-product-meta">
+															<span class="text-accent mr-2">$25.<small>00</small></span><span class="text-muted">x 1</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="widget-cart-item pb-2 border-bottom">
+												<button class="close text-danger" type="button" aria-label="Remove">
+													<span aria-hidden="true">&times;</span>
+												</button>
+												<div class="media align-items-center">
+													<a class="d-block mr-2" href="shop-single-v2.html">
+														<img width="64" src="images/book_01.png" alt="Product" />
+													</a>
+													<div class="media-body">
+														<h6 class="widget-product-title">
+															<a href="shop-single-v2.html">Labanyabatee O Anyanya
+                                                            Galpa
+                                                        </a>
+														</h6>
+														<div class="widget-product-meta">
+															<span class="text-accent mr-2">$25.<small>00</small></span><span class="text-muted">x 1</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex flex-wrap justify-content-between align-items-center py-3">
+											<div class="font-size-sm mr-2 py-2">
+												<span class="text-muted">Subtotal:</span><span class="text-accent font-size-base ml-1">$1,247.<small>00</small></span>
+											</div>
+											<a class="btn btn-outline-secondary btn-sm" href="shop-cart.html">Expand cart<i class="czi-arrow-right ml-1 mr-n1"></i>
+											</a>
+										</div>
+										<a class="btn btn-primary btn-sm btn-block" href="checkout-details.html">
+											<i class="czi-card mr-2 font-size-base align-middle"></i>Checkout
+                                    </a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</header>
+		<!-- Page title-->
+		<!-- Page Content-->
+		<!-- Hero (Banners + Slider)-->
+		<section class=" ">
+			<div class="container py-xl-2">
+				<div class="row">
+					<!-- Slider     -->
+					<div class="col-xl-12 order-xl-2">
+						<div class="cz-carousel">
+							<div class="cz-carousel-inner"
+								data-carousel-options="{&quot;items&quot;: 1, &quot;controls&quot;: false, &quot;loop&quot;: true, &quot;autoplay&quot;:true}">
+								<div>
+									<div class="row align-items-center">
+										<div class="col-xl-12 order-md-2">
+											<img class="d-block mx-auto" src="images/img-01.png"
+												alt="VR Collection">
+										</div>
+										<!-- <div
+                                      class="banContHdr col-lg-5 col-md-6 offset-lg-1 order-md-1 pt-4 pb-md-4 text-center text-md-left">
+                                      <h2 class="font-weight-light pb-1 from-bottom">World of music with</h2>
+                                      <h1 class="display-4 from-bottom delay-1">Headphones</h1>
+                                      <h5 class="font-weight-light pb-3 from-bottom delay-2">Choose between top brands</h5><a
+                                        class="btn btn-primary btn-shadow scale-up delay-4" href="shop-grid-ls.html">Shop Now<i
+                                          class="czi-arrow-right ml-2 mr-n1"></i></a>
+                                    </div> -->
+									</div>
+								</div>
+								<div>
+									<div class="row align-items-center">
+										<div class="col-xl-12 order-md-2">
+											<img class="d-block mx-auto" src="images/ban_01.jpg"
+												alt="VR Collection">
+										</div>
+										<div class="banContHdr col-lg-5 col-md-6 ml-5 order-md-1 pt-4 pb-md-4 text-center text-md-left">
+											<h2 class="font-weight-light pb-1 from-bottom">World of books </h2>
+											<h1 class="display-6 from-bottom delay-1">Buy, Sell, Donate & Publish</h1>
+											<!-- <h5 class="font-weight-light pb-3 from-bottom delay-2">y</h5> -->
+											<a class="btn btn-primary btn-shadow scale-up delay-4" href="shop-grid-ls.html">Shop Now<i class="czi-arrow-right ml-2 mr-n1"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Products grid (Trending products)-->
+		<div class="sechHdr container ">
+			<div class="searchCol">
+				<label>Select Language</label>
+				<select class="custom-select">
+					<option>All Language</option>
+					<option>English</option>
+					<option>Hindi</option>
+					<option>Odia</option>
+				</select>
+			</div>
+			<div class="searchCol ">
+				<label>Select Category</label>
+				<select class="custom-select">
+					<option>All categories</option>
+					<option>Autobiography
+                </option>
+					<option>Culture
+                </option>
+					<option>Fiction
+                </option>
+					<option>History
+                </option>
+					<option>Memoir
+                </option>
+					<option>Mythology
+                </option>
+					<option>Non-Fiction
+                </option>
+					<option>Novel
+                </option>
+					<option>Poetry
+                </option>
+					<option>Science
+                </option>
+					<option>Short Story
+                </option>
+					<option>Translation
+                </option>
+					<option>Travelog
+                </option>
+
+				</select>
+			</div>
+		</div>
+		<section class="container ">
+
+			<!-- Heading-->
+			<div class="d-flex flex-wrap justify-content-between align-items-center  pb-2 mb-2">
+				<h2 class="h3 mb-0 pt-3 mr-2">New Arrival</h2>
+				<div class="pt-3">
+					<a class="btn btn-outline-accent btn-sm" href="shop-grid-ls.html">More Books<i class="czi-arrow-right ml-1 mr-n1"></i>
+					</a>
+				</div>
+			</div>
+			<!-- Grid-->
+			<div class="row pt-2 mx-n2">
+				<!-- Product-->
+				<div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
+					<div class="card product-card">
+						<div class="product-card-actions d-flex align-items-center">
+							<button class="btn-wishlist btn-sm" type="button" data-toggle="tooltip" data-placement="left"
+								title="Add to wishlist">
+								<i class="czi-heart"></i>
+							</button>
+						</div>
+						<a class="card-img-top d-block overflow-hidden" href="shop-single-v2.html">
+							<img src="images/book_01.png"
+								alt="Product">
+						</a>
+						<div class="card-body py-2">
+							<h3 class="product-title font-size-sm">
+								<a href="shop-single-v2.html">Treasure Walks
+                            </a>
+							</h3>
+							<!-- <a class="product-meta d-block font-size-xs pb-1" href="#">By: Prasanta
+                          Behera</a> -->
+							<div class="d-flex justify-content-between cardPricHdr">
+								<div class="product-price"><span class="text-accent">$19.<small>00</small></span></div>
+
+								<button class="btn btn-primary btn-sm mb-2" type="button" data-toggle="toast" data-target="#cart-toast">
+									<i class="czi-cart font-size-sm mr-1"></i>ADD
+                           
+								</button>
+
+							</div>
+						</div>
+						<div class="card-body card-body-hidden">
+
+							<div class="text-center">
+								<a class="nav-link-style font-size-ms" href="#quick-view-electro"
+									data-toggle="modal"><i class="czi-eye align-middle mr-1"></i>Quick view</a>
+							</div>
+						</div>
+					</div>
+					<hr class="d-sm-none">
+				</div>
+				<!-- Product-->
+				<div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
+					<div class="card product-card">
+						<div class="product-card-actions d-flex align-items-center">
+							<button class="btn-wishlist btn-sm" type="button" data-toggle="tooltip" data-placement="left"
+								title="Add to wishlist">
+								<i class="czi-heart"></i>
+							</button>
+						</div>
+						<a class="card-img-top d-block overflow-hidden" href="shop-single-v2.html">
+							<img src="images/book_01.png"
+								alt="Product">
+						</a>
+						<div class="card-body py-2">
+							<h3 class="product-title font-size-sm">
+								<a href="shop-single-v2.html">Treasure Walks
+                            </a>
+							</h3>
+							<!-- <a class="product-meta d-block font-size-xs pb-1" href="#">By: Prasanta
+                        Behera</a> -->
+							<div class="d-flex justify-content-between cardPricHdr">
+								<div class="product-price"><span class="text-accent">$19.<small>00</small></span></div>
+
+								<button class="btn btn-primary btn-sm mb-2" type="button" data-toggle="toast" data-target="#cart-toast">
+									<i class="czi-cart font-size-sm mr-1"></i>ADD
+                           
+								</button>
+
+							</div>
+						</div>
+						<div class="card-body card-body-hidden">
+
+							<div class="text-center">
+								<a class="nav-link-style font-size-ms" href="#quick-view-electro"
+									data-toggle="modal"><i class="czi-eye align-middle mr-1"></i>Quick view</a>
+							</div>
+						</div>
+					</div>
+					<hr class="d-sm-none">
+				</div>
+				<!-- Product-->
+				<div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
+					<div class="card product-card">
+						<div class="product-card-actions d-flex align-items-center">
+							<button class="btn-wishlist btn-sm" type="button" data-toggle="tooltip" data-placement="left"
+								title="Add to wishlist">
+								<i class="czi-heart"></i>
+							</button>
+						</div>
+						<a class="card-img-top d-block overflow-hidden" href="shop-single-v2.html">
+							<img src="images/book_01.png"
+								alt="Product">
+						</a>
+						<div class="card-body py-2">
+							<h3 class="product-title font-size-sm">
+								<a href="shop-single-v2.html">Treasure Walks
+                            </a>
+							</h3>
+							<!-- <a class="product-meta d-block font-size-xs pb-1" href="#">By: Prasanta
+                          Behera</a> -->
+							<div class="d-flex justify-content-between cardPricHdr">
+								<div class="product-price"><span class="text-accent">$19.<small>00</small></span></div>
+
+								<button class="btn btn-primary btn-sm mb-2" type="button" data-toggle="toast" data-target="#cart-toast">
+									<i class="czi-cart font-size-sm mr-1"></i>ADD
+                           
+								</button>
+
+							</div>
+						</div>
+						<div class="card-body card-body-hidden">
+
+							<div class="text-center">
+								<a class="nav-link-style font-size-ms" href="#quick-view-electro"
+									data-toggle="modal"><i class="czi-eye align-middle mr-1"></i>Quick view</a>
+							</div>
+						</div>
+					</div>
+					<hr class="d-sm-none">
+				</div>
+				<!-- Product-->
+				<div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
+					<div class="card product-card">
+						<div class="product-card-actions d-flex align-items-center">
+							<button class="btn-wishlist btn-sm" type="button" data-toggle="tooltip" data-placement="left"
+								title="Add to wishlist">
+								<i class="czi-heart"></i>
+							</button>
+						</div>
+						<a class="card-img-top d-block overflow-hidden" href="shop-single-v2.html">
+							<img src="images/book_01.png"
+								alt="Product">
+						</a>
+						<div class="card-body py-2">
+							<h3 class="product-title font-size-sm">
+								<a href="shop-single-v2.html">Treasure Walks
+                            </a>
+							</h3>
+							<!-- <a class="product-meta d-block font-size-xs pb-1" href="#">By: Prasanta
+                          Behera</a> -->
+							<div class="d-flex justify-content-between cardPricHdr">
+								<div class="product-price"><span class="text-accent">$19.<small>00</small></span></div>
+
+								<button class="btn btn-primary btn-sm mb-2" type="button" data-toggle="toast" data-target="#cart-toast">
+									<i class="czi-cart font-size-sm mr-1"></i>ADD
+                           
+								</button>
+
+							</div>
+						</div>
+						<div class="card-body card-body-hidden">
+
+							<div class="text-center">
+								<a class="nav-link-style font-size-ms" href="#quick-view-electro"
+									data-toggle="modal"><i class="czi-eye align-middle mr-1"></i>Quick view</a>
+							</div>
+						</div>
+					</div>
+					<hr class="d-sm-none">
+				</div>
+				<!-- Product-->
+		</section>
+		<!-- product 2 -->
+		<section class="container  ">
+
+			<!-- Heading-->
+			<div class="d-flex flex-wrap justify-content-between align-items-center pt-1 pb-1 mb-1">
+				<div class="bookTag">
+					<a href="#" class="h3 mb-0 mr-2 active">Best Selling Books</a> <span>/</span>
+					<a href="#" class="h3 mb-0 mr-2">Academic Books</a>
+				</div>
+				<div class="">
+					<a class="btn btn-outline-accent btn-sm" href="shop-grid-ls.html">More Books<i class="czi-arrow-right ml-1 mr-n1"></i>
+					</a>
+				</div>
+			</div>
+			<!-- Grid-->
+			<div class="row pt-2 mx-n2">
+				<!-- Product-->
+				<div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
+					<div class="card product-card">
+						<div class="product-card-actions d-flex align-items-center">
+							<button class="btn-wishlist btn-sm" type="button" data-toggle="tooltip" data-placement="left"
+								title="Add to wishlist">
+								<i class="czi-heart"></i>
+							</button>
+						</div>
+						<a class="card-img-top d-block overflow-hidden" href="shop-single-v2.html">
+							<img src="images/book_01.png"
+								alt="Product">
+						</a>
+						<div class="card-body py-2">
+							<h3 class="product-title font-size-sm">
+								<a href="shop-single-v2.html">Treasure Walks
+                            </a>
+							</h3>
+							<!-- <a class="product-meta d-block font-size-xs pb-1" href="#">By: Prasanta
+                        Behera</a> -->
+							<div class="d-flex justify-content-between cardPricHdr">
+								<div class="product-price"><span class="text-accent">$19.<small>00</small></span></div>
+
+								<button class="btn btn-primary btn-sm mb-2" type="button" data-toggle="toast" data-target="#cart-toast">
+									<i class="czi-cart font-size-sm mr-1"></i>ADD
+                           
+								</button>
+
+							</div>
+						</div>
+						<div class="card-body card-body-hidden">
+
+							<div class="text-center">
+								<a class="nav-link-style font-size-ms" href="#quick-view-electro"
+									data-toggle="modal"><i class="czi-eye align-middle mr-1"></i>Quick view</a>
+							</div>
+						</div>
+					</div>
+					<hr class="d-sm-none">
+				</div>
+				<!-- Product-->
+				<div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
+					<div class="card product-card">
+						<div class="product-card-actions d-flex align-items-center">
+							<button class="btn-wishlist btn-sm" type="button" data-toggle="tooltip" data-placement="left"
+								title="Add to wishlist">
+								<i class="czi-heart"></i>
+							</button>
+						</div>
+						<a class="card-img-top d-block overflow-hidden" href="shop-single-v2.html">
+							<img src="images/book_01.png"
+								alt="Product">
+						</a>
+						<div class="card-body py-2">
+							<h3 class="product-title font-size-sm">
+								<a href="shop-single-v2.html">Treasure Walks
+                            </a>
+							</h3>
+							<!-- <a class="product-meta d-block font-size-xs pb-1" href="#">By: Prasanta
+                        Behera</a> -->
+							<div class="d-flex justify-content-between cardPricHdr">
+								<div class="product-price"><span class="text-accent">$19.<small>00</small></span></div>
+
+								<button class="btn btn-primary btn-sm mb-2" type="button" data-toggle="toast" data-target="#cart-toast">
+									<i class="czi-cart font-size-sm mr-1"></i>ADD
+                           
+								</button>
+
+							</div>
+						</div>
+						<div class="card-body card-body-hidden">
+
+							<div class="text-center">
+								<a class="nav-link-style font-size-ms" href="#quick-view-electro"
+									data-toggle="modal"><i class="czi-eye align-middle mr-1"></i>Quick view</a>
+							</div>
+						</div>
+					</div>
+					<hr class="d-sm-none">
+				</div>
+				<!-- Product-->
+				<div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
+					<div class="card product-card">
+						<div class="product-card-actions d-flex align-items-center">
+							<button class="btn-wishlist btn-sm" type="button" data-toggle="tooltip" data-placement="left"
+								title="Add to wishlist">
+								<i class="czi-heart"></i>
+							</button>
+						</div>
+						<a class="card-img-top d-block overflow-hidden" href="shop-single-v2.html">
+							<img src="images/book_01.png"
+								alt="Product">
+						</a>
+						<div class="card-body py-2">
+							<h3 class="product-title font-size-sm">
+								<a href="shop-single-v2.html">Treasure Walks
+                            </a>
+							</h3>
+							<!-- <a class="product-meta d-block font-size-xs pb-1" href="#">By: Prasanta
+                        Behera</a> -->
+							<div class="d-flex justify-content-between cardPricHdr">
+								<div class="product-price"><span class="text-accent">$19.<small>00</small></span></div>
+
+								<button class="btn btn-primary btn-sm mb-2" type="button" data-toggle="toast" data-target="#cart-toast">
+									<i class="czi-cart font-size-sm mr-1"></i>ADD
+                           
+								</button>
+
+							</div>
+						</div>
+						<div class="card-body card-body-hidden">
+
+							<div class="text-center">
+								<a class="nav-link-style font-size-ms" href="#quick-view-electro"
+									data-toggle="modal"><i class="czi-eye align-middle mr-1"></i>Quick view</a>
+							</div>
+						</div>
+					</div>
+					<hr class="d-sm-none">
+				</div>
+				<!-- Product-->
+				<div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
+					<div class="card product-card">
+						<div class="product-card-actions d-flex align-items-center">
+							<button class="btn-wishlist btn-sm" type="button" data-toggle="tooltip" data-placement="left"
+								title="Add to wishlist">
+								<i class="czi-heart"></i>
+							</button>
+						</div>
+						<a class="card-img-top d-block overflow-hidden" href="shop-single-v2.html">
+							<img src="images/book_01.png"
+								alt="Product">
+						</a>
+						<div class="card-body py-2">
+							<h3 class="product-title font-size-sm">
+								<a href="shop-single-v2.html">Treasure Walks
+                            </a>
+							</h3>
+							<!-- <a class="product-meta d-block font-size-xs pb-1" href="#">By: Prasanta
+                        Behera</a> -->
+							<div class="d-flex justify-content-between cardPricHdr">
+								<div class="product-price"><span class="text-accent">$19.<small>00</small></span></div>
+
+								<button class="btn btn-primary btn-sm mb-2" type="button" data-toggle="toast" data-target="#cart-toast">
+									<i class="czi-cart font-size-sm mr-1"></i>ADD
+                           
+								</button>
+
+							</div>
+						</div>
+						<div class="card-body card-body-hidden">
+
+							<div class="text-center">
+								<a class="nav-link-style font-size-ms" href="#quick-view-electro"
+									data-toggle="modal"><i class="czi-eye align-middle mr-1"></i>Quick view</a>
+							</div>
+						</div>
+					</div>
+					<hr class="d-sm-none">
+				</div>
+		</section>
+
+		<!-- Blog + Instagram info cards-->
+		<section class="container-fluid px-0 mb-3">
+			<div class="row no-gutters">
+				<div class="col-md-4">
+					<a class="card border-0 rounded-0 text-decoration-none py-md-4 bg-faded-primary"
+						href="blog-list-sidebar.html">
+						<div class="card-body text-center">
+							<i class="czi-edit h3 mt-2 mb-4 text-primary"></i>
+							<h3 class="h5 mb-1">Academic Books
+                        </h3>
+							<p class="text-muted font-size-sm">Shop Now</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a class="card border-0 rounded-0 text-decoration-none py-md-4 bg-faded-accent" href="#">
+						<div class="card-body text-center">
+							<i class="czi-instagram h3 mt-2 mb-4 text-accent"></i>
+							<h3 class="h5 mb-1">Publish Books
+                        </h3>
+							<p class="text-muted font-size-sm">Online</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a class="card border-0 rounded-0 text-decoration-none py-md-4 bg-faded-success" href="#">
+						<div class="card-body text-center">
+							<i class="czi-instagram h3 mt-2 mb-4 text-accent"></i>
+							<h3 class="h5 mb-1">Paperback
+                            Books
+                        </h3>
+							<p class="text-muted font-size-sm">Publish</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+		<!-- Toast: Added to Cart-->
+		<div class="toast-container toast-bottom-center">
+			<div class="toast mb-3" id="cart-toast" data-delay="5000" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-header bg-success text-white">
+					<i class="czi-check-circle mr-2"></i>
+					<h6 class="font-size-sm text-white mb-0 mr-auto">Added to cart!</h6>
+					<button class="close text-white ml-2 mb-1" type="button" data-dismiss="toast" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="toast-body">This item has been added to your cart.</div>
+			</div>
+		</div>
+		<!-- author page -->
+		<section class="container-fluid  py-4 bg-faded-info">
+			<div class="container">
+				<!-- Heading-->
+				<div class="d-flex flex-wrap justify-content-between align-items-center pt-1 pb-2 mb-2">
+					<div class="h3 mb-0  mr-2 active mainHead">Author Best Selling</div>
+
+					<div class="">
+						<a class="btn btn-outline-accent btn-sm" href="shop-grid-ls.html">All Authors<i class="czi-arrow-right ml-1 mr-n1"></i>
+						</a>
+					</div>
+				</div>
+				<!-- Grid-->
+				<div class="row mx-n2">
+					<div class="col-lg-6">
+						<div class="mx-auto " style="max-width: 35rem;">
+							<div class="authImg">
+								<img src="images/author_01.jpg" />
+							</div>
+							<h2 class="h5">Biraja Routray</h2>
+							<p class="font-size-sm pb-3 text-muted">
+								Born in 1973, Dr. Biraja Routray is a powerful voice among contemporary voices in Odia short stories. His
+                            short stories and poems are around the variance of the day-to-day life of a common man. He remains in the
+                            continuous search of life and shares his experience in the form of short stories with readers. His five
+                            short story collections are Gahali Arapakhe, Bahubachan, Pratipakshara Hasa, Bishama Bahu, Purna o Sunya.
+                            He
+                            also has four poetry collections and a collection of essays to his credit.
+                       
+							</p>
+							<!-- <a class="btn btn-primary btn-shadow" href="shop-grid-ls.html">Full Profile</a> -->
+						</div>
+
+					</div>
+					<!-- Product-->
+					<div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
+						<div class="card product-card">
+							<div class="product-card-actions d-flex align-items-center">
+								<button class="btn-wishlist btn-sm" type="button" data-toggle="tooltip" data-placement="left"
+									title="Add to wishlist">
+									<i class="czi-heart"></i>
+								</button>
+							</div>
+							<a class="card-img-top d-block overflow-hidden" href="shop-single-v2.html">
+								<img src="images/book_01.png" alt="Product">
+							</a>
+							<div class="card-body py-2">
+								<h3 class="product-title font-size-sm">
+									<a href="shop-single-v2.html">Treasure Walks
+                                </a>
+								</h3>
+								<!-- <a class="product-meta d-block font-size-xs pb-1" href="#">By: Prasanta
+                            Behera</a> -->
+								<div class="d-flex justify-content-between cardPricHdr">
+									<div class="product-price"><span class="text-accent">$19.<small>00</small></span></div>
+
+									<button class="btn btn-primary btn-sm mb-2" type="button" data-toggle="toast"
+										data-target="#cart-toast">
+										<i class="czi-cart font-size-sm mr-1"></i>ADD
+                               
+									</button>
+
+								</div>
+							</div>
+							<div class="card-body card-body-hidden">
+
+								<div class="text-center">
+									<a class="nav-link-style font-size-ms" href="#quick-view-electro"
+										data-toggle="modal"><i class="czi-eye align-middle mr-1"></i>Quick view</a>
+								</div>
+							</div>
+						</div>
+						<hr class="d-sm-none">
+					</div>
+					<!-- Product-->
+					<div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
+						<div class="card product-card">
+							<div class="product-card-actions d-flex align-items-center">
+								<button class="btn-wishlist btn-sm" type="button" data-toggle="tooltip" data-placement="left"
+									title="Add to wishlist">
+									<i class="czi-heart"></i>
+								</button>
+							</div>
+							<a class="card-img-top d-block overflow-hidden" href="shop-single-v2.html">
+								<img src="images/book_01.png" alt="Product">
+							</a>
+							<div class="card-body py-2">
+								<h3 class="product-title font-size-sm">
+									<a href="shop-single-v2.html">Treasure Walks
+                                </a>
+								</h3>
+								<!-- <a class="product-meta d-block font-size-xs pb-1" href="#">By: Prasanta
+                            Behera</a> -->
+								<div class="d-flex justify-content-between cardPricHdr">
+									<div class="product-price"><span class="text-accent">$19.<small>00</small></span></div>
+
+									<button class="btn btn-primary btn-sm mb-2" type="button" data-toggle="toast"
+										data-target="#cart-toast">
+										<i class="czi-cart font-size-sm mr-1"></i>ADD
+                               
+									</button>
+
+								</div>
+							</div>
+							<div class="card-body card-body-hidden">
+
+								<div class="text-center">
+									<a class="nav-link-style font-size-ms" href="#quick-view-electro"
+										data-toggle="modal"><i class="czi-eye align-middle mr-1"></i>Quick view</a>
+								</div>
+							</div>
+						</div>
+						<hr class="d-sm-none">
+					</div>
+				</div>
+
+				<!-- Product-->
+		</section>
+		<!-- Footer-->
+		<footer class="bg-dark">
+
+			<div class="pt-3 bg-darker">
+				<div class="container">
+					<div class="row footIcnHdr">
+						<div class="col-md-20 col-sm-6 mb-4">
+							<div class="text-nowrap mb-4">
+								<a class="d-inline-block align-middle mt-n1 mr-3" href="index.html">
+									<img class="d-block" width="117" src="images/blackBook_logo.png" alt="Black Eagle Books" />
+								</a>
+
+							</div>
+						</div>
+						<div class="col-md-20 col-sm-6 mb-4">
+							<div class="media">
+								<i class="czi-rocket text-primary" style="font-size: 2.25rem;"></i>
+								<div class="media-body pl-3">
+									<h6 class="font-size-base text-light mb-1">Fast and free delivery</h6>
+									<p class="mb-0 font-size-ms text-light opacity-50">Free delivery for all orders over $200</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-20 col-sm-6 mb-4">
+							<div class="media">
+								<i class="czi-currency-exchange text-primary" style="font-size: 2.25rem;"></i>
+								<div class="media-body pl-3">
+									<h6 class="font-size-base text-light mb-1">Money back guarantee</h6>
+									<p class="mb-0 font-size-ms text-light opacity-50">We return money within 30 days</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-20 col-sm-6 mb-4">
+							<div class="media">
+								<i class="czi-support text-primary" style="font-size: 2.25rem;"></i>
+								<div class="media-body pl-3">
+									<h6 class="font-size-base text-light mb-1">24/7 customer support</h6>
+									<p class="mb-0 font-size-ms text-light opacity-50">Friendly 24/7 customer support</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-20 col-sm-6 mb-4">
+							<div class="media">
+								<i class="czi-card text-primary" style="font-size: 2.25rem;"></i>
+								<div class="media-body pl-3">
+									<h6 class="font-size-base text-light mb-1">Secure online payment</h6>
+									<p class="mb-0 font-size-ms text-light opacity-50">We possess SSL / Secure сertificate</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr class="hr-light pb-2 mb-2">
+					<div class="row pb-2">
+						<div class="col-md-8 text-center text-md-left">
+							<div class="widget widget-links widget-light">
+								<!-- <h3 class="widget-title text-light">Shop departments</h3> -->
+								<ul class="widget-list d-flex flex-wrap justify-content-center justify-content-md-start">
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="authors.html">Authors</a>
+									</li>
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="adoptBook.html">Adopt a
+                                        Book
+                                    </a>
+									</li>
+
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="donate.html">Donate
+                                    </a>
+									</li>
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="publishbooks.html">Publish your
+                                        Book
+                                    </a>
+									</li>
+
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="shop-grid-ls.html">Book Shop</a>
+									</li>
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="about.html">About us</a>
+									</li>
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="contacts.html">Contact Us
+                                    </a>
+									</li>
+								</ul>
+							</div>
+							<div class="widget widget-links widget-light mt-2">
+								<ul class="widget-list d-flex flex-wrap justify-content-center justify-content-md-start">
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="tnc.html">Terms
+                                        and Condition
+                                    </a>
+									</li>
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="return.html">Return
+                                        Center
+                                    </a>
+									</li>
+									<li class="widget-list-item mr-4"><a class="widget-list-link" href="support.html">Support</a></li>
+									<li class="widget-list-item mr-4"><a class="widget-list-link" href="privacy.html">Privacy</a></li>
+									<li class="widget-list-item mr-4">
+										<a class="widget-list-link" href="#">Terms
+                                        of use
+                                    </a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-8 pl-0 ml-0 mt-4 ">
+								<div class="mb-1">
+									<a class="social-btn sb-light sb-twitter ml-2 mb-2" href="#">
+										<i class="czi-twitter"></i>
+									</a><a class="social-btn sb-light sb-facebook ml-2 mb-2" href="#">
+										<i class="czi-facebook"></i>
+									</a><a class="social-btn sb-light sb-instagram ml-2 mb-2" href="#">
+										<i class="czi-instagram"></i>
+									</a><a class="social-btn sb-light sb-pinterest ml-2 mb-2" href="#">
+										<i class="czi-pinterest"></i>
+									</a><a class="social-btn sb-light sb-youtube ml-2 mb-2" href="#">
+										<i class="czi-youtube"></i>
+									</a>
+									<img class="d-inline-block pl-3" width="187" src="img/cards-alt.png" alt="Payment methods" />
+
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 text-center text-md-right ">
+							<h3 class="widget-title text-light ">Stay informed</h3>
+							<form class="cz-subscribe-form validate" action="#" method="post" name="mc-embedded-subscribe-form"
+								target="_blank" novalidate>
+								<div class="input-group input-group-overlay flex-nowrap">
+									<input class="form-control prepended-form-control" type="email" name="EMAIL" placeholder="Your email"
+										required>
+									<div class="input-group-append">
+										<button class="btn btn-primary" type="submit" name="subscribe">Subscribe</button>
+									</div>
+								</div>
+								<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+								<div style="position: absolute; left: -5000px;" aria-hidden="true">
+									<input class="cz-subscribe-form-antispam" type="text" name="b_c7103e2c981361a6639545bd5_29ca296126"
+										tabindex="-1">
+								</div>
+								<small class="form-text text-light opacity-50">*Subscribe to our newsletter to receive early
+                                discount offers, updates and new products info.
+                            </small>
+								<div class="subscribe-status"></div>
+							</form>
+						</div>
+					</div>
+					<hr class="hr-light pb-2 mb-2">
+					<div>
+						<div class="pb-4 font-size-xs text-light opacity-50 text-center text-md-left">
+							© Copyrights 2019, Black Eagle
+                        Books
+                        (A nonprofit to propagate Indian literature globally) 7464 Wisdom Lane, Dublin, OH 43016, USA
+                        The content and images used on this site are copyright protected and copyrights vests with the respective
+                        owners.
+                        The usage of the content and images on this website is intended to promote the works and no endorsement of
+                        the
+                        artist shall be implied.
+                        Unauthorized use is prohibited and punishable by law.
+                   
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</footer>
+		<!-- Toolbar for handheld devices-->
+		<div class="cz-handheld-toolbar">
+			<div class="d-table table-fixed w-100">
+				<a class="d-table-cell cz-handheld-toolbar-item"
+					href="account-wishlist.html">
+					<span class="cz-handheld-toolbar-icon"><i class="czi-heart"></i></span><span class="cz-handheld-toolbar-label">Wishlist</span>
+				</a>
+				<a class="d-table-cell cz-handheld-toolbar-item" href="account-profile.html">
+					<span class="cz-handheld-toolbar-icon"><i class="navbar-tool-icon czi-user"></i></span><span class="cz-handheld-toolbar-label">Account</span>
+				</a>
+				<a class="d-table-cell cz-handheld-toolbar-item" href="shop-cart.html">
+					<span class="cz-handheld-toolbar-icon">
+						<i class="czi-cart"></i><span class="badge badge-primary badge-pill ml-1">4</span>
+					</span><span class="cz-handheld-toolbar-label">$26.00</span>
+				</a>
+			</div>
+		</div>
+		<!-- Back To Top Button-->
+		<a class="btn-scroll-top" href="#top" data-scroll>
+			<span class="btn-scroll-top-tooltip text-muted font-size-sm mr-2">Top</span><i class="btn-scroll-top-icon czi-arrow-up">
+        </i>
+		</a>
+	</form>
+	 <!-- Vendor scrits: js libraries and plugins-->
+    <%--<script src="js/vendor/jquery/dist/jquery.slim.min.js"></script>
+    <script src="js/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/vendor/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+    <script src="js/vendor/simplebar/dist/simplebar.min.js"></script>--%>
+    <%--<script src="js/vendor/tiny-slider/dist/min/tiny-slider.js"></script>--%>
+    <%--<script src="js/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="js/vendor/drift-zoom/dist/Drift.min.js"></script>
+    <script src="js/vendor/lightgallery.js/dist/js/lightgallery.min.js"></script>
+    <script src="js/vendor/lg-video.js/dist/lg-video.min.js"></script>--%>
+    <!-- Main theme script-->
+    <script src="js/theme.min.js"></script>
+</body>

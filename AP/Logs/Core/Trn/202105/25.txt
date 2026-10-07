@@ -1,0 +1,17 @@
+25-05-2021 08:21:32|CORE-TFN-EXT|TrnExecuter_GetOrderSearchReport|500|Object reference not set to an instance of an object.|   at Lib.Core.Trn.Data.Settings.AppConfig.get_TrnDBConnection() in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Data\Settings\AppConfig.cs:line 12
+   at Lib.Core.Trn.Data.TrnDataManager..ctor() in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Data\TrnDataManager.cs:line 19
+   at Lib.Core.Trn.Helpers.AppDataHelper.GetOrderSearchReport(TrnRptOrderGetParams trnOrderRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\Helpers\AppDataHelper.cs:line 211
+   at Lib.Core.Trn.TrnManager.GetOrderSearchReport(TrnRptOrderGetParams trnOrderRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\TrnManager.cs:line 278
+   at Lib.Core.Trn.Executer.TrnExecuter.GetOrderSearchReport(TrnRptOrderGetParams trnOrderRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Executer\TrnExecuter.cs:line 1017
+25-05-2021 08:23:01|CORE-TFN-EXT|TrnExecuter_GetOrderSearchReport|500|Column 'TotalPrice' does not belong to table Table.|   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at Lib.Core.Trn.Data.TrnDataMapper.MapOrderRpt(DataTable dt) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Data\TrnDataMapper.cs:line 630
+   at Lib.Core.Trn.Helpers.AppDataHelper.GetOrderSearchReport(TrnRptOrderGetParams trnOrderRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\Helpers\AppDataHelper.cs:line 216
+   at Lib.Core.Trn.TrnManager.GetOrderSearchReport(TrnRptOrderGetParams trnOrderRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\TrnManager.cs:line 278
+   at Lib.Core.Trn.Executer.TrnExecuter.GetOrderSearchReport(TrnRptOrderGetParams trnOrderRptGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Executer\TrnExecuter.cs:line 1017
+25-05-2021 18:12:39|LIB-TRN-DATA|TrnDataManager_GetOrderSearchReport|500|The number of parameters does not match number of values for stored procedure.|   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.Execute[T](T& resultSet, String commandText, Object[] parameterValues) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 65
+25-05-2021 18:16:32|LIB-TRN-DATA|TrnDataManager_GetOrderSearchReport|500|The number of parameters does not match number of values for stored procedure.|   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.Execute[T](T& resultSet, String commandText, Object[] parameterValues) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 65

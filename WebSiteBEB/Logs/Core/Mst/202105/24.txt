@@ -1,0 +1,18 @@
+24-05-2021 22:41:32|LIB-MST-DATA|MstDataManager_GetStates|500|The number of parameters does not match number of values for stored procedure.|   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.Execute[T](T& resultSet, String commandText, Object[] parameterValues) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 65
+24-05-2021 22:41:32|||500|Error while processing request. Please contact administrator.|
+24-05-2021 22:41:32|||500|Error while processing request. Please contact administrator.|
+24-05-2021 22:48:54|CORE-MST-EXT|MstExecuter_GetStateById|1010|No data found|
+24-05-2021 22:48:54|||1010|No data found|
+24-05-2021 22:50:49|CORE-MST-EXT|MstExecuter_GetStateById|1010|No data found|
+24-05-2021 22:51:51|CORE-MST-EXT|MstExecuter_GetStateById|1010|No data found|
+24-05-2021 22:51:51|||1010|No data found|
+24-05-2021 22:55:38|CORE-MST-EXT|MstExecuter_GetCityById|1010|No data found|
+24-05-2021 22:55:38|||1010|No data found|
+24-05-2021 22:55:48|CORE-MST-EXT|MstExecuter_GetCityById|1010|No data found|
+24-05-2021 22:55:48|||1010|No data found|
+24-05-2021 22:56:03|CORE-MST-EXT|MstExecuter_GetCityById|1010|No data found|
+24-05-2021 22:56:03|||1010|No data found|
+24-05-2021 22:56:44|CORE-MST-EXT|MstExecuter_GetCityById|1010|No data found|
+24-05-2021 22:56:44|||1010|No data found|

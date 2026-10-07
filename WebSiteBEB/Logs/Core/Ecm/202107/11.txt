@@ -1,0 +1,35 @@
+11-07-2021 08:26:09|CORE-ECM-EXT|EcmExecuter_GetUserWishListById|1010|No data found|
+11-07-2021 08:26:09|CORE-ECM-EXT|EcmExecuter_InsertUserWishList|1000|Object cannot be cast from DBNull to other types.|   at System.DBNull.System.IConvertible.ToInt64(IFormatProvider provider)
+   at System.Convert.ToInt64(Object value)
+   at Lib.Core.Ecm.Data.EcmDataManager.InsertUserWishList(EcmUserWishListItem ecmUserWishList) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm.Data\EcmDataManager.cs:line 894
+   at Lib.Core.Ecm.Helpers.AppDataHelper.InsertUserWishList(EcmUserWishListItem ecmUserWishList) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm\Helpers\AppDataHelper.cs:line 450
+   at Lib.Core.Ecm.EcmManager.InsertUserWishList(EcmUserWishListItem ecmUserWishList) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm\EcmManager.cs:line 755
+   at Lib.Core.Ecm.Executer.EcmExecuter.InsertUserWishList(EcmUserWishListItem ecmUserWishList) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm.Executer\EcmExecuter.cs:line 4291
+11-07-2021 08:26:09|||1000|Object cannot be cast from DBNull to other types.|
+11-07-2021 10:57:48|CORE-ECM-EXT|EcmExecuter_GetProduct|1000|Column 'Id' does not belong to table Table.|   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at Lib.Core.Ecm.Data.EcmDataMapper.MapProductEntity(DataTable dt) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm.Data\EcmDataMapper.cs:line 74
+   at Lib.Core.Ecm.Helpers.AppDataHelper.GetProductEntity(EcmProductEntityGetParams ecmProductEntityGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm\Helpers\AppDataHelper.cs:line 313
+   at Lib.Core.Ecm.EcmManager.GetProductEntity(EcmProductEntityGetParams ecmProductEntityGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm\EcmManager.cs:line 538
+   at Lib.Core.Ecm.Executer.EcmExecuter.GetProduct(ProductGetReq productGetReq) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm.Executer\EcmExecuter.cs:line 1925
+11-07-2021 10:58:28|CORE-ECM-EXT|EcmExecuter_GetProduct|1000|Column 'Id' does not belong to table Table.|   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at Lib.Core.Ecm.Data.EcmDataMapper.MapProductEntity(DataTable dt) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm.Data\EcmDataMapper.cs:line 74
+   at Lib.Core.Ecm.Helpers.AppDataHelper.GetProductEntity(EcmProductEntityGetParams ecmProductEntityGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm\Helpers\AppDataHelper.cs:line 313
+   at Lib.Core.Ecm.EcmManager.GetProductEntity(EcmProductEntityGetParams ecmProductEntityGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm\EcmManager.cs:line 538
+   at Lib.Core.Ecm.Executer.EcmExecuter.GetProduct(ProductGetReq productGetReq) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm.Executer\EcmExecuter.cs:line 1925
+11-07-2021 10:58:35|CORE-ECM-EXT|EcmExecuter_GetProduct|1000|Column 'Id' does not belong to table Table.|   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at Lib.Core.Ecm.Data.EcmDataMapper.MapProductEntity(DataTable dt) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm.Data\EcmDataMapper.cs:line 74
+   at Lib.Core.Ecm.Helpers.AppDataHelper.GetProductEntity(EcmProductEntityGetParams ecmProductEntityGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm\Helpers\AppDataHelper.cs:line 313
+   at Lib.Core.Ecm.EcmManager.GetProductEntity(EcmProductEntityGetParams ecmProductEntityGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm\EcmManager.cs:line 538
+   at Lib.Core.Ecm.Executer.EcmExecuter.GetProduct(ProductGetReq productGetReq) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm.Executer\EcmExecuter.cs:line 1925
+11-07-2021 10:59:41|CORE-ECM-EXT|EcmExecuter_GetProduct|1000|Column 'Id' does not belong to table Table.|   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at Lib.Core.Ecm.Data.EcmDataMapper.MapProductEntity(DataTable dt) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm.Data\EcmDataMapper.cs:line 74
+   at Lib.Core.Ecm.Helpers.AppDataHelper.GetProductEntity(EcmProductEntityGetParams ecmProductEntityGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm\Helpers\AppDataHelper.cs:line 313
+   at Lib.Core.Ecm.EcmManager.GetProductEntity(EcmProductEntityGetParams ecmProductEntityGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm\EcmManager.cs:line 538
+   at Lib.Core.Ecm.Executer.EcmExecuter.GetProduct(ProductGetReq productGetReq) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm.Executer\EcmExecuter.cs:line 1925
+11-07-2021 21:16:36|CORE-ECM-EXT|EcmExecuter_InsertUserWishList|1011|Record alredy exists.|
+11-07-2021 21:16:38|CORE-ECM-EXT|EcmExecuter_InsertUserWishList|1011|Record alredy exists.|
+11-07-2021 21:16:40|CORE-ECM-EXT|EcmExecuter_InsertUserWishList|1011|Record alredy exists.|

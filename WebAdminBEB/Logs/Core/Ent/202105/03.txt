@@ -1,0 +1,2 @@
+03-05-2021 20:07:03|CORE-ENT-EXT|EntExecuter_GetEntityById|1002|Invalid Data(Id)|
+03-05-2021 20:08:01|CORE-ENT-EXT|EntExecuter_GetEntityById|1002|Invalid Data(Id)|

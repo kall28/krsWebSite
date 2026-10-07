@@ -1,0 +1,20 @@
+25-05-2021 18:32:03|LIB-PAY-DATA|PayDataManager_GetPayTransSearch|500|The stored procedure 'sp_RPT_PAY_Trans_Get' doesn't exist.|   at System.Data.SqlClient.SqlCommand.DeriveParameters()
+   at System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(SqlCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase.DeriveParameters(DbCommand discoveryCommand)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.DiscoverParameters(DbCommand command)
+   at Microsoft.Practices.EnterpriseLibrary.Data.ParameterCache.SetParameters(DbCommand command, Database database)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.GetStoredProcCommand(String storedProcedureName, Object[] parameterValues)
+   at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(String storedProcedureName, Object[] parameterValues)
+   at Lib.Adapter.Data.DBClient.DatabaseManager.Execute[T](T& resultSet, String commandText, Object[] parameterValues) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib\Lib.Adapter\Lib.Adapter.Data\Lib.Adapter.Data.DBClient\DatabaseManager.cs:line 65
+25-05-2021 19:14:30|CORE-PAY-EXT|PayExecuter_GetPayTransSearch|1000|Column 'PGDateTime' does not belong to table Table.|   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at Lib.Core.Pay.Data.PayDataMapper.MapPayTrans(DataTable dt) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Pay\Lib.Core.Pay.Data\PayDataMapper.cs:line 73
+   at Lib.Core.Pay.Helpers.AppDataHelper.GetPayTransSearch(PayTransSearchGetParams payTransSearchGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Pay\Lib.Core.Pay\Helpers\AppDataHelper.cs:line 253
+   at Lib.Core.Pay.PayManager.GetPayTransSearch(PayTransSearchGetParams payTransSearchGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Pay\Lib.Core.Pay\PayManager.cs:line 409
+   at Lib.Core.Pay.Executer.PayExecuter.GetPayTransSearch(PayTransSearchGetParams payTransSearchGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Pay\Lib.Core.Pay.Executer\PayExecuter.cs:line 4851
+25-05-2021 19:16:36|CORE-PAY-EXT|PayExecuter_GetPayTransSearch|1000|Column 'AdditionalDetails1' does not belong to table Table.|   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at Lib.Core.Pay.Data.PayDataMapper.MapPayTrans(DataTable dt) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Pay\Lib.Core.Pay.Data\PayDataMapper.cs:line 73
+   at Lib.Core.Pay.Helpers.AppDataHelper.GetPayTransSearch(PayTransSearchGetParams payTransSearchGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Pay\Lib.Core.Pay\Helpers\AppDataHelper.cs:line 253
+   at Lib.Core.Pay.PayManager.GetPayTransSearch(PayTransSearchGetParams payTransSearchGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Pay\Lib.Core.Pay\PayManager.cs:line 409
+   at Lib.Core.Pay.Executer.PayExecuter.GetPayTransSearch(PayTransSearchGetParams payTransSearchGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Pay\Lib.Core.Pay.Executer\PayExecuter.cs:line 4851

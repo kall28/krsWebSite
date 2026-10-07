@@ -1,0 +1,24 @@
+19-06-2021 20:35:47|CORE-TFN-EXT|TrnExecuter_GetUserOrderData|500|Column 'TotalWeight' does not belong to table Table.|   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at Lib.Core.Trn.Data.TrnDataMapper.MapOrderDataList(DataTable dataTable) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Data\TrnDataMapper.cs:line 491
+   at Lib.Core.Trn.Helpers.AppDataHelper.GetUserOrderData(TrnUserOrderDataGetParams trnUserOrderDataGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\Helpers\AppDataHelper.cs:line 61
+   at Lib.Core.Trn.TrnManager.GetUserOrderData(TrnUserOrderDataGetParams trnUserOrderDataGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\TrnManager.cs:line 52
+   at Lib.Core.Trn.Executer.TrnExecuter.GetUserOrderData(TrnUserOrderDataGetParams trnUserOrderDataGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Executer\TrnExecuter.cs:line 143
+19-06-2021 20:35:53|CORE-TFN-EXT|TrnExecuter_GetUserOrderData|500|Column 'TotalWeight' does not belong to table Table.|   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at Lib.Core.Trn.Data.TrnDataMapper.MapOrderDataList(DataTable dataTable) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Data\TrnDataMapper.cs:line 491
+   at Lib.Core.Trn.Helpers.AppDataHelper.GetUserOrderData(TrnUserOrderDataGetParams trnUserOrderDataGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\Helpers\AppDataHelper.cs:line 61
+   at Lib.Core.Trn.TrnManager.GetUserOrderData(TrnUserOrderDataGetParams trnUserOrderDataGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\TrnManager.cs:line 52
+   at Lib.Core.Trn.Executer.TrnExecuter.GetUserOrderData(TrnUserOrderDataGetParams trnUserOrderDataGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Executer\TrnExecuter.cs:line 143
+19-06-2021 20:40:29|CORE-TFN-EXT|TrnExecuter_GetUserOrderData|500|Column 'TotalWeight' does not belong to table Table.|   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at Lib.Core.Trn.Data.TrnDataMapper.MapOrderDataList(DataTable dataTable) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Data\TrnDataMapper.cs:line 491
+   at Lib.Core.Trn.Helpers.AppDataHelper.GetUserOrderData(TrnUserOrderDataGetParams trnUserOrderDataGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\Helpers\AppDataHelper.cs:line 61
+   at Lib.Core.Trn.TrnManager.GetUserOrderData(TrnUserOrderDataGetParams trnUserOrderDataGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\TrnManager.cs:line 52
+   at Lib.Core.Trn.Executer.TrnExecuter.GetUserOrderData(TrnUserOrderDataGetParams trnUserOrderDataGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Executer\TrnExecuter.cs:line 143
+19-06-2021 20:43:04|CORE-TFN-EXT|TrnExecuter_GetUserOrderData|500|Column 'UnitWeight' does not belong to table Table.|   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at Lib.Core.Trn.Data.TrnDataMapper.MapOrderDataList(DataTable dataTable) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Data\TrnDataMapper.cs:line 539
+   at Lib.Core.Trn.Helpers.AppDataHelper.GetUserOrderData(TrnUserOrderDataGetParams trnUserOrderDataGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\Helpers\AppDataHelper.cs:line 61
+   at Lib.Core.Trn.TrnManager.GetUserOrderData(TrnUserOrderDataGetParams trnUserOrderDataGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn\TrnManager.cs:line 52
+   at Lib.Core.Trn.Executer.TrnExecuter.GetUserOrderData(TrnUserOrderDataGetParams trnUserOrderDataGetParams) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Trn\Lib.Core.Trn.Executer\TrnExecuter.cs:line 143

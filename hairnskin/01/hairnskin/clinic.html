@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="English">
+
+<head id="head"></head>
+
+<body id="top">
+    <div class="loader-wrapper img-gif">
+        <img src="images/loader.gif" alt="">
+    </div>
+    <div class="pageWrap">
+
+        <!-- header -->
+        <header id="header"></header>
+        <!-- Slider Start -->
+        <div class="container">
+
+            <section class="page-title bg-cont">
+                <div class="row">
+                    <div class="col-md-12 pageBnr">
+                        <span class="hangBnr-img">
+                            <img src="images/illustrator-12.png" />
+                        </span>
+                        <span class="hangBnr-img-right">
+                            <img src="images/illustrator-03.png" />
+                        </span>
+                        <div class="block text-center">
+                            <h1 class="text-capitalize text-lg">Clinics</h1>
+                        </div>
+                    </div>
+            </section>
+        </div>
+
+    <!-- portfolio -->
+    <section class="section doctors">
+        <div class="container">
+            <div class="col-12 text-center  mb-1">
+                <div class="btn-group btn-group-toggle " data-toggle="buttons">
+                    <label class="btn active ">
+                        <input type="radio" name="shuffle-filter" value="all" checked="checked" />All Department
+                    </label>
+                    <label class="btn ">
+                        <input type="radio" name="shuffle-filter" value="cat1" />Inside Hospial
+                    </label>
+                    <label class="btn">
+                        <input type="radio" name="shuffle-filter" value="cat2" />Operaing Room
+                    </label>
+                    <label class="btn">
+                        <input type="radio" name="shuffle-filter" value="cat3" />Event
+                    </label>
+                </div>
+            </div>
+
+            <div class="row shuffle-wrapper gal-wrap portfolio-gallery">
+                <div class="galHdr shuffle-item"
+                    data-groups="[&quot;cat1&quot;,&quot;cat2&quot;]">
+                    <div class="position-relative doctor-inner-box">
+                        <div class="doctor-profile">
+                            <div class="doctor-img">
+                                <img src="images/clinc.jpg" alt="doctor-image" class="img-fluid w-100">
+                            </div>
+                        </div>
+                        <!-- <div class="content mt-3">
+                            <h4 class="mb-0"><a href="doctor-single.html">Thomas Henry</a></h4>
+                            <p>Cardiology</p>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="galHdr shuffle-item" data-groups="[&quot;cat2&quot;]">
+                    <div class="position-relative doctor-inner-box">
+                        <div class="doctor-profile">
+                            <div class="doctor-img">
+                                <img src="images/clinc.jpg" alt="doctor-image" class="img-fluid w-100">
+                            </div>
+                        </div>
+                        <!-- <div class="content mt-3">
+                        <h4 class="mb-0"><a href="doctor-single.html">Thomas Henry</a></h4>
+                        <p>Cardiology</p>
+                    </div> -->
+                    </div>
+                </div>
+                <div class="galHdr shuffle-item"
+                    data-groups="[&quot;cat1&quot;,&quot;cat3&quot;]">
+                    <div class="position-relative doctor-inner-box">
+                        <div class="doctor-profile">
+                            <div class="doctor-img">
+                                <img src="images/clinc.jpg" alt="doctor-image" class="img-fluid w-100">
+                            </div>
+                        </div>
+                        <!-- <div class="content mt-3">
+                    <h4 class="mb-0"><a href="doctor-single.html">Thomas Henry</a></h4>
+                    <p>Cardiology</p>
+                </div> -->
+                    </div>
+                </div>
+                <div class="galHdr shuffle-item"
+                data-groups="[&quot;cat1&quot;,&quot;cat4&quot;]">
+                <div class="position-relative doctor-inner-box">
+                    <div class="doctor-profile">
+                        <div class="doctor-img">
+                            <img src="images/clinc.jpg" alt="doctor-image" class="img-fluid w-100">
+                        </div>
+                    </div>
+                    <!-- <div class="content mt-3">
+                <h4 class="mb-0"><a href="doctor-single.html">Thomas Henry</a></h4>
+                <p>Cardiology</p>
+            </div> -->
+                </div>
+            </div>
+
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- footer Start -->
+    <footer id="footer" class="footer section">
+    </footer>
+
+    <!--     Essential Scripts
+    =====================================-->
+
+
+    <!-- Main jQuery -->
+    <script src="plugins/jquery/jquery.js"></script>
+    <!-- Bootstrap 4.3.2 -->
+    <script src="plugins/bootstrap/js/popper.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugins/counterup/jquery.easing.js"></script>
+    <!-- Slick Slider -->
+    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+    <!-- Counterup -->
+    <script src="plugins/counterup/jquery.waypoints.min.js"></script>
+
+    <script src="plugins/shuffle/shuffle.min.js"></script>
+    <script src="plugins/counterup/jquery.counterup.min.js"></script>
+    <!-- Google Map -->
+    <script src="plugins/google-map/map.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>
+
+    <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        var divisor = document.getElementById("divisor"),
+            slider = document.getElementById("slider");
+        function moveDivisor() {
+            divisor.style.width = slider.value + "%";
+        }
+    </script>
+
+</body>
+
+</html>
