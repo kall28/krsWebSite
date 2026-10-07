@@ -30,8 +30,8 @@ export default function Nav() {
   }, [open]);
 
   return (
-    <header data-nav className="fixed inset-x-0 top-3 z-50 px-3 md:top-5">
-      <nav aria-label="Primary" className="glass relative z-[60] mx-auto flex h-14 max-w-5xl items-center justify-between rounded-full pl-3 pr-2 transition-[background,box-shadow] duration-500 [[data-nav][data-solid]_&]:bg-black/60 [[data-nav][data-solid]_&]:shadow-[0_10px_40px_-10px_rgba(0,0,0,.8)]">
+    <header data-nav className="fixed inset-x-0 top-0 z-50">
+      <nav aria-label="Primary" className="glass relative z-[60] flex h-16 w-full items-center justify-between !border-x-0 !border-t-0 px-4 transition-[background,box-shadow] duration-500 md:px-8 lg:px-12 [[data-nav][data-solid]_&]:bg-black/60 [[data-nav][data-solid]_&]:shadow-[0_10px_40px_-10px_rgba(0,0,0,.8)]">
         <a href="#top" className="flex items-center gap-2 font-[family-name:var(--font-display)] text-xl font-bold tracking-tight" aria-label="KRS Infoserve, back to top">
           <LogoMark size={34} />
           KRS<span className="hidden font-normal text-muted sm:inline">Infoserve</span>
