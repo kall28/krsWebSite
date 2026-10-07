@@ -1,30 +1,31 @@
-import Heading from "./Heading";
+import SectionIntro from "./SectionIntro";
 import { clients, testimonials } from "@/lib/content";
 
-export default function Trust() {
-  return (
-    <section id="trust" className="relative bg-surface py-28 md:py-40">
-      <div className="mx-auto max-w-[90rem] px-5 md:px-10">
-        <p className="eyebrow mb-5" data-fade>Clients</p>
-        <Heading text="Teams across cinema, retail and fintech _trust us._" className="max-w-5xl text-[length:var(--text-huge)]" />
+const Trust = () => (
+  <section id="trust" className="theme-ivory relative">
+    <div className="mx-auto max-w-[90rem] px-5 py-28 md:px-10 md:py-40">
+      <SectionIntro index="04" eyebrow="Clients" title="Teams across cinema, retail and fintech _trust us._" />
 
-        <ul className="mt-14 flex flex-wrap gap-3 md:mt-20" aria-label="Clients and projects from our portfolio">
-          {clients.map((c) => (
-            <li key={c} data-fade className="glass display rounded-full px-6 py-3 text-xl md:text-2xl">{c}</li>
-          ))}
-        </ul>
-        <p className="mt-4 text-sm text-muted">Names listed are projects from our portfolio.</p>
+      <ul className="mt-16 grid grid-cols-2 border-l border-t border-line md:mt-24 md:grid-cols-5" aria-label="Clients and projects from our portfolio">
+        {clients.map((c) => (
+          <li key={c} data-fade className="flex min-h-28 items-center justify-center border-b border-r border-line px-4 text-center md:min-h-36">
+            <span className="display text-xl text-fg/70 transition-colors duration-300 hover:text-fg md:text-2xl">{c}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-4 text-sm text-muted">Names listed are projects from our portfolio.</p>
 
-        <div className="mt-20 grid gap-4 md:mt-28 md:grid-cols-2">
-          {testimonials.map((t) => (
-            <blockquote key={t.quote} data-fade className="relative rounded-3xl border border-dashed border-white/25 p-8 md:p-10">
-              <span className="absolute -top-3 left-6 rounded-full bg-cyan px-3 py-0.5 text-xs font-semibold text-black">Placeholder, not a real testimonial</span>
-              <p className="display text-2xl text-fg/50 md:text-3xl !leading-tight">“{t.quote}”</p>
-              <footer className="mt-6 text-sm text-muted">{t.who}</footer>
-            </blockquote>
-          ))}
-        </div>
+      <div className="mt-20 grid gap-px border border-line bg-line md:mt-28 md:grid-cols-2">
+        {testimonials.map((t) => (
+          <figure key={t.quote} data-fade className="relative flex flex-col justify-between gap-10 bg-ivory p-8 md:p-12">
+            <span className="eyebrow self-start rounded-full border border-dashed border-fg/40 px-3 py-1 !text-fg">Placeholder, not a real testimonial</span>
+            <blockquote className="display text-2xl leading-snug text-fg/55 md:text-3xl">“{t.quote}”</blockquote>
+            <figcaption className="text-sm text-muted">{t.who}</figcaption>
+          </figure>
+        ))}
       </div>
-    </section>
-  );
-}
+    </div>
+  </section>
+);
+
+export default Trust;

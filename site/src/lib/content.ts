@@ -13,6 +13,21 @@ export const nav = [
   { href: "#trust", label: "Clients" },
 ];
 
+export const hero = {
+  headline: "Ideas become\n_experiences._",
+  support: "We design and build digital products people love.",
+  followUp: "Built for _real people._",
+  primary: { href: "#work", label: "Explore our work" },
+  secondary: { href: "#contact", label: "Start a project" },
+  showcase: {
+    name: "Cinépolis Indonesia",
+    kind: "Web booking & mobile app",
+    domain: "cinepolis.co.id",
+    desktop: { src: "/work/cinepolis-home.jpg", alt: "Cinépolis Indonesia home page with quick ticket booking", w: 2880, h: 1484 },
+    mobile: { src: "/work/cinema-app.jpg", alt: "Cinema ticketing mobile app shown on two phones", w: 1688, h: 1624 },
+  },
+};
+
 export const services = [
   {
     title: "Web applications",
@@ -41,7 +56,19 @@ export const services = [
   },
 ];
 
-export const projects = [
+type Project = {
+  name: string;
+  kind: string;
+  line: string;
+  img: string;
+  alt: string;
+  w: number;
+  h: number;
+  mockup?: boolean;
+  url?: string;
+};
+
+export const projects: Project[] = [
   {
     name: "Cinépolis Indonesia",
     kind: "Web booking & mobile app",
@@ -50,6 +77,7 @@ export const projects = [
     alt: "Cinépolis Indonesia food and beverage selection step in the online booking flow",
     w: 2880,
     h: 1484,
+    url: "https://cinepolis.co.id",
   },
   {
     name: "Renepay",

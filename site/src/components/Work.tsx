@@ -1,41 +1,77 @@
 import Image from "next/image";
-import Heading from "./Heading";
+import SectionIntro from "./SectionIntro";
 import { projects } from "@/lib/content";
 
-export default function Work() {
-  return (
-    <section id="work" className="relative bg-surface pt-28 md:pt-40">
-      <div className="mx-auto max-w-[90rem] px-5 md:px-10">
-        <p className="eyebrow mb-5" data-fade>Selected work</p>
-        <Heading text="Products in the hands of _real customers._" className="max-w-5xl text-[length:var(--text-huge)]" />
-        <p className="mt-6 hidden text-sm text-muted lg:block" data-fade>Keep scrolling: the row moves sideways →</p>
-      </div>
+type Project = (typeof projects)[number];
 
-      {/* Desktop: pinned and driven sideways by scroll. Mobile/tablet: plain vertical stack. */}
-      <div data-hscroll className="mt-12 overflow-hidden pb-28 lg:flex lg:h-screen lg:items-center lg:pb-0">
-        <ol data-htrack className="flex flex-col gap-6 px-5 md:px-10 lg:w-max lg:flex-row lg:gap-8">
-          {projects.map((p, i) => {
-            const light = "mockup" in p && p.mockup;
+const CaseLink = ({ project }: { project: Project }) => {
+  if (project.url) {
+    return (
+      <a href={project.url} target="_blank" rel="noopener noreferrer" className="link-u mt-8 inline-flex items-center gap-2 text-sm font-medium">
+        Visit live site<span aria-hidden="true">↗</span><span className="sr-only">(opens in a new tab)</span>
+      </a>
+    );
+  }
+  return <a href="#contact" className="link-u mt-8 inline-block text-sm font-medium">Start a similar project →</a>;
+};
+
+const CaseMeta = ({ project, index }: { project: Project; index: number }) => (
+  <div className="flex items-center gap-4">
+    <span className="eyebrow text-fg">{String(index + 1).padStart(2, "0")}</span>
+    <span className="h-px w-8 bg-line" aria-hidden="true" />
+    <span className="eyebrow">{project.kind}</span>
+  </div>
+);
+
+const WideCase = ({ project, index }: { project: Project; index: number }) => (
+  <article className="grid gap-x-8 gap-y-10 lg:grid-cols-12">
+    <div data-clip className="relative aspect-[48/25] overflow-hidden rounded-lg bg-surface lg:col-span-12">
+      <div data-parallax="3" className="absolute inset-x-0 -inset-y-[4%]">
+        <Image src={project.img} alt={project.alt} fill sizes="(min-width:1440px) 1360px, 94vw" className="object-cover object-top" />
+      </div>
+    </div>
+    <header className="lg:col-span-6" data-fade>
+      <CaseMeta project={project} index={index} />
+      <h3 className="display mt-6 text-[clamp(2.6rem,5vw,4.75rem)]">{project.name}</h3>
+    </header>
+    <div className="lg:col-span-4 lg:col-start-9 lg:pt-12" data-fade>
+      <p className="text-lg text-muted">{project.line}</p>
+      <CaseLink project={project} />
+    </div>
+  </article>
+);
+
+const MockupCase = ({ project, index, reverse }: { project: Project; index: number; reverse: boolean }) => (
+  <article className="grid items-center gap-x-8 gap-y-10 lg:grid-cols-12">
+    <div data-clip className={`relative aspect-[5/4] overflow-hidden rounded-lg bg-ivory lg:col-span-7 ${reverse ? "lg:order-2 lg:col-start-6" : ""}`}>
+      <div data-parallax="3" className="absolute inset-0">
+        <Image src={project.img} alt={project.alt} fill sizes="(min-width:1024px) 55vw, 94vw" className="object-contain p-[5%]" />
+      </div>
+    </div>
+    <div className={`lg:col-span-4 ${reverse ? "lg:order-1 lg:col-start-1" : "lg:col-start-9"}`} data-fade>
+      <CaseMeta project={project} index={index} />
+      <h3 className="display mt-6 text-[clamp(2.6rem,5vw,4.75rem)]">{project.name}</h3>
+      <p className="mt-6 text-lg text-muted">{project.line}</p>
+      <CaseLink project={project} />
+    </div>
+  </article>
+);
+
+const Work = () => {
+  let mockupCount = 0;
+  return (
+    <section id="work" className="relative bg-bg">
+      <div className="mx-auto max-w-[90rem] px-5 py-28 md:px-10 md:py-40">
+        <SectionIntro index="02" eyebrow="Selected work" title="Products in the hands of _real customers._" aside="Four projects, from high-volume consumer booking to B2B procurement and field sales." />
+
+        <ol className="mt-20 space-y-28 md:mt-28 md:space-y-40">
+          {projects.map((project, index) => {
+            const reverse = project.mockup ? mockupCount++ % 2 === 1 : false;
             return (
-              <li key={p.name} className="lg:w-[62vw] lg:max-w-[64rem] lg:shrink-0">
-                <article data-hover data-card className="group grid h-full overflow-hidden rounded-[2rem] border border-line bg-bg md:grid-cols-12 lg:grid-cols-1 lg:grid-rows-[auto_1fr]">
-                  <div className={`relative aspect-[4/3] overflow-hidden md:col-span-7 md:aspect-auto md:min-h-[24rem] lg:aspect-[16/8] lg:min-h-0 ${light ? "bg-[#ececf1]" : "bg-black"}`}>
-                    <div className="absolute -inset-x-[10%] -inset-y-[8%] lg:-inset-y-0" data-hpar data-vpar>
-                    <Image src={p.img} alt={p.alt} fill sizes="(min-width:1024px) 62vw, (min-width:768px) 58vw, 92vw"
-                      className={`transition-transform duration-[1200ms] ease-[var(--ease-out-expo)] group-hover:scale-[1.05] ${light ? "object-cover mix-blend-multiply" : "object-cover object-top"}`} />
-                    </div>
-                  </div>
-                  <div className="flex flex-col justify-between gap-8 p-7 md:col-span-5 md:p-10 lg:flex-row lg:items-end lg:p-8">
-                    <div>
-                      <div className="mb-4 flex items-center gap-3">
-                        <span className="eyebrow">0{i + 1} / 0{projects.length}</span>
-                        <span className="rounded-full bg-cyan/10 px-3 py-1 text-xs text-cyan ring-1 ring-cyan/30">{p.kind}</span>
-                      </div>
-                      <h3 className="display text-4xl md:text-5xl">{p.name}</h3>
-                    </div>
-                    <p className="max-w-sm text-muted">{p.line}</p>
-                  </div>
-                </article>
+              <li key={project.name}>
+                {project.mockup
+                  ? <MockupCase project={project} index={index} reverse={reverse} />
+                  : <WideCase project={project} index={index} />}
               </li>
             );
           })}
@@ -43,4 +79,6 @@ export default function Work() {
       </div>
     </section>
   );
-}
+};
+
+export default Work;

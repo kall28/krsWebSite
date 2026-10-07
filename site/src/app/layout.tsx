@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Inter_Tight } from "next/font/google";
+import { Instrument_Serif, Inter_Tight } from "next/font/google";
 import { site } from "@/lib/content";
 import "./globals.css";
 
-const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-display", display: "swap" });
+const display = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-display", display: "swap" });
 const sans = Inter_Tight({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 
 const description =
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: "KRS Infoserve", description },
 };
 
-export const viewport: Viewport = { themeColor: "#07070a", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#070d24", width: "device-width", initialScale: 1 };
 
 const jsonLd = {
   "@context": "https://schema.org",

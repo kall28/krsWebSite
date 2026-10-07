@@ -1,66 +1,100 @@
 import Image from "next/image";
-import Network from "./Network";
 import Heading from "./Heading";
 import { LinkButton } from "./Button";
-import { clients } from "@/lib/content";
+import { hero } from "@/lib/content";
+import { sculpture } from "@/lib/sculpture";
 
-export default function Hero() {
+type SculptureLayerProps = { layer: "back" | "front" };
+
+/** The ribbon is rendered as two aligned layers: faces behind the text plane and faces in front of it. */
+const SculptureLayer = ({ layer }: SculptureLayerProps) => (
+  <div
+    data-sculpt
+    aria-hidden="true"
+    className={`pointer-events-none absolute left-1/2 top-[44%] w-[min(118vw,36rem)] -translate-x-1/2 -translate-y-1/2 md:w-[min(80vw,46rem)] lg:top-[49%] lg:w-[min(52vw,56rem,86vh)] ${layer === "front" ? "z-20" : "z-0"}`}
+  >
+    <div data-sculpt-idle>
+      <Image
+        src={sculpture[layer]}
+        alt=""
+        width={sculpture.width}
+        height={sculpture.height}
+        sizes="(min-width:1024px) 54vw, (min-width:768px) 80vw, 118vw"
+        loading="eager"
+        fetchPriority="high"
+        className="h-auto w-full select-none"
+        draggable={false}
+      />
+    </div>
+  </div>
+);
+
+const Showcase = () => {
+  const { showcase } = hero;
   return (
-    <section id="top" className="noise relative flex min-h-svh flex-col overflow-hidden pt-28">
-      {/* ambient glow + grid */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="grid-bg absolute inset-0" />
-        <Network />
-        <div className="blob -left-24 top-10 h-[28rem] w-[28rem] bg-indigo/40" />
-        <div className="blob -right-24 top-1/3 h-[24rem] w-[24rem] bg-cyan/20 [animation-delay:-6s]" />
-      </div>
-
-      <div className="relative mx-auto grid w-full max-w-[90rem] flex-1 items-center gap-14 px-5 pb-14 md:px-10 lg:grid-cols-12 lg:gap-8">
-        <div className="lg:col-span-7">
-          <p className="glass mb-8 inline-flex items-center gap-2.5 rounded-full py-1.5 pl-2 pr-4 text-sm text-muted" data-fade>
-            <span className="relative flex h-2.5 w-2.5 ml-1.5"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan opacity-60" /><span className="relative h-2.5 w-2.5 rounded-full bg-cyan" /></span>
-            Digital studio in Mumbai
-          </p>
-          <Heading as="h1" hero text="We design & build _digital products_ people love." className="text-[clamp(2.9rem,7.6vw,7.6rem)]" />
-          <p className="mt-8 max-w-xl text-lg text-muted md:text-xl" data-fade>
-            Web apps, mobile apps and brands for businesses that want to grow. Designed with care, built to last, supported long after launch.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-3" data-fade>
-            <LinkButton href="#contact" magnetic>Start a project</LinkButton>
-            <LinkButton href="#work" variant="ghost" magnetic>See our work</LinkButton>
+    <figure data-hero-comp className="pointer-events-auto relative mx-auto mt-12 w-full max-w-4xl lg:mt-[5vh] lg:w-[min(60vw,100vh)] lg:max-w-none">
+      <a href="#work" aria-label={`${showcase.name}, ${showcase.kind}. Jump to selected work`} className="group block rounded-xl">
+        <div className="overflow-hidden rounded-xl border border-line bg-surface shadow-[0_60px_120px_-50px_rgba(0,0,0,.9)]">
+          <div className="flex h-8 items-center gap-1.5 border-b border-line px-3" aria-hidden="true">
+            <span className="h-2 w-2 rounded-full bg-fg/20" /><span className="h-2 w-2 rounded-full bg-fg/20" /><span className="h-2 w-2 rounded-full bg-fg/20" />
+            <span className="ml-3 rounded-full bg-fg/5 px-3 text-[10px] leading-5 text-muted">{showcase.domain}</span>
           </div>
+          <Image
+            src={showcase.desktop.src}
+            alt={showcase.desktop.alt}
+            width={showcase.desktop.w}
+            height={showcase.desktop.h}
+            sizes="(min-width:1024px) 60vw, 92vw"
+            className="h-auto w-full transition-transform duration-[1200ms] ease-[var(--ease-out-expo)] group-hover:scale-[1.02]"
+          />
         </div>
-
-        {/* Product window + floating phone, real client work */}
-        <div className="relative mx-auto w-full max-w-xl pb-10 [perspective:1400px] lg:col-span-5 lg:max-w-none" data-hero-stage aria-label="Selected KRS projects">
-          <div data-clip data-hero-window className="glass relative rounded-2xl p-2 shadow-[0_40px_80px_-30px_rgba(90,47,224,.5)]">
-            <div className="flex items-center gap-1.5 px-2 pb-2 pt-1" aria-hidden="true">
-              <span className="h-2.5 w-2.5 rounded-full bg-white/20" /><span className="h-2.5 w-2.5 rounded-full bg-white/20" /><span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-              <span className="ml-3 h-5 flex-1 rounded-full bg-white/5 px-3 text-[10px] leading-5 text-muted">cinepolis.co.id</span>
-            </div>
-            <div className="relative aspect-[16/11] overflow-hidden rounded-lg bg-black">
-              <div className="absolute -inset-[8%]" data-parallax="5">
-                <Image src="/work/cinepolis-home.jpg" alt="Cinépolis Indonesia home page" fill priority sizes="(min-width:1024px) 38vw, 90vw" className="object-cover object-top" />
-              </div>
-            </div>
-          </div>
-          <div data-clip data-hero-phone className="absolute -bottom-2 -left-2 w-[42%] rotate-[-4deg] overflow-hidden rounded-2xl bg-[#ececf1] shadow-[0_30px_60px_-20px_rgba(0,0,0,.9)] ring-1 ring-white/20 md:-left-8">
-            <div className="relative aspect-square">
-              <div className="absolute -inset-[6%]" data-parallax="8">
-                <Image src="/work/cinema-app.jpg" alt="Cinema ticketing mobile app on two phones" fill sizes="(min-width:1024px) 16vw, 40vw" className="object-cover mix-blend-multiply" />
-              </div>
-            </div>
-          </div>
+        <div data-hero-phone className="absolute -bottom-[9%] -right-[2%] w-[30%] rounded-2xl bg-ivory p-1.5 shadow-[0_40px_80px_-30px_rgba(0,0,0,.9)] md:-right-[4%]">
+          <Image src={showcase.mobile.src} alt={showcase.mobile.alt} width={showcase.mobile.w} height={showcase.mobile.h} sizes="(min-width:1024px) 18vw, 30vw" className="h-auto w-full rounded-xl" />
         </div>
-      </div>
-
-      <div className="marquee relative border-y border-line bg-black/30 py-5 backdrop-blur" aria-hidden="true">
-        <div className="marquee-track flex w-max gap-14 whitespace-nowrap pr-14">
-          {[...clients, ...clients].map((c, i) => (
-            <span key={i} className="display flex items-center gap-14 text-xl text-muted">{c}<span className="text-cyan">✦</span></span>
-          ))}
-        </div>
-      </div>
-    </section>
+      </a>
+      <figcaption className="mt-5 flex max-w-[66%] flex-wrap items-baseline gap-x-3 text-sm text-muted">
+        <span className="eyebrow">Featured</span>
+        <span className="text-fg">{showcase.name}</span>
+        <span>{showcase.kind}</span>
+      </figcaption>
+    </figure>
   );
-}
+};
+
+const Hero = () => (
+  <section id="top" aria-label="Introduction" className="relative">
+    <div aria-hidden="true" className="hero-gradient pointer-events-none absolute inset-0" />
+
+    <div data-hero-stage className="relative motion-lg:h-svh motion-lg:overflow-hidden">
+      {/* Scene A: headline woven through the sculpture */}
+      <div data-hero-a className="relative isolate flex min-h-svh flex-col items-center justify-center overflow-hidden px-5 pb-28 pt-28 text-center md:px-10 motion-lg:absolute motion-lg:inset-0 motion-lg:overflow-visible">
+        <SculptureLayer layer="back" />
+        <Heading as="h1" hero text={hero.headline} className="relative z-10 text-[length:var(--text-mega)] !leading-[0.9]" />
+        <SculptureLayer layer="front" />
+
+        <div data-hero-copy className="relative z-30 mt-10 md:mt-12">
+          <div data-hero-intro className="flex flex-col items-center">
+            <p className="max-w-md text-lg text-fg/85 md:text-xl">{hero.support}</p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <LinkButton href={hero.primary.href}>{hero.primary.label}</LinkButton>
+              <LinkButton href={hero.secondary.href} variant="ghost">{hero.secondary.label}</LinkButton>
+            </div>
+          </div>
+        </div>
+
+        <div data-hero-copy className="absolute inset-x-5 bottom-7 z-30 flex items-end justify-between md:inset-x-10" aria-hidden="true">
+          <span data-hero-intro className="eyebrow">Digital studio · Mumbai</span>
+          <span data-hero-intro className="eyebrow hidden items-center gap-3 md:flex">Scroll<span className="h-px w-10 bg-fg/40" /></span>
+        </div>
+      </div>
+
+      {/* Scene B: the follow-up line and a real project composition */}
+      <div data-hero-b className="relative px-5 pb-28 pt-4 md:px-10 motion-lg:pointer-events-none motion-lg:absolute motion-lg:inset-0 motion-lg:flex motion-lg:flex-col motion-lg:items-center motion-lg:pb-0 motion-lg:pt-[13vh]">
+        <Heading text={hero.followUp} reveal="manual" className="text-center text-[length:var(--text-huge)]" />
+        <Showcase />
+      </div>
+    </div>
+  </section>
+);
+
+export default Hero;
