@@ -1,5 +1,0 @@
-03-05-2021 07:13:27|CLT-EXT|ClientExecuter_GetNews|500|Object reference not set to an instance of an object.|   at Lib.Core.Cnt.Executer.Settings.AppConfig.get_ErrorLogFolderPathCnt() in D:\Apps\TFS\DotNet\Default-4.8\Lib-4.8\Lib.Core\Lib.Core.Cnt\Lib.Core.Cnt.Executer\Settings\AppConfig.cs:line 15
-   at Lib.Core.Cnt.Executer.Helpers.AppHelper.GetErrorLogFolderPath() in D:\Apps\TFS\DotNet\Default-4.8\Lib-4.8\Lib.Core\Lib.Core.Cnt\Lib.Core.Cnt.Executer\Helpers\AppHelper.cs:line 17
-   at Lib.Core.Cnt.Executer.CntExecuter.GetNews(CntNewsGetParams cntNewsGetParams) in D:\Apps\TFS\DotNet\Default-4.8\Lib-4.8\Lib.Core\Lib.Core.Cnt\Lib.Core.Cnt.Executer\CntExecuter.cs:line 2764
-   at Lib.Client.Executer.Helpers.CntHelper.GetNews(CntNewsGetParams cntNewsGetParams) in D:\Apps\TFS\DotNet\Default-4.8\Lib-4.8\Lib.Client\Lib.Client\Lib.Client.Executer\Helpers\CntHelper.cs:line 267
-   at Lib.Client.Executer.ClientExecuter.GetNews(ReqHeaderParams reqHeaderParams, CntNewsGetParams cntNewsGetParams) in D:\Apps\TFS\DotNet\Default-4.8\Lib-4.8\Lib.Client\Lib.Client\Lib.Client.Executer\ClientExecuter.cs:line 1546

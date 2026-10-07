@@ -1,2 +1,0 @@
-23-06-2021 22:50:06|CORE-CNT-EXT|CntExecuter_GetAppPageByCode|1010|No data found|
-23-06-2021 22:52:04|CORE-CNT-EXT|CntExecuter_GetAppPageByCode|1010|No data found|

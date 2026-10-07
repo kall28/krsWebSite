@@ -1,6 +1,0 @@
-17-06-2021 12:26:52|CORE-ENT-EXT|EntExecuter_GetEntity|1001|Invalid Data(organization)|
-17-06-2021 12:26:52|||1001|Invalid Data(organization)|
-17-06-2021 12:27:52|CORE-ENT-EXT|EntExecuter_GetEntity|1001|Invalid Data(organization)|
-17-06-2021 12:27:52|||1001|Invalid Data(organization)|
-17-06-2021 12:28:46|CORE-ENT-EXT|EntExecuter_GetEntity|1001|Invalid Data(organization)|
-17-06-2021 12:28:46|||1001|Invalid Data(organization)|

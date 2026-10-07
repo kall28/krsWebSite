@@ -1,7 +1,0 @@
-12/07/2021 00:25:53|CORE-ECM-EXT|EcmExecuter_GetUserWishListById|1010|No data found|
-12/07/2021 00:25:53|CORE-ECM-EXT|EcmExecuter_InsertUserWishList|1000|Object cannot be cast from DBNull to other types.|   at System.DBNull.System.IConvertible.ToInt64(IFormatProvider provider)
-   at Lib.Core.Ecm.Data.EcmDataManager.InsertUserWishList(EcmUserWishListItem ecmUserWishList) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm.Data\EcmDataManager.cs:line 896
-   at Lib.Core.Ecm.Helpers.AppDataHelper.InsertUserWishList(EcmUserWishListItem ecmUserWishList) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm\Helpers\AppDataHelper.cs:line 450
-   at Lib.Core.Ecm.EcmManager.InsertUserWishList(EcmUserWishListItem ecmUserWishList) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm\EcmManager.cs:line 755
-   at Lib.Core.Ecm.Executer.EcmExecuter.InsertUserWishList(EcmUserWishListItem ecmUserWishList) in D:\Apps\TFS\DotNet\Default-4.5\Lib-4.5\Lib.Core\Lib.Core.Ecm\Lib.Core.Ecm.Executer\EcmExecuter.cs:line 4296
-12/07/2021 00:25:53|||1000|Object cannot be cast from DBNull to other types.|

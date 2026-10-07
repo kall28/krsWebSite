@@ -1,5 +1,0 @@
-17-05-2021 11:47:37|CORE-CMN-EXT|CmnExecuter_GetActivityConfigBySysName|1010|No data found|
-17-05-2021 11:56:55|CORE-CMN-EXT|CmnExecuter_GetActivityConfigBySysName|1010|No data found|
-17-05-2021 11:58:15|CORE-CMN-EXT|CmnExecuter_GetActivityConfigBySysName|1010|No data found|
-17-05-2021 12:02:17|CORE-CMN-EXT|CmnExecuter_GetActivityConfigBySysName|1010|No data found|
-17-05-2021 12:03:17|CORE-CMN-EXT|CmnExecuter_GetActivityConfigBySysName|1010|No data found|

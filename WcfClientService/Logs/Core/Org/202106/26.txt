@@ -1,6 +1,0 @@
-26/06/2021 13:10:59|CORE-ORG-EXT|OrgExecuter_GetOrgAppUserSource|1010|Invalid User.|
-26/06/2021 13:10:59|||1010|Invalid User.|
-26/06/2021 18:30:52|CORE-ORG-EXT|OrgExecuter_GetOrgAppUserSource|1010|Invalid User.|
-26/06/2021 18:30:52|||1010|Invalid User.|
-26/06/2021 18:31:15|CORE-ORG-EXT|OrgExecuter_GetOrgAppUserSource|1010|Invalid User.|
-26/06/2021 18:31:15|||1010|Invalid User.|

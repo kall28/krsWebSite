@@ -1,8 +1,0 @@
-11-05-2021 13:20:05|CORE-ORG-EXT|OrgExecuter_AuthAppUserSource|1002|App Source Not Found.|
-11-05-2021 13:21:28|CORE-ORG-EXT|OrgExecuter_AuthAppUserSource|1002|App Source Not Found.|
-11-05-2021 13:21:39|CORE-ORG-EXT|OrgExecuter_AuthAppUserSource|1002|App Source Not Found.|
-11-05-2021 13:21:49|CORE-ORG-EXT|OrgExecuter_AuthAppUserSource|1002|App Source Not Found.|
-11-05-2021 17:58:11|CORE-ORG-EXT|OrgExecuter_GetOrgAppUserRoleByAppUserId|1010|No data found|
-11-05-2021 17:58:11|||1010|No data found|
-11-05-2021 17:58:24|CORE-ORG-EXT|OrgExecuter_GetOrgAppUserRoleByAppUserId|1010|No data found|
-11-05-2021 17:58:24|||1010|No data found|
